@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<style>
+    html, body{
+        margin: 0;
+    }
+    #cabecalho {
+        background-color: rgb(32, 32, 222);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    #camisas{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        padding: 10px;
+    }
+
+    .camisa{
+        background-color: white;
+        width: calc(18% + 8px); 
+        color: black;
+        border: 1px solid black;
+        border-radius: 15px;
+        padding: 10px;
+        p, h1{
+            text-align: center;
+        }
+        button, img{
+            margin: 0 auto;
+            display: block;
+        }
+        button{
+            border-color: blue;
+            border-radius: 10px;
+            background-color: blue;
+            color: white;
+            img{
+                top: 0.15em;
+                width: 1em;
+                position: relative;
+                display: inline;
+            }
+        }
+    }
+    .botoes{
+        width: 50px;
+        img{
+            width: 100%;
+        }
+    }
+    #fundo{
+        width: 100vw;
+    }
+    </style>
+<body>
+
+<div id="cabecalho">
+    <div class="botoes">
+        <img id="profile" src="profile.svg" alt="ft de perfil">
+    </div>
+    <div class="botoes">
+        <img id="profile" src="carrinho.svg" alt="ft de carrinho">
+    </div>
+    <div class="botoes">
+        <img id="profile" src="profile.svg" alt="ft de perfil">
+    </div>
+</div>
+<img id="fundo" src="fundo.png" alt="fundo da pagina">
+<div id="camisas">
+    <div class="camisa">
+        <img src="camisa.png" >
+        <p>Descrição</p>
+        <h1>Camisa</h1>
+        <button>
+            Adicionar ao carrinho
+            <img id="profile" src="carrinho.svg" alt="ft de carrinho">
+        </button>
+    </div>
+    <div class="camisa">
+        <img src="camisa.png" >
+        <p>Descrição</p>
+        <h1>Camisa</h1>
+        <button>
+            Adicionar ao carrinho
+            <img id="profile" src="carrinho.svg" alt="ft de carrinho">
+        </button>
+    </div>
+
+    <div class="camisa">
+        <img src="camisa.png" >
+        <p>Descrição</p>
+        <h1>Camisa</h1>
+        <button>
+            Adicionar ao carrinho
+            <img id="profile" src="carrinho.svg" alt="ft de carrinho">
+        </button>
+    </div>
+    <div class="camisa">
+        <img src="camisa.png" >
+        <p>Descrição</p>
+        <h1>Camisa</h1>
+        <button>
+            Adicionar ao carrinho
+            <img id="profile" src="carrinho.svg" alt="ft de carrinho">
+        </button>
+    </div>
+    <div class="camisa">
+        <img src="camisa.png" >
+        <p>Descrição</p>
+        <h1>Camisa</h1>
+        <button>
+            Adicionar ao carrinho
+            <img id="profile" src="carrinho.svg" alt="ft de carrinho">
+        </button>
+    </div>
+</div>
+</body>
+</html> 
