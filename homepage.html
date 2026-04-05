@@ -31,6 +31,7 @@
     }
 
     .camisa{
+        cursor: pointer;
         background-color: white;
         width: calc(18% + 8px); 
         color: black;
@@ -61,6 +62,7 @@
             margin-top: -5%;
             margin-bottom: 7%;
             font-size: 1em;
+            cursor: pointer;
             img{
                 margin-left: 5%;
                 top: 0.15em;
@@ -97,6 +99,62 @@
         input{
             border-radius: 15px;
             padding-left: 7%;
+        }
+    }
+    #ofertas{
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 3em;
+        margin-left: 1vw;
+    }
+    .deslizar{
+        position: relative;
+        width: 100%;
+        .e_d{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            img{
+                padding-top: 5px;
+                width: 23px;
+            }
+        }
+        .esquerda{
+            margin-left: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .direita{
+            margin-right: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+    }
+    .deslizar .seta {
+        border-radius: 50%;
+        background: rgba(224, 214, 214, 0.5);
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #carrossel{
+        display: flex;
+        gap: 30px;
+        margin: auto; 
+        overflow: hidden;
+        justify-content: center;
+        .camisa{
+            width:calc((0.8)*(18% + 8px)) ;
+            min-width: 100px;
+            height: 350px;
+            flex-shrink: 0;
         }
     }
     </style>
@@ -164,6 +222,79 @@
             Adicionar ao carrinho
             <img src="imagens/carrinho.svg" alt="ft de carrinho">
         </button>
+    </div>
+</div>
+<h1 id="ofertas">Ofertas</h1>
+<div class="deslizar">
+    <div class="e_d">
+            <button class="seta esquerda"><img src="imagens/seta-esquerda.png" alt="seta_esquerda "></button>
+            <button class="seta direita"><img src="imagens/seta-direita.png" alt="seta_direita"></button>
+    </div>
+    <div id="carrossel">
+        <div class="camisa">
+            <img src="imagens/camisa.png" >
+            <p>Descrição</p>
+            <h1>Preço</h1>
+            <button>
+                Adicionar ao carrinho
+                <img src="imagens/carrinho.svg" alt="ft de carrinho">
+            </button>
+        </div>
+        <div class="camisa">
+            <img src="imagens/camisa.png" >
+            <p>Descrição</p>
+            <h1>Preço</h1>
+            <button>
+                Adicionar ao carrinho
+                <img src="imagens/carrinho.svg" alt="ft de carrinho">
+            </button>
+        </div>
+    
+        <div class="camisa">
+            <img src="imagens/camisa.png" >
+            <p>Descrição</p>
+            <h1>Preço</h1>
+            <button>
+                Adicionar ao carrinho
+                <img src="imagens/carrinho.svg" alt="ft de carrinho">
+            </button>
+        </div>
+        <div class="camisa">
+            <img src="imagens/camisa.png" >
+            <p>Descrição</p>
+            <h1>Preço</h1>
+            <button>
+                Adicionar ao carrinho
+                <img src="imagens/carrinho.svg" alt="ft de carrinho">
+            </button>
+        </div>
+        <div class="camisa">
+            <img src="imagens/camisa.png" >
+            <p>Descrição</p>
+            <h1>Preço</h1>
+            <button>
+                Adicionar ao carrinho
+                <img src="imagens/carrinho.svg" alt="ft de carrinho">
+            </button>
+        </div>
+        <div class="camisa">
+            <img src="imagens/camisa.png" >
+            <p>Descrição</p>
+            <h1>Preço</h1>
+            <button>
+                Adicionar ao carrinho
+                <img src="imagens/carrinho.svg" alt="ft de carrinho">
+            </button>
+        </div>
+        <div class="camisa">
+            <img src="imagens/camisa.png" >
+            <p>Descrição</p>
+            <h1>Preço</h1>
+            <button>
+                Adicionar ao carrinho
+                <img src="imagens/carrinho.svg" alt="ft de carrinho">
+            </button>
+        </div>
     </div>
 </div>
 </body>
