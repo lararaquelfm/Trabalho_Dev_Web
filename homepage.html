@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>homepage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Contrail+One&display=swap" rel="stylesheet">
+</head>
+<style>
+    html, body{
+        margin: 0;
+        font-family: "Contrail One", sans-serif;
+    }
+    #cabecalho {
+        background-color: #170b9b;
+        display: flex;
+        flex-wrap: wrap;
+        height: 8vh;
+    }
+    #background{
+        width: 100%;
+    }
+
+    #camisas{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1vw;
+        position: relative;
+        bottom: 15vh;
+        padding: 1vw;
+    }
+
+    .camisa{
+        cursor: pointer;
+        background-color: white;
+        width: calc(18% + 8px); 
+        color: black;
+        border: 0.1em solid black;
+        border-radius: 15px;
+        padding: 0.1%;
+        p, h1{
+            text-align: center;
+        }
+        p{
+            font-size: 1.5em;
+        }
+        h1{
+            font-size: 2em;
+            margin-top: -7%;
+        }
+        button, img{
+            margin: 0 auto;
+            display: block;
+        }
+        button{
+            border-color: blue;
+            border-radius: 10px;
+            background-color: blue;
+            color: white;
+            width: 80%;
+            height: 5vh;
+            margin-top: -5%;
+            margin-bottom: 7%;
+            font-size: 1em;
+            cursor: pointer;
+            img{
+                margin-left: 5%;
+                top: 0.15em;
+                width: 1em;
+                position: relative;
+                display: inline;
+            }
+        }
+    }
+    .botoes{
+        width: 4%;
+        max-width: 30%;
+        position: relative;
+        margin-top: 0.2%;
+        margin-left: 1%;
+        img{
+                max-height: 75%;
+        }
+    }
+    .pesquisa{
+        position: absolute;
+        margin-left: 65%;
+        margin-top: 0.6%;
+        width: 30%;
+        height: 4%;
+        max-width: 30%;
+        max-height: 5%;
+        img{
+            max-width: 5%;
+            position: absolute; 
+            left: 1.5%;
+            margin-top: 1.5%;
+        }
+        input{
+            border-radius: 15px;
+            padding-left: 7%;
+        }
+    }
+    #ofertas{
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 3em;
+        margin-left: 1vw;
+    }
+    .deslizar{
+        position: relative;
+        width: 100%;
+        .e_d{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            img{
+                padding-top: 5px;
+                width: 23px;
+            }
+        }
+        .esquerda{
+            margin-left: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .direita{
+            margin-right: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+    }
+    .deslizar .seta {
+        border-radius: 50%;
+        background: rgba(224, 214, 214, 0.5);
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #carrossel{
+        display: flex;
+        gap: 30px;
+        margin: auto; 
+        overflow: hidden;
+        justify-content: center;
+        .camisa{
+            width:calc((0.8)*(18% + 8px)) ;
+            min-width: 100px;
+            height: 350px;
+            flex-shrink: 0;
+        }
+    }
+    </style>
+<body>
+
+<div id="cabecalho">
+    <div class="botoes">
+        <img id="profile" src="imagens/profile.svg" style="width: 100%; height: auto" alt="ft de perfil">
+    </div>
+    <div class="botoes">
+        <img id="favorito" src="imagens/favorito.svg" style="width: 100%; height: auto" alt="ft de favorito">
+    </div>
+    <div class="botoes">
+        <img id="carrinho" src="imagens/carrinho.svg" style="width: 100%; height: auto" alt="ft de carrinho">
+    </div>
+    <div class="pesquisa">
+        <img src="imagens/search.svg" style="width: 100%; height: auto" alt="lupa de pesquisa">
+        <input type="text" style="width: 100%; height: 100%;">
+    </div>
+</div>
+<img id="background" src="imagens/background.png" style="width: 100%; height: auto" alt="background da pagina">
+<div id="camisas">
+    <div class="camisa">
+        <img src="imagens/camisa.png" >
+        <p>Descrição</p>
+        <h1>Preço</h1>
+        <button>
+            Adicionar ao carrinho
+            <img src="imagens/carrinho.svg" alt="ft de carrinho">
+        </button>
+    </div>
+    <div class="camisa">
+        <img src="imagens/camisa.png" >
+        <p>Descrição</p>
+        <h1>Preço</h1>
+        <button>
+            Adicionar ao carrinho
+            <img src="imagens/carrinho.svg" alt="ft de carrinho">
+        </button>
+    </div>
+
+    <div class="camisa">
+        <img src="imagens/camisa.png" >
+        <p>Descrição</p>
+        <h1>Preço</h1>
+        <button>
+            Adicionar ao carrinho
+            <img src="imagens/carrinho.svg" alt="ft de carrinho">
+        </button>
+    </div>
+    <div class="camisa">
+        <img src="imagens/camisa.png" >
+        <p>Descrição</p>
+        <h1>Preço</h1>
+        <button>
+            Adicionar ao carrinho
+            <img src="imagens/carrinho.svg" alt="ft de carrinho">
+        </button>
+    </div>
+    <div class="camisa">
+        <img src="imagens/camisa.png" >
+        <p>Descrição</p>
+        <h1>Preço</h1>
+        <button>
+            Adicionar ao carrinho
+            <img src="imagens/carrinho.svg" alt="ft de carrinho">
+        </button>
+    </div>
+</div>
+<h1 id="ofertas">Ofertas</h1>
+<div class="deslizar">
+    <div class="e_d">
+            <button class="seta esquerda"><img src="imagens/seta-esquerda.png" alt="seta_esquerda "></button>
+            <button class="seta direita"><img src="imagens/seta-direita.png" alt="seta_direita"></button>
+    </div>
+    <div id="carrossel">
+        <div class="camisa">
+            <img src="imagens/camisa.png" >
+            <p>Descrição</p>
+            <h1>Preço</h1>
+            <button>
+                Adicionar ao carrinho
+                <img src="imagens/carrinho.svg" alt="ft de carrinho">
+            </button>
+        </div>
+        <div class="camisa">
+            <img src="imagens/camisa.png" >
+            <p>Descrição</p>
+            <h1>Preço</h1>
+            <button>
+                Adicionar ao carrinho
+                <img src="imagens/carrinho.svg" alt="ft de carrinho">
+            </button>
+        </div>
+    
+        <div class="camisa">
+            <img src="imagens/camisa.png" >
+            <p>Descrição</p>
+            <h1>Preço</h1>
+            <button>
+                Adicionar ao carrinho
+                <img src="imagens/carrinho.svg" alt="ft de carrinho">
+            </button>
+        </div>
+        <div class="camisa">
+            <img src="imagens/camisa.png" >
+            <p>Descrição</p>
+            <h1>Preço</h1>
+            <button>
+                Adicionar ao carrinho
+                <img src="imagens/carrinho.svg" alt="ft de carrinho">
+            </button>
+        </div>
+        <div class="camisa">
+            <img src="imagens/camisa.png" >
+            <p>Descrição</p>
+            <h1>Preço</h1>
+            <button>
+                Adicionar ao carrinho
+                <img src="imagens/carrinho.svg" alt="ft de carrinho">
+            </button>
+        </div>
+        <div class="camisa">
+            <img src="imagens/camisa.png" >
+            <p>Descrição</p>
+            <h1>Preço</h1>
+            <button>
+                Adicionar ao carrinho
+                <img src="imagens/carrinho.svg" alt="ft de carrinho">
+            </button>
+        </div>
+        <div class="camisa">
+            <img src="imagens/camisa.png" >
+            <p>Descrição</p>
+            <h1>Preço</h1>
+            <button>
+                Adicionar ao carrinho
+                <img src="imagens/carrinho.svg" alt="ft de carrinho">
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html> 
