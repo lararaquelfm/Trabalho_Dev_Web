@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ver Blusa</title>
+    <style> 
+        body{
+            font-family: arial;
+        }
+    </style>      
+</head>
+
+
+<body>
+    <header class="topo">
+    <img src = "profile.svg" class = "clicaveis">
+    <img src = "favorito.svg" class = "clicaveis">
+    <img src = "carrinho.svg" class = "clicaveis">
+    <input class = "caixa" type="text" placeholder="     ">
+    
+    </header>
+
+    <style>
+        .topo {
+        background-color: darkblue;
+        display: flex;
+        align-items:center;
+        }
+        .caixa{
+            flex: 1;               
+            margin: 5px 60px;          
+            padding: 5px;      
+            border-radius: 20px;     
+            border: 1px solid gray;
+            background-image: url('search.svg');
+            background-repeat: no-repeat;
+            background-position: 15px center; /* Posiciona a lupa à esquerda */
+            padding-left: 40px; /* Dá espaço para o texto não ficar em cima da lupa */
+            background-color: white;
+        }
+        .clicaveis{
+            margin: 5px;
+        }
+    </style>
+    <main>
+        <div class = "container">
+            <div class = "card">
+                <img src = "Blusa_ceara.webp" class="produto-img">
+            </div>
+            <div class = "info">
+                <h3 class = "nome">Camisa do Ceará</h3>
+                <h3 class = "preço" >R$ 289,90</h3>    
+                <h3 class = "linha">____________________________________________________</h3>
+                <h3 class = "tamanho"> Tamanho:  </h3>
+                <div class = "botoes">    
+                    <button class="comprar">Comprar agora</button>
+                    <button class = "add_carrinho"> Adicionar ao carrinho <img src="carrinho.svg"></button>
+                </div>
+            </div> 
+        </div>
+
+
+    <style>
+        .container{
+            display: flex;
+            align-items:flex-start;
+            gap: 50px;
+        }
+        .produto-img{
+            width: 500px;
+        }
+        .card{
+            border: 1px solid Gray;
+            padding: 15px;
+            margin: 40px 80px;
+            border-radius: 10px;
+            display: inline-block;
+            
+            align-items: center;   
+            gap: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .info{
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 60px;
+            width: 100%
+        }
+        .nome{
+            font-size: 60px;
+            margin: 5px;
+        }
+        .preço{
+            font-size: 80px;
+            margin: 5px;
+            color: darkblue;
+        }
+        .linha{
+            color:darkblue;
+            margin-top: 10px;
+        }
+        .tamanho{
+            align-items: flex-start;
+        }
+        .comprar{
+        background-color: darkblue;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 50px; /* isso cria o efeito de pílula */
+        font-size: 20px;
+        cursor: pointer;
+        margin-top: 15px;
+        }
+        .add_carrinho{
+        display: flex;
+        background-color: darkblue;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 50px; 
+        font-size: 20px;
+        cursor: pointer;
+        margin-top: 15px;
+        align-items: center;
+        }
+        .botoes{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%
+        }
+
+    </style>
+
+
+</body>
+</html>

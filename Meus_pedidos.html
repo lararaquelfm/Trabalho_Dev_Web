@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meus pedidos</title>
+    <style> 
+        body{
+            font-family: arial;
+        }
+    </style>      
+</head>
+
+
+<body>
+    <header class="topo">
+    <img src = "profile.svg" class = "clicaveis">
+    <img src = "favorito.svg" class = "clicaveis">
+    <img src = "carrinho.svg" class = "clicaveis">
+    <input class = "caixa" type="text" placeholder="     ">
+    
+    </header>
+
+    <style>
+        header{
+            color : White;
+            padding: 5px 10px;
+        }
+        .topo {
+        background-color: darkblue;
+        display: flex;
+        align-items:center;
+        }
+        .caixa{
+            flex: 1;               
+            margin: 5px 60px;          
+            padding: 5px;      
+            border-radius: 20px;     
+            border: 1px solid gray;
+            background-image: url('search.svg');
+            background-repeat: no-repeat;
+            background-position: 15px center; 
+            padding-left: 40px; 
+            background-color: white;
+        }
+        .clicaveis{
+            margin: 5px;
+        }
+    </style>
+
+
+<main>
+    <h1> Meus pedidos</h1>
+    <div class = "card">
+        <img src = "Blusa_ceara.webp" class="produto-img">
+        <div class = "info">
+            <h3> Camisa do Ceará</h3>
+            <p><span class = "label">Tamanho: </span> M </p>
+            <p><span class = "label">Quantidade:</span> 1</p>
+            <p><span class = "label">Preço total:</span> 289,00 </p>
+            <p><span class = "label">Prazo para entrega:</span> 15 dias úteis</p>
+        </div>
+    </div>
+    <div class = "card">
+        <img src = "Blusa_ceara.webp" class="produto-img">
+        <div class = "info">
+            <h3> Camisa do Ceará</h3>
+            <p><span class = "label">Tamanho: </span> M </p>
+            <p><span class = "label">Quantidade:</span> 1</p>
+            <p><span class = "label">Preço total:</span> 289,00 </p>
+            <p><span class = "label">Prazo para entrega:</span> 15 dias úteis</p>
+        </div>
+    </div>
+    <div class = "card">
+        <img src = "Blusa_ceara.webp" class="produto-img">
+        <div class = "info">
+            <h3> Camisa do Ceará</h3>
+            <p><span class = "label">Tamanho: </span> M </p>
+            <p><span class = "label">Quantidade:</span> 1</p>
+            <p><span class = "label">Preço total:</span> 289,00 </p>
+            <p><span class = "label">Prazo para entrega:</span> 15 dias úteis</p>
+        </div>
+    </div>
+    <div class = "card">
+        <img src = "Blusa_ceara.webp" class="produto-img">
+        <div class = "info">
+            <h3> Camisa do Ceará</h3>
+            <p><span class = "label">Tamanho: </span> M </p>
+            <p><span class = "label">Quantidade:</span> 1</p>
+            <p><span class = "label">Preço total:</span> 289,00 </p>
+            <p><span class = "label">Prazo para entrega:</span> 15 dias úteis</p>
+        </div>
+    </div>
+
+    <style>
+        h1{
+            padding: 10px;
+            margin: 10px;
+        }
+        .label{
+            font-weight: bolder;
+        }
+        .info h3{
+            font-size: 16px;
+            margin: 0;
+        }
+        .info p {
+        font-size: 14px;
+        margin: 2px 0;
+        }
+        .produto-img{
+            width: 100px;
+        }
+        .card{
+            border: 1px solid Gray;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 10px;
+
+            display:flex;
+            align-items: center;   
+            gap: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</main>
+</body>
+</html>
