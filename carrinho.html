@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Contrail+One&display=swap" rel="stylesheet">
+    </head>
+    <style>
+        html, body{
+            margin: 0;
+            font-family: "Contrail One", sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            #cabecalho {
+                background-color: #170b9b;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            
+            .botoes{
+            width: 50px;
+            position: relative;
+            left: 10px;
+            margin-right: 1%;
+            cursor: pointer;
+            img{
+                width: 100%;
+            }
+        }
+        .pesquisa{
+            position: relative;
+            margin-left: 45%;
+            margin-top: 0.4%;
+            width: 500px;
+            height: 30px;
+            img{
+                position: absolute; 
+                left: 1%;
+                margin-top: 6px;
+            }
+            input{
+                border-radius: 15px;
+                padding-left: 30px;
+            }
+        }
+
+            #camisas{
+                margin-left: 30px;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column; /*deixa uma camisa abaixo da outra*/
+                gap: 10px;
+                padding: 10px;
+                padding-bottom: 120px;
+                .camisa{
+                    background-color: white;
+                    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                    width: calc(95%); 
+                    color: black;
+                    border: 1px solid black;
+                    border-radius: 15px;
+                    padding: 15px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: 30px;
+                }
+        
+                .camisa img {
+                    max-width: 100px;
+                    height: auto;
+                }
+        
+                .camisa-detalhes {
+                    display: flex;
+                    flex-direction: column;
+                    text-align: start;
+                    gap: 8px;
+                }
+                
+                .camisa-detalhes h1 { /*referente ao título da camisa*/
+                    font-size: 1.45rem;
+                    margin-top: -20px;
+                    gap: 8px;
+                }
+                
+                .camisa-detalhes p{ /*referente ao valor do item*/
+                    font-family: sans-serif;
+                    font-size: 1.2rem;
+                    margin-left: 1050px;
+                    margin-bottom: -20px;
+                }
+        
+                .camisa-controles {
+                    display: flex; /*deixa um botao do lado do outro*/
+                    align-items: center;
+                    gap: 15px; /*distancia entre os botões*/
+                    margin-left: 1050px;
+                    margin-top: -75px;
+                }
+        
+                .controle-item {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 36px;
+                    height: 36px;
+                    background-color: #170b9b;
+                    border-radius: 50%; 
+                    color: white;
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                    cursor: pointer;
+                    border: none;
+                    padding: 0;
+                }
+        
+                .controle-item img {
+                    width: 30px;
+                    display: block;
+                }
+        
+                .checkbox-item {
+                        width: 20px;
+                        height: 20px;
+                        cursor: pointer;
+                        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                }
+                .camisa-variacao select {
+                    border-radius: 20%;
+                    cursor: pointer;
+                    border-color: gray;
+                }
+            }
+
+
+            #concluir {
+                position: fixed;
+                background-color: white;
+                bottom: 0;
+                left: 0;
+                z-index: 10;
+                display: flex;
+                flex-wrap: wrap;
+                height: 100px;
+                margin-bottom: 0;
+                border: 1px solid black;
+                align-items: center;
+                width: 100%;
+                box-sizing: border-box;
+                
+                .botao-finalizar {
+                    justify-content: flex-end;
+                    color: white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #170b9b;
+                    border-radius: 10%;
+                    margin-left: auto;
+                    margin-right: 20px;
+                    height: 40px;
+                    width: 200px;
+                    cursor: pointer;
+                }
+                .checkbox-all {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    margin-left: 30px;
+                    gap: 10px;
+                    width: auto;
+                    cursor: pointer;
+                }
+                #selecionar-tudo {
+                width: 25px;
+                height: 25px;
+                cursor: pointer;
+                }
+            }
+        }
+
+            </style>
+        <body>
+
+        <div id="cabecalho">
+            <div class="botoes">
+                <img id="profile" src="imagens/profile.svg" alt="ft de perfil">
+            </div>
+            <div class="botoes">
+                <img id="favorito" src="imagens/favorito.svg" alt="ft de perfil">
+            </div>
+            <div class="botoes">
+                <img id="carrinho" src="imagens/carrinho.svg" alt="ft de carrinho">
+            </div>
+            <div class="pesquisa">
+                <img src="imagens/search.svg">
+                <input type="text" style="width: 100%; height: 100%;">
+            </div>
+        </div>
+        <div id="camisas">
+            <div class="camisa">
+                <input type="checkbox" id="selecionar-camisa" class="checkbox-item">
+                <img src="imagens/camiseta_corinthians.png" class="produto-img" alt="Camiseta">
+                
+                <div class="camisa-detalhes">
+                    <h1>Camiseta do Corinthians</h1>
+
+                    <div class="camisa-variacao">
+                        <label for="tamanho-item1"><strong>Tamanho:</strong></label>
+                        <select id="tamanho-item1" name="tamanho">
+                            <option value="P">P</option>
+                            <option value="M" selected>M</option> <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                    </div>
+
+                    <div class="camisa-variacao">
+                        <label for="cor-item1"><strong>Cor:</strong></label>
+                        <select id="cor-item1" name="cor">
+                            <option value="Branco">Preto</option>
+                            <option value="Preto" selected>Branco</option>
+                        </select>
+                    </div>
+                    
+                    <div class="camisa-controles">
+                        <button class="controle-item">
+                            <img src="imagens/lixeira.png" alt="Remover"> 
+                        </button>
+                        <div class="controle-item center">1</div>
+                        <button class="controle-item">+</button>
+                    </div>
+                    <p><strong>Total:</strong> R$ 249,99</p>
+                </div>
+            </div>
+
+            <div class="camisa">
+                <input type="checkbox" id="selecionar-camisa" class="checkbox-item">
+                <img src="imagens/camiseta_ceara.png" class="produto-img" alt="Camiseta">
+                
+                <div class="camisa-detalhes">
+                    <h1>Camiseta do Ceará</h1>
+
+                    <div class="camisa-variacao">
+                        <label for="tamanho-item2"><strong>Tamanho:</strong></label>
+                        <select id="tamanho-item2" name="tamanho">
+                            <option value="P">P</option>
+                            <option value="M" selected>P</option> <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                    </div>
+
+                    <div class="camisa-variacao">
+                        <label for="cor-item2"><strong>Cor:</strong></label>
+                        <select id="cor-item2" name="cor">
+                            <option value="Branco">Preto</option>
+                            <option value="Preto" selected>Branco</option>
+                        </select>
+                    </div>
+                    
+                    <div class="camisa-controles">
+                        <button class="controle-item">-</button>
+                        <div class="controle-item center">2</div>
+                        <button class="controle-item">+</button>
+                    </div>
+                    <p><strong>Total:</strong> R$ 499,98</p>
+                </div>
+            </div>
+            
+            <div class="camisa">
+                <input type="checkbox" id="selecionar-camisa" class="checkbox-item">
+                <img src="imagens/camiseta_real_madrid.png" class="produto-img" alt="Camiseta">
+                
+                <div class="camisa-detalhes">
+                    <h1>Camiseta do Real Madrid</h1>
+
+                    <div class="camisa-variacao">
+                        <label for="tamanho-item3"><strong>Tamanho:</strong></label>
+                        <select id="tamanho-item3" name="tamanho">
+                            <option value="P">P</option>
+                            <option value="M" selected>M</option> <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                    </div>
+
+                    <div class="camisa-variacao">
+                        <label for="cor-item3"><strong>Cor:</strong></label>
+                        <select id="cor-item3" name="cor">
+                            <option value="Branco">Preto</option>
+                            <option value="Preto" selected>Branco</option>
+                        </select>
+                    </div>
+                    
+                    <div class="camisa-controles">
+                        <button class="controle-item">
+                            <img src="imagens/lixeira.png" alt="Remover"> 
+                        </button>
+                        <div class="controle-item center">1</div>
+                        <button class="controle-item">+</button>
+                    </div>
+                    <p><strong>Total:</strong> R$ 449,99</p>
+                </div>
+            </div>
+            
+            <div class="camisa">
+                <input type="checkbox" id="selecionar-camisa" class="checkbox-item">
+                <img src="imagens/camiseta_caucaia.png" class="produto-img" alt="Camiseta">
+                
+                <div class="camisa-detalhes">
+                    <h1>Camiseta do Caucaia</h1>
+
+                    <div class="camisa-variacao">
+                        <label for="tamanho-item4"><strong>Tamanho:</strong></label>
+                        <select id="tamanho-item4" name="tamanho">
+                            <option value="P">P</option>
+                            <option value="M" selected>GG</option> <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                    </div>
+
+                    <div class="camisa-variacao">
+                        <label for="cor-item4"><strong>Cor:</strong></label>
+                        <select id="cor-item4" name="cor">
+                            <option value="Branco">Preto</option>
+                            <option value="Preto" selected>Branco</option>
+                        </select>
+                    </div>
+                    
+                    <div class="camisa-controles">
+                        <button class="controle-item">
+                            <img src="imagens/lixeira.png" alt="Remover"> 
+                        </button>
+                        <div class="controle-item center">4</div>
+                        <button class="controle-item">+</button>
+                    </div>
+                    <p><strong>Total:</strong> R$ 799,96</p>
+                </div>
+            </div>
+            <div class="camisa">
+                <input type="checkbox" id="selecionar-camisa" class="checkbox-item">
+                <img src="imagens/camiseta_ibis.png" class="produto-img" alt="Camiseta">
+                
+                <div class="camisa-detalhes">
+                    <h1>Camiseta do Ibis</h1>
+
+                    <div class="camisa-variacao">
+                        <label for="tamanho-item5"><strong>Tamanho:</strong></label>
+                        <select id="tamanho-item5" name="tamanho">
+                            <option value="P">P</option>
+                            <option value="M" selected>M</option> <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                    </div>
+
+                    <div class="camisa-variacao">
+                        <label for="cor-item5"><strong>Cor:</strong></label>
+                        <select id="cor-item5" name="cor">
+                            <option value="Branco">Preto</option>
+                            <option value="Preto" selected>Branco</option>
+                        </select>
+                    </div>
+                    
+                    <div class="camisa-controles">
+                        <button class="controle-item">
+                            <img src="imagens/lixeira.png" alt="Remover"> 
+                        </button>
+                        <div class="controle-item center">1</div>
+                        <button class="controle-item">+</button>
+                    </div>
+                    <p><strong>Total:</strong> R$ 149,99</p>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        <div id="concluir">
+            <div class="checkbox-all">
+                <input type="checkbox" id="selecionar-tudo" class="checkbox-item"> <p>Selecionar tudo</p>
+            </div>
+            
+            <div class="botao-finalizar">
+                <p>Finalizar Compra</p>
+            </div>
+        </div>
+    </body>
+</html>
