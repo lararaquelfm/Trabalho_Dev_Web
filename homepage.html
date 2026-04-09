@@ -1,22 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-<title>homepage</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Contrail+One&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="barra_navegacao.css">
 </head>
 <style>
-    html, body{
-        margin: 0;
-        font-family: "Contrail One", sans-serif;
-    }
-    #cabecalho {
-        background-color: #170b9b;
-        display: flex;
-        flex-wrap: wrap;
-        height: 8vh;
-    }
     #background{
         width: 100%;
     }
@@ -31,7 +20,6 @@
     }
 
     .camisa{
-        cursor: pointer;
         background-color: white;
         width: calc(18% + 8px); 
         color: black;
@@ -70,35 +58,6 @@
                 position: relative;
                 display: inline;
             }
-        }
-    }
-    .botoes{
-        width: 4%;
-        max-width: 30%;
-        position: relative;
-        margin-top: 0.2%;
-        margin-left: 1%;
-        img{
-                max-height: 75%;
-        }
-    }
-    .pesquisa{
-        position: absolute;
-        margin-left: 65%;
-        margin-top: 0.6%;
-        width: 30%;
-        height: 4%;
-        max-width: 30%;
-        max-height: 5%;
-        img{
-            max-width: 5%;
-            position: absolute; 
-            left: 1.5%;
-            margin-top: 1.5%;
-        }
-        input{
-            border-radius: 15px;
-            padding-left: 7%;
         }
     }
     #ofertas{
@@ -155,12 +114,16 @@
             min-width: 100px;
             height: 350px;
             flex-shrink: 0;
+            button{
+                font-size: 85%;
+            }
         }
+        
     }
-    </style>
+</style>
 <body>
 
-<div id="cabecalho">
+<div id="barraNavegacao">
     <div class="botoes">
         <img id="profile" src="imagens/profile.svg" style="width: 100%; height: auto" alt="ft de perfil">
     </div>

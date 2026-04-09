@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
+body{
+    margin: 0;
+    font-family: "Contrail One", sans-serif;
+}
+
+#barraNavegacao {
+    background-color: #170b9b;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 6vh;
+}
+
+.botoes{
+    cursor: pointer;
+    width: 40px;
+    position: relative;
+    margin-left: 1%;
+    align-items: center;
+    img{
+            width: 100%;
+            height: auto;
+    }
+}
+
+.pesquisa{
+    position: absolute;
+    margin-left: 66%;
+    margin-bottom: 0.5%;
+    width: 30%;
+    height: 4%;
+    max-width: 30%;
+    max-height: 3%;
+    align-items: center;
+    img{
+        max-width: 5%;
+        position: absolute; 
+        left: 1.5%;
+        margin-top: 1%;
+    }
+    input{
+        border-radius: 15px;
+        padding-left: 7%;
+    }
+}
