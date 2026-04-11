@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        body,p{
+            font-family: "Poppins", sans-serif;
+        }
+        #cabecalhoAdm{
+            .pcima{
+                background-color: #170b9b;
+                display: flex; 
+                padding: 15px;
+                align-items: center;
+                color: white;
+                img{
+                    margin-right: 10px;
+                }
+                
+            }
+            .plado{
+                display: flex;
+                .menu{
+                    color: white;
+                    background-color: #170b9b;
+                    min-height: 90vh;
+                    width: 10%;
+                    h2{
+                        cursor: pointer;
+                        margin-left: 27%;
+                        margin-top: 10%;
+                    }
+                    #ativo{
+                        margin-bottom: 0;
+                        margin-top: 5px;
+                        display: flex;
+                        align-items: center;
+                        margin-left: 13.5%;
+                        img{
+                            width: 15%;
+                            margin-left: 0;
+                        }
+                        h2{
+                            margin-top: 0;
+                            margin-left: 0;
+                            margin-bottom: 0;
+                        }
+                    }
+                    
+                }
+                .conteudo{
+                  position: relative;  
+                }
+                
+            }
+        }
+        .cabecalhocadastro{
+            margin-left: 4%;
+            width: 90%;
+            margin: 0 auto;
+            h1{
+                margin-top: 20px;
+                margin-bottom: 10px;
+                font-size: 50px;
+            }
+            .pesquisar{
+                width: 50%;
+                font-family: "Poppins", sans-serif;
+                padding: 4px;
+                display: flex;
+                align-items: center;
+                border: 2px solid gray;
+                border-radius: 15px;
+                margin-bottom: 2%;
+                input{ 
+                    outline: none;
+                    border-style: none;
+                }
+            }
+        }
+        .Cadastro{
+            padding: 4px;
+            border-radius: 15px;
+            width: 90%;
+            margin: 0 auto;
+            border: 2px solid gray;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 1%;
+            p{
+                font-family: "Poppins", sans-serif;
+                margin: 0;
+                padding: 2px;
+                margin-left: 1%;
+            }
+        }
+        </style>
+</head>
+<body>
+    <div id="cabecalhoAdm">
+        <div class="pcima">
+            <img id="profile" src="imagens/profile.svg" style="width: 3%; height: auto" alt="ft de perfil">
+            <h1>Administrador</h1>
+        </div>
+        <div class="plado">
+            <div class="menu" style="width:15%;">
+                <h2>Dashboard</h2>
+                <h2>Compras</h2>
+                <div id="ativo">
+                    <img src="imagens/arrowright.svg" alt="seta direita">
+                    <h2>Cadastros</h2>
+                </div>
+                <h2>Itens</h2>
+                <h2>Categorias</h2>
+            </div>
+            <div class="conteudo" style="width: 85%">
+                <div class="cabecalhocadastro">
+                    <h1>Cadastros</h1>
+                    <div class="pesquisar">
+                        <img src="imagens/search.svg" style="width: 26px">
+                        <input id="busca" type="text" placeholder="Buscar cadastro por nome" style="width: 100%; height: 100%">
+                    </div>
+                </div>
+                <div class="Cadastro">
+                    <p><span class = "dados"><b>Nome:</b></span> Nome </p>
+                    <p><span class = "dados"><b>Endereço:</b></span> Endereço </p>
+                    <p><span class = "dados"><b>CEP:</b></span> 00000-000 </p>
+                    <p><span class = "dados"><b>E-mail:</b></span> xxxxxx@gmail.com </p>
+                    <p><span class = "dados"><b>Telefone:</b></span> (00) 90000-0000 </p>
+                </div>
+                <div class="Cadastro">
+                    <p><span class = "dados"><b>Nome:</b></span> Nome </p>
+                    <p><span class = "dados"><b>Endereço:</b></span> Endereço </p>
+                    <p><span class = "dados"><b>CEP:</b></span> 00000-000 </p>
+                    <p><span class = "dados"><b>E-mail:</b></span> xxxxxx@gmail.com </p>
+                    <p><span class = "dados"><b>Telefone:</b></span> (00) 90000-0000 </p>
+                </div>
+                <div class="Cadastro">
+                    <p><span class = "dados"><b>Nome:</b></span> Nome </p>
+                    <p><span class = "dados"><b>Endereço:</b></span> Endereço </p>
+                    <p><span class = "dados"><b>CEP:</b></span> 00000-000 </p>
+                    <p><span class = "dados"><b>E-mail:</b></span> xxxxxx@gmail.com </p>
+                    <p><span class = "dados"><b>Telefone:</b></span> (00) 90000-0000 </p>
+                </div>
+                <div class="Cadastro">
+                    <p><span class = "dados"><b>Nome:</b></span> Nome </p>
+                    <p><span class = "dados"><b>Endereço:</b></span> Endereço </p>
+                    <p><span class = "dados"><b>CEP:</b></span> 00000-000 </p>
+                    <p><span class = "dados"><b>E-mail:</b></span> xxxxxx@gmail.com </p>
+                    <p><span class = "dados"><b>Telefone:</b></span> (00) 90000-0000 </p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
