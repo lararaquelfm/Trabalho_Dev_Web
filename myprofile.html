@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Perfil</title>
+    <link rel="stylesheet" href="barra_navegacao.css">
+</head>
+<style>
+    
+    .container {
+        max-width: 1000px;
+        margin: 50px auto;
+        padding: 0 20px;
+    }
+
+    .container h1 {
+        font-size: 36px;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .container p {
+        color: #666;
+        margin-bottom: 30px;
+    }
+
+    .card {
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grade {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        gap: 40px;
+        margin-bottom: 40px;
+        position: relative;
+    }
+
+    .grade::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background-color: #ddd;
+    }
+
+    .campo {
+        margin-bottom: 25px;
+    }
+
+    .campo strong {
+        display: block;
+        font-size: 18px;
+        margin-bottom: 5px;
+        color: #000;
+    }
+
+    .campo span {
+        font-size: 16px;
+        color: #555;
+        word-break: break-all;
+    }
+
+    .botao-alterar {
+        background-color: #120a8f;
+        color: white;
+        border: none;
+        padding: 15px 60px;
+        border-radius: 50px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .botao-alterar:hover {
+        background-color: #0a065e;
+        transform: scale(1.02);
+    }
+
+</style>
+<body>
+
+    <div id="barraNavegacao">
+        <div class="botoes">
+            <img id="profile" src="imagens/profile.svg" style="width: 100%; height: auto" alt="ft de perfil">
+        </div>
+        <div class="botoes">
+            <img id="home" src="imagens/home.svg" style="width: 100%; height: auto" alt="ft de favorito">
+        </div>
+        <div class="botoes">
+            <img id="carrinho" src="imagens/carrinho.svg" style="width: 100%; height: auto" alt="ft de carrinho">
+        </div>
+        <div class="pesquisa">
+            <img src="imagens/search.svg" style="width: 100%; height: auto" alt="lupa de pesquisa">
+            <input type="text" style="width: 100%; height: 100%;">
+        </div>
+    </div>
+
+   <main class="container">
+        <h1>Meu perfil</h1>
+        <p>Acesse ou altere seus dados</p>
+
+        <section class="card">
+            <div class="grade">
+                <div class="col">
+                    <div class="campo">
+                        <strong>Nome:</strong>
+                        <span>Nome completo</span>
+                    </div>
+                    <div class="campo">
+                        <strong>CPF:</strong>
+                        <span>000.000.000-00</span>
+                    </div>
+                    <div class="campo">
+                        <strong>E-mail:</strong>
+                        <span>x********@gmail.com</span>
+                    </div>
+                    <div class="campo">
+                        <strong>Senha:</strong>
+                        <span>************</span>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="campo">
+                        <strong>Data de Nascimento</strong>
+                        <span>00/00/0000</span>
+                    </div>
+                    <div class="campo">
+                        <strong>Endereço:</strong>
+                        <span>************</span>
+                    </div>
+                    <div class="campo">
+                        <strong>CEP:</strong>
+                        <span>************</span>
+                    </div>
+                    <div class="campo">
+                        <strong>Telefone:</strong>
+                        <span>************</span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="botao-alterar">Alterar Dados</button>
+        </section>
+    </main>
+
+</body>
+</html>
