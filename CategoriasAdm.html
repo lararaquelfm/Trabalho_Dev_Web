@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <link rel="stylesheet" href="barra_navegacao_adm.css">
+    <style>
+        #pag{
+            margin-left: 4%;
+            width: 90%;
+            margin: 0 auto;
+        }
+        #cabecalho{
+            height: 15%;
+            width: 100%;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: flex-start;
+            h1{
+                margin-top: 20px;
+                font-size: 3.5em;
+                display: inline-block;
+                
+            }
+            .pesquisa{
+                position: relative;
+                width: 33%;
+                height: 40px;
+                img{
+                    max-width: 7%;
+                    position: absolute; 
+                    left: 1.5%;
+                    margin-top: 0.9%;
+                }
+                input{
+                    font-size: 1.5em;
+                    border: 1.5px solid gray;
+                    border-radius: 50px;
+                    padding-left: 10%;
+                    width: 100%;
+                    height: 93%;
+                }
+            }
+            button{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: 50px;
+                border-color: #170b9b;
+                border-radius: 50px;
+                background-color: #170b9b;
+                color: white;
+                width: 20%;
+                height: 40px;
+                font-size: 1.2em;
+                cursor: pointer;
+                img{
+                    width: 2em;
+                }
+            }
+        }
+
+        #filtros{
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid gray;
+            border-radius: 50px;
+            margin-right: 20.5%;
+            h1{
+                margin: 10px;
+            }
+            .filtrar{
+                width: 27%;
+                height: 30px;
+                padding: 4px;
+                display: flex;
+                align-items: center;
+                border: 2px solid gray;
+                border-radius: 50px;
+                left: 100px;
+                select{ 
+                    font-size: 1em;
+                    outline: #170b9b;
+                    background: none;
+                    cursor: pointer;
+                    border-style: none;
+                }
+                img{
+                    width: 26px;
+                }
+            }
+        }
+
+        #tabela{
+            margin-top: 3%;
+            table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            }
+
+            th, td {
+                border: 1px solid gray;
+                padding: 10px;
+                text-align: center;
+            }
+
+            th {
+                background-color: #170b9b;
+                color: white;
+                font-weight: bold;
+            }
+            /* 
+            Peguei o css do toggle box neste link: https://uiverse.io/zanina-yassine/afraid-eel-50
+            */
+            .toggle_switch{
+                width: 51px;
+                height: 31px;
+                position: relative;
+                margin-left: 40%;
+                .checkbox {
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+                    position: absolute;
+                }
+                .switch {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    background-color: #e9e9eb;
+                    border-radius: 16px;
+                    cursor: pointer;
+                    transition: all 0.2s ease-out;
+                }
+                .slider {
+                    width: 27px;
+                    height: 27px;
+                    position: absolute;
+                    left: calc(50% - 27px/2 - 10px);
+                    top: calc(50% - 27px/2);
+                    border-radius: 50%;
+                    background: #FFFFFF;
+                    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
+                    transition: all 0.2s ease-out;
+                    cursor: pointer;
+                }
+
+                .checkbox:checked + .switch {
+                    background-color: #170b9b;
+                }
+
+                .checkbox:checked + .switch .slider {
+                    left: calc(50% - 27px/2 + 10px);
+                    top: calc(50% - 27px/2);
+                }
+            }
+            button{
+                width: 30%;
+                cursor: pointer;
+                border: none;
+                background: none;
+                img{
+                    width: 75%;
+                }
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="pcima">
+        <img id="profile" src="imagens/profile.svg" style="width: 3%; height: auto" alt="ft de perfil">
+        <h1>Administrador</h1>
+    </div>
+    <div class="plado">
+        <div class="menu" style="width:15%;">
+            <a href="">Dashboard</a>
+            <a href="ComprasAdm.html">Compras</a>
+            <a href="CadastrosAdm.html">Cadastros</a>
+            <a href="">Itens</a>
+            <div id="ativo">
+                <img src="imagens/arrowright.svg" alt="seta direita">
+                <a href="CategoriasAdm.html">Categorias</a>
+            </div>
+        </div>
+        <div id="conteudo" style="width: 85%">
+            <div id="pag">
+                <div id="cabecalho">
+                    <h1>Categorias</h1>
+                    <div class="pesquisa">
+                        <img src="imagens/search.svg" style="width: 100%; height: auto" alt="lupa de pesquisa">
+                        <input type="text" placeholder="Buscar categoria">
+                    </div>
+                    <button>
+                        <img src="imagens/mais.svg" alt="ft de um mais">
+                        <strong>Adicionar nova categoria</strong>
+                    </button>
+                </div>
+                <div id="filtros">
+                    <h1>Tipo de atributo:</h1>
+                    <div class="filtrar">
+                    <img src="imagens/filter.svg">
+                    <select name="Filtro" id="atributo" style="width: 100%; height: 100%">
+                        <option value="Atributo 1">Atributo 1</option>
+                        <option value="Atributo 2">Atributo 2</option>
+                        <option value="Atributo 3">Atributo 3</option>
+                        <option value="Atributo 4">Atributo 4</option>
+                    </select>
+                    </div>
+                    <h1>Status:</h1>
+                    <div class="filtrar">
+                    <img src="imagens/filter.svg">
+                    <select name="Filtro" id="status" style="width: 100%; height: 100%">
+                        <option value="Ativo">Ativo</option>
+                        <option value="Inativo">Inativo</option>
+                    </select>
+                    </div>
+                </div>
+                    <div id="tabela">
+                        <table>
+                        <thead>
+                            <tr>
+                            <th>Nome</th>
+                            <th>Atributo(s)</th>
+                            <th>ID</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>nome</td>
+                            <td>atributo1, atributo2</td>
+                            <td>777</td>
+                            <td>
+                                <div class="toggle_switch">
+                                    <input type="checkbox" class="checkbox" id="checkbox1">
+                                    <label class="switch" for="checkbox1">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <button>
+                                    <img src="imagens/lixeira_preta.svg" alt="icone para delet">
+                                </button>
+                                <button>
+                                    <img src="imagens/editar.svg" alt="icone de edição">
+                                </button>
+                            </td>
+                            </tr>
+                            <tr>
+                            <td>nome</td>
+                            <td>atributo1, atributo2</td>
+                            <td>777</td>
+                            <td>
+                                <div class="toggle_switch">
+                                    <input type="checkbox" class="checkbox" id="checkbox2">
+                                    <label class="switch" for="checkbox2">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <button>
+                                    <img src="imagens/lixeira_preta.svg" alt="icone para delet">
+                                </button>
+                                <button>
+                                    <img src="imagens/editar.svg" alt="icone de edição">
+                                </button>
+                            </td>
+                            </tr>
+                            <tr>
+                            <td>nome</td>
+                            <td>atributo1, atributo2</td>
+                            <td>777</td>
+                            <td>
+                                <div class="toggle_switch">
+                                    <input type="checkbox" class="checkbox" id="checkbox3">
+                                    <label class="switch" for="checkbox3">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <button>
+                                    <img src="imagens/lixeira_preta.svg" alt="icone para delet">
+                                </button>
+                                <button>
+                                    <img src="imagens/editar.svg" alt="icone de edição">
+                                </button>
+                            </td>
+                            </tr>
+                        </tbody>
+                        </table> 
+                    </div>
+                </div>
+        </div>
+    </div>
+</body>
+</html>
