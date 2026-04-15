@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="barra_navegacao_adm.css">
+    <style>
+        body,option, select{
+            font-family: "Poppins", sans-serif;
+        }
+                #itens {
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                    padding: 10px;
+                    gap: 10px;
+                    width: 100%;
+
+                    .itens-detalhes {
+                        display: flex;
+                        background-color: white;
+                        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                        height: 30%;
+                        width: calc(50% - 10px); 
+                        color: black;
+                        border: 1px solid black;
+                        border-radius: 15px;
+                        padding: 15px;
+                        display: flex;
+                        align-items: center;
+                        gap: 30px;
+                        box-sizing: border-box;
+                    }
+
+                    .lado-esquerdo {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    }
+
+                    .itens-img {
+                        width: 20%;
+                    }
+
+                    .lado-direito {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    margin-left: auto;
+                    gap: 20px;
+                    align-self: flex-start;
+                    }
+
+                    p{
+                        font-family: "Poppins", sans-serif;
+                        margin: 0;
+                        padding: 1px;
+                        margin-left: 1%;
+                    }
+
+                    h1 {
+                        font-family: "Poppins", sans-serif;
+                        margin: 0;
+                        padding: 0px;
+                        font-size: 1.5rem;
+                    }
+
+                    .tamanhos {
+                        display: flex;
+                        gap: 15px;
+                        align-items: flex-start;
+                        
+                        .grupo-tamanho {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 2px;
+
+                            .tamanho {
+                            border: 1px solid black;
+                            border-radius: 5px;
+                            width: 30px;
+                            height: 20px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            }
+                        }
+                    }
+
+                    quantidade p {
+                        font-family: "Poppins", sans-serif;
+                        margin: 0;
+                        font-size: 1rem;
+                    }
+
+                    .botao-editar {
+                        margin-left: auto;
+                        margin-right: 2%;
+                        margin-top: 2%;
+                        cursor: pointer;
+                        height: 30px;
+                        background-color: transparent;
+                        border: none;
+
+                        img {
+                            width: 30px;
+                        }
+                    }
+                }    
+
+        </style>
+    </head>
+<body>
+        <div class="pcima">
+            <img id="profile" src="imagens/profile.svg" style="width: 3%; height: auto" alt="ft de perfil">
+            <h1>Administrador</h1>
+        </div>
+        <div class="plado">
+            <div class="menu" style="width:15%;">
+                <h2>Dashboard</h2>
+                <h2>Compras</h2>
+                <h2>Cadastros</h2>
+                <div id="ativo">
+                    <img src="imagens/arrowright.svg" alt="seta direita">
+                    <h2>Itens</h2>
+                </div>
+                <h2>Categorias</h2>
+            </div>
+            <div class="conteudo" style="width: 85%">
+                <div id="itens">
+                    <div class="itens-detalhes">
+                        <img src="imagens/camiseta_corinthians.png" class="itens-img" alt="Camiseta">
+                        <div class="lado-esquerdo">
+                            <h1><strong>Descrição</strong></h1>
+                            <p><strong>Preço: </strong> R$ 199,99</p>
+
+                            <div class="tamanhos">
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">PP</div>
+                                    <span class="qtd">1</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">P</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">M</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">G</div>
+                                    <span class="qtd">0</span>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <div class="lado-direito">
+                            <button class="botao-editar">
+                                <img src="imagens/edit_icon.png" alt="Editar">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="itens-detalhes">
+                        <img src="imagens/camiseta_corinthians.png" class="itens-img" alt="Camiseta">
+                        <div class="lado-esquerdo">
+                            <h1><strong>Descrição</strong></h1>
+                            <p><strong>Preço: </strong> R$ 199,99</p>
+
+                             <div class="tamanhos">
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">PP</div>
+                                    <span class="qtd">1</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">P</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">M</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">G</div>
+                                    <span class="qtd">0</span>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <div class="lado-direito">
+                            <button class="botao-editar">
+                                <img src="imagens/edit_icon.png" alt="Editar">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="itens-detalhes">
+                        <img src="imagens/camiseta_corinthians.png" class="itens-img" alt="Camiseta">
+                        <div class="lado-esquerdo">
+                            <h1><strong>Descrição</strong></h1>
+                            <p><strong>Preço: </strong> R$ 199,99</p>
+
+                             <div class="tamanhos">
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">PP</div>
+                                    <span class="qtd">1</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">P</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">M</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">G</div>
+                                    <span class="qtd">0</span>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <div class="lado-direito">
+                            <button class="botao-editar">
+                                <img src="imagens/edit_icon.png" alt="Editar">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="itens-detalhes">
+                        <img src="imagens/camiseta_corinthians.png" class="itens-img" alt="Camiseta">
+                        <div class="lado-esquerdo">
+                            <h1><strong>Descrição</strong></h1>
+                            <p><strong>Preço: </strong> R$ 199,99</p>
+
+                             <div class="tamanhos">
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">PP</div>
+                                    <span class="qtd">1</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">P</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">M</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">G</div>
+                                    <span class="qtd">0</span>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <div class="lado-direito">
+                            <button class="botao-editar">
+                                <img src="imagens/edit_icon.png" alt="Editar">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="itens-detalhes">
+                        <img src="imagens/camiseta_corinthians.png" class="itens-img" alt="Camiseta">
+                        <div class="lado-esquerdo">
+                            <h1><strong>Descrição</strong></h1>
+                            <p><strong>Preço: </strong> R$ 199,99</p>
+
+                             <div class="tamanhos">
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">PP</div>
+                                    <span class="qtd">1</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">P</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">M</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">G</div>
+                                    <span class="qtd">0</span>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <div class="lado-direito">
+                            <button class="botao-editar">
+                                <img src="imagens/edit_icon.png" alt="Editar">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="itens-detalhes">
+                        <img src="imagens/camiseta_corinthians.png" class="itens-img" alt="Camiseta">
+                        <div class="lado-esquerdo">
+                            <h1><strong>Descrição</strong></h1>
+                            <p><strong>Preço: </strong> R$ 199,99</p>
+
+                             <div class="tamanhos">
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">PP</div>
+                                    <span class="qtd">1</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">P</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">M</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">G</div>
+                                    <span class="qtd">0</span>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <div class="lado-direito">
+                            <button class="botao-editar">
+                                <img src="imagens/edit_icon.png" alt="Editar">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="itens-detalhes">
+                        <img src="imagens/camiseta_corinthians.png" class="itens-img" alt="Camiseta">
+                        <div class="lado-esquerdo">
+                            <h1><strong>Descrição</strong></h1>
+                            <p><strong>Preço: </strong> R$ 199,99</p>
+
+                             <div class="tamanhos">
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">PP</div>
+                                    <span class="qtd">1</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">P</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">M</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">G</div>
+                                    <span class="qtd">0</span>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <div class="lado-direito">
+                            <button class="botao-editar">
+                                <img src="imagens/edit_icon.png" alt="Editar">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="itens-detalhes">
+                        <img src="imagens/camiseta_corinthians.png" class="itens-img" alt="Camiseta">
+                        <div class="lado-esquerdo">
+                            <h1><strong>Descrição</strong></h1>
+                            <p><strong>Preço: </strong> R$ 199,99</p>
+
+                            <div class="tamanhos">
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">PP</div>
+                                    <span class="qtd">1</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">P</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">M</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">G</div>
+                                    <span class="qtd">0</span>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <div class="lado-direito">
+                            <button class="botao-editar">
+                                <img src="imagens/edit_icon.png" alt="Editar">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="itens-detalhes">
+                        <img src="imagens/camiseta_corinthians.png" class="itens-img" alt="Camiseta">
+                        <div class="lado-esquerdo">
+                            <h1><strong>Descrição</strong></h1>
+                            <p><strong>Preço: </strong> R$ 199,99</p>
+
+                            <div class="tamanhos">
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">PP</div>
+                                    <span class="qtd">1</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">P</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">M</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">G</div>
+                                    <span class="qtd">0</span>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <div class="lado-direito">
+                            <button class="botao-editar">
+                                <img src="imagens/edit_icon.png" alt="Editar">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="itens-detalhes">
+                        <img src="imagens/camiseta_corinthians.png" class="itens-img" alt="Camiseta">
+                        <div class="lado-esquerdo">
+                            <h1><strong>Descrição</strong></h1>
+                            <p><strong>Preço: </strong> R$ 199,99</p>
+
+                            <div class="tamanhos">
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">PP</div>
+                                    <span class="qtd">1</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">P</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">M</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">G</div>
+                                    <span class="qtd">0</span>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <div class="lado-direito">
+                            <button class="botao-editar">
+                                <img src="imagens/edit_icon.png" alt="Editar">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="itens-detalhes">
+                        <img src="imagens/camiseta_corinthians.png" class="itens-img" alt="Camiseta">
+                        <div class="lado-esquerdo">
+                            <h1><strong>Descrição</strong></h1>
+                            <p><strong>Preço: </strong> R$ 199,99</p>
+
+                            <div class="tamanhos">
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">PP</div>
+                                    <span class="qtd">1</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">P</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">M</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">G</div>
+                                    <span class="qtd">0</span>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <div class="lado-direito">
+                            <button class="botao-editar">
+                                <img src="imagens/edit_icon.png" alt="Editar">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="itens-detalhes">
+                        <img src="imagens/camiseta_corinthians.png" class="itens-img" alt="Camiseta">
+                        <div class="lado-esquerdo">
+                            <h1><strong>Descrição</strong></h1>
+                            <p><strong>Preço: </strong> R$ 199,99</p>
+
+                            <div class="tamanhos">
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">PP</div>
+                                    <span class="qtd">1</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">P</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">M</div>
+                                    <span class="qtd">4</span>
+                                </div>
+
+                                <div class="grupo-tamanho">
+                                    <div class="tamanho">G</div>
+                                    <span class="qtd">0</span>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <div class="lado-direito">
+                            <button class="botao-editar">
+                                <img src="imagens/edit_icon.png" alt="Editar">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>
