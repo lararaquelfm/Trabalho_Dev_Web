@@ -20,6 +20,7 @@
     }
 
     .camisa{
+        cursor: pointer;
         background-color: white;
         width: calc(18% + 8px); 
         color: black;
@@ -111,6 +112,7 @@
         overflow: hidden;
         justify-content: center;
         .camisa{
+            padding: 15px;
             width:calc((0.8)*(18% + 8px)) ;
             min-width: 100px;
             height: 350px;
@@ -130,29 +132,33 @@
     </div>
     <div class="botoes">
         <a href="homepage.html">
-        <img id="home" src="imagens/home.svg" style="width: 100%; height: auto" alt="ft de favorito">
-    </a>
+        <img id="home" src="imagens/home.svg" style="width: 100%; height: auto" alt="ft da home">
+        </a>
         </div>
     <div class="botoes">
         <a href="carrinho.html">
         <img id="carrinho" src="imagens/carrinho.svg" style="width: 100%; height: auto" alt="ft de carrinho"></a>
     </div>
     <div class="pesquisa">
-        <img src="imagens/search.svg" style="width: 100%; height: auto" alt="lupa de pesquisa">
-        <input type="text" style="width: 100%; height: 100%;">
+        <a href="PaginaPesquisa.html">
+            <img src="imagens/search.svg" style="width: 100%; height: auto" alt="lupa de pesquisa">
+            <input type="text" class="desativar" style="width: 100%; height: 100%;">  
+        </a>
     </div>
 </div>
 <img id="background" src="imagens/background.png" style="width: 100%; height: auto" alt="background da pagina">
 <div id="camisas">
     <div class="camisa">
-        <img src="imagens/camisa.png" >
-        <p>Descrição</p>
-        <h1>Preço</h1>
-        <button>
-            Adicionar ao carrinho
-            <img src="imagens/carrinho.svg" alt="ft de carrinho">
-        </button>
-    </div>
+        <a href="Pagina_Blusa.html" style="text-decoration: none; color: inherit;">
+            <img src="imagens/camisa.png" >
+            <p>Descrição</p>
+            <h1>Preço</h1>
+            <button>
+                Adicionar ao carrinho
+                <img src="imagens/carrinho.svg" alt="ft de carrinho">
+            </button>
+        </div>
+        </a>
     <div class="camisa">
         <img src="imagens/camisa.png" >
         <p>Descrição</p>

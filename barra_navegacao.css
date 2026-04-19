@@ -38,6 +38,9 @@ body{
         left: 1.5%;
         margin-top: 1%;
     }
+    .desativar{
+        pointer-events: none;
+    }
     input{
         border-radius: 15px;
         padding-left: 7%;
