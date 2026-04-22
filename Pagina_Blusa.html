@@ -8,109 +8,15 @@
         }
     </style>      
 </head>
-<style>
-    .container{
-        display: flex;
-        align-items:flex-start;
-        gap: 50px;
-    }
-    .botoes_compra{
-        display: flex;
-        gap: 10px;
-    }
-    .produto-img{
-        width: 500px;
-    }
-    .card{
-        border: 1px solid Gray;
-        padding: 15px;
-        margin: 40px 80px;
-        border-radius: 10px;
-        display: inline-block;
-        
-        align-items: center;   
-        gap: 30px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .info{
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 60px;
-        width: 100%
-    }
-    .nome{
-        font-size: 60px;
-        margin: 5px;
-    }
-    .preço{
-        font-size: 80px;
-        margin: 5px;
-        color: darkblue;
-    }
-    .linha{
-        color:darkblue;
-        margin-top: 10px;
-    }
-    .tamanho{
-        align-items: flex-start;
-    }
-    .comprar{
-    background-color: darkblue;
-    color: white;
-    padding: 12px 30px;
-    border-radius: 50px; /* isso cria o efeito de pílula */
-    font-size: 20px;
-    cursor: pointer;
-    margin-top: 15px;
-    min-width: 280px;
-    }
-    .botoes a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-    .add_carrinho{
-    display: flex;
-    background-color: darkblue;
-    color: white;
-    padding: 12px 30px;
-    border-radius: 50px; 
-    font-size: 20px;
-    cursor: pointer;
-    margin-top: 15px;
-    align-items: center;
-    justify-content: center;
-    min-width: 280px;
-    gap: 5px;
-    img{
-        max-width: 2vh;
-    }
-    }
-</style>
+
+
 <body>
-    <div id="barraNavegacao">
-        <div class="botoes">
-            <img id="profile" src="imagens/profile.svg" style="width: 100%; height: auto" alt="ft de perfil">
-        </div>
-        <div class="botoes">
-            <div class="botoes">
-            <a href="homepage.html">
-                <img id="home" src="imagens/home.svg" style="width: 100%; height: auto" alt="ft de favorito">
-            </a>
-        </div>
-        </div>
-        <div class="botoes">
-            <a href="carrinho.html">
-                <img id="carrinho" src="imagens/carrinho.svg" style="width: 100%; height: auto" alt="ft de carrinho">
-            </a>
-        </div>
-        <div class="pesquisa">
-            <img src="imagens/search.svg" style="width: 100%; height: auto" alt="lupa de pesquisa">
-            <input type="text" style="width: 100%; height: 100%;">
-        </div>
-    </div>
+    <header class="topo">
+    <img src = "imagens/profile.svg" class = "clicaveis">
+    <img src = "imagens/favorito.svg" class = "clicaveis">
+    <img src = "imagens/carrinho.svg" class = "clicaveis">
+    <input class = "caixa" type="text" placeholder="     ">
+    
     </header>
 
     <style>
@@ -143,9 +49,15 @@
             <div class = "info">
                 <h3 class = "nome">Camisa do Ceará</h3>
                 <h3 class = "preço" >R$ 289,90</h3>    
-                <h3 class = "linha">____________________________________________________</h3>
+                <h3 class = "linha">___________________________________________________________</h3>
                 <h3 class = "tamanho"> Tamanho:  </h3>
-                <div class = "botoes_compra">    
+                <div class="tamanhos">
+                    <div class="tam">PP</div>
+                    <div class="tam">P</div>
+                    <div class="tam">M</div>
+                    <div class="tam">G</div>
+                </div>
+                <div class = "botoes">    
                     <button class="comprar">Comprar agora</button>
                     <button class = "add_carrinho"> Adicionar ao carrinho <img src="imagens/carrinho.svg"></button>
                 </div>
