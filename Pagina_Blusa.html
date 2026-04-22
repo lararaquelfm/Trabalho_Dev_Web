@@ -2,7 +2,11 @@
 <html>
 <head>
     <title>Ver Blusa</title>
-    <link rel="stylesheet" href="barra_navegacao.css">    
+    <style> 
+        body{
+            font-family: arial;
+        }
+    </style>      
 </head>
 <style>
     .container{
@@ -108,7 +112,28 @@
         </div>
     </div>
     </header>
+
     <style>
+        .topo {
+        background-color: darkblue;
+        display: flex;
+        align-items:center;
+        }
+        .caixa{
+            flex: 1;               
+            margin: 5px 60px;          
+            padding: 5px;      
+            border-radius: 20px;     
+            border: 1px solid gray;
+            background-image: url('imagens/search.svg');
+            background-repeat: no-repeat;
+            background-position: 15px center; /* Posiciona a lupa à esquerda */
+            padding-left: 40px; /* Dá espaço para o texto não ficar em cima da lupa */
+            background-color: white;
+        }
+        .clicaveis{
+            margin: 5px;
+        }
     </style>
     <main>
         <div class = "container">
@@ -126,6 +151,105 @@
                 </div>
             </div> 
         </div>
+
+
+    <style>
+        .container{
+            display: flex;
+            align-items:flex-start;
+            gap: 50px;
+        }
+        .produto-img{
+            width: 500px;
+        }
+        .card{
+            border: 1px solid Gray;
+            padding: 15px;
+            margin: 40px 80px;
+            border-radius: 10px;
+            display: inline-block;
+            
+            align-items: center;   
+            gap: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .info{
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 60px;
+            width: 100%
+        }
+        .nome{
+            font-size: 60px;
+            margin: 5px;
+        }
+        .preço{
+            font-size: 80px;
+            margin: 5px;
+            color: darkblue;
+        }
+        .linha{
+            color:darkblue;
+            margin-top: 10px;
+        }
+        .tamanho{
+            align-items: flex-start;
+        }
+        .comprar{
+        background-color: darkblue;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 50px; /* isso cria o efeito de pílula */
+        font-size: 20px;
+        cursor: pointer;
+        margin-top: 15px;
+        }
+        .add_carrinho{
+        display: flex;
+        background-color: darkblue;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 50px; 
+        font-size: 20px;
+        cursor: pointer;
+        margin-top: 15px;
+        align-items: center;
+        }
+        .botoes{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            gap: 20px;               
+            margin-top: 30px;
+        }
+        .tamanhos {
+        display: flex;
+        gap: 10px;
+        }
+        .tam {
+        width: 50px;
+        height: 50px;
+        border: 2px solid darkblue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 8px;
+        font-weight: bold;
+        }
+        .tam:hover {
+        background-color: darkblue;
+        color: white;
+        transition: 0.3s;
+    }
+
+
+
+    </style>
+
 
 </body>
 </html>
