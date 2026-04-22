@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+    <link rel="stylesheet" href="barra_navegacao_adm.css">
+    <link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/charts.css@1.2.0/dist/charts.min.css ">
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+
+    #pag{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        #cabecalho{
+            display: block;
+        }
+        .dados{
+            margin-right: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            border: 1px solid black;
+            border-radius: 20px;
+            flex-direction: column;
+            min-width: 30%;
+            max-width: calc(40px + 90%);
+            .titulo{
+                p{
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+                margin-left: 5%;
+                font-size: 20px;
+            }
+            .cont{
+                h3{
+                    margin-top: 30px;
+                }
+                align-self: center;
+                font-size: 40px;
+            }
+        }
+    }
+
+    #camisaV{
+        display: flex;
+        margin-top: 10px;
+        width: 95%;
+    }
+
+    .camisa{
+        display: flex;
+        align-items: start;
+        background-color: white;
+        color: black;
+        width: 100%;
+        p {
+            width: 100%;  
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 15px;
+        }
+        .foto{
+            display: block;
+            img{
+                width: 65%;
+                height: auto;
+                margin: 0 auto;
+                display: block;
+            }
+        }
+    }
+
+    #colunas{
+        display: flex;
+        position: relative;
+        margin: 10px 10px 10px 40px;
+    }
+
+    #colunas .axis{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        list-style: none;
+        margin: 0;
+        padding: 0 10px 35px 0;
+        text-align: right;
+        color: #888;
+        font-size: 14px;
+    }
+
+    .charts-css.column td{
+        font-weight: normal;
+        color: transparent;
+        font-size: 31px;
+        line-height: 1;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .charts-css.column th {
+        font-weight: normal;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .charts-css.column td:hover {
+        color: black;
+        opacity: 0.8;
+        filter: brightness(1.2);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+    #grafico_pizza{
+        height: 200px;
+        width: 200px;
+        margin: 0 auto;
+        margin-top: 80px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .charts-css.pie td{
+        color: transparent;
+        font-size: 30px;
+        position: relative;
+    }
+
+    .legenda{
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        font-size: 16px;
+    }
+
+    .cor{
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-right: 8px;
+        border-radius: 3px;
+    }
+
+    .charts-css.pie tr:nth-child(1) td { --color: #4f7de3; }
+    .charts-css.pie tr:nth-child(2) td { --color: #9b7ddf; }
+    .charts-css.pie tr:nth-child(3) td { --color: #e6b066; }
+    .charts-css.pie tr:nth-child(4) td { --color: #f2d04f; }
+    .ceara{ background: #4f7de3;}
+    .ferroviaria{ background: #9b7ddf;}
+    .corinthians{ background: #e6b066;}
+    .outros{ background: #f2d04f;}
+
+</style>
+<body>
+     <div class="pcima">
+        <img id="profile" src="imagens/profile.svg" style="width: 3%; height: auto" alt="ft de perfil">
+        <h1>Administrador</h1>
+    </div>
+    <div class="plado">
+        <div class="menu" style="width:15%;">
+            <div id="ativo">
+                <img src="imagens/arrowright.svg" alt="seta direita">
+                <a href="DashBoardAdm.html">Dashboard</a>
+            </div>
+            <a href="ComprasAdm.html">Compras</a>
+            <a href="CadastrosAdm.html">Cadastros</a>
+            <a href="ItensAdm.html">Itens</a>
+            <a href="CategoriasAdm.html">Categorias</a>
+        </div>
+        <div id="conteudo" style="width: 85%">
+            <div id="pag">
+                <div id="cabecalho">
+                    <h1>Dados</h1>
+                </div>
+                <div class="dados">
+                    <div class="titulo">
+                        <p>Lucro mensal</p>
+                    </div>
+                    <div class="cont">
+                        <h3>R$: 777,77</h3>
+                    </div>
+                </div>
+                <div class="dados">
+                    <div class="titulo">
+                        <p>Produto mais vendido</p>
+                    </div>
+                    <div id="camisaV">
+                        <div class="camisa">
+                            <div class="foto">
+                                <img src="imagens/camisa.png">
+                            </div>
+                            <div id="descricao">
+                                <p style="font-size: 17px;"><strong>Camisa da Seleção Brasileira</strong></p>
+                                <p>Preço: R$ 777,77</p>
+                                <p>Vendas: 999 unid.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dados">
+                    <div class="titulo">
+                        <p>Visitas ao site hoje</p>
+                    </div>
+                    <div class="cont">
+                        <h3>145 visitas</h3>
+                    </div>
+                </div>
+                <div class="dados">
+                    <div class="titulo">
+                        <p>Vendas por mês</p>
+                    </div>
+                    <div class="cont">
+                        <div id="grafico_coluna">
+                            <div id="colunas">
+                                <ul class="axis">
+                                    <li>1000</li>
+                                    <li>750</li>
+                                    <li>500</li>
+                                    <li>250</li>
+                                    <li>0</li>
+                                </ul>
+                                 <table class="charts-css column data-spacing-5 show-labels show-4-secondary-axes show-data-on-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Mês</th>
+                                            <th scope="col">Vendas</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Jan</th>
+                                            <td style="--size: 0.4;">400</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Fev</th>
+                                            <td style="--size: 0.5;">500</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Mar</th>
+                                            <td style="--size: 0.35;">350</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Abr</th>
+                                            <td style="--size: 0.4;">400</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Maio</th>
+                                            <td style="--size: 0.1;">100</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Jun</th>
+                                            <td style="--size: 0.7;">700</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Jul</th>
+                                            <td style="--size: 0.6;">600</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Ago</th>
+                                            <td style="--size: 0.5;">500</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Set</th>
+                                            <td style="--size: 0.2;">200</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Out</th>
+                                            <td style="--size: 0.3;">300</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Nov</th>
+                                            <td style="--size: 0.25;">250</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Dez</th>
+                                            <td style="--size: 0.5;">500</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dados">
+                    <div class="titulo">
+                        <p>Vendas por time</p>
+                    </div>
+                    <div class="cont">
+                        <div id="grafico_pizza">
+                                <table class="charts-css pie ">
+                                    <tbody>
+                                        <tr>
+                                            <td style="--start: 0.0; --end: 0.55;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="--start: 0.55; --end: 0.8;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="--start: 0.8; --end: 0.95;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="--start: 0.95; --end: 1.0;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="legenda">
+                                    <div><span class="cor ceara"></span> Ceará — 55%</div>
+                                    <div><span class="cor ferroviaria"></span> Ferroviário — 25%</div>
+                                    <div><span class="cor corinthians"></span> Corinthians — 15%</div>
+                                    <div><span class="cor outros"></span> Outros — 5%</div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
