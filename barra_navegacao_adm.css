@@ -40,7 +40,10 @@ body{
 }
 .plado{
     display: flex;
+    max-width: 1600px;
     .menu{
+        display: flex;
+        flex-direction: column;
         color: white;
         background-color: #170b9b;
         min-height: 90vh;
