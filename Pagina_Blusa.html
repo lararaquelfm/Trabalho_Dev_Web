@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Ver Blusa</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="barra_navegacao.css">
     <style> 
         body{
             font-family: arial;
@@ -11,15 +13,35 @@
 
 
 <body>
-    <header class="topo">
-    <img src = "imagens/profile.svg" class = "clicaveis">
-    <img src = "imagens/favorito.svg" class = "clicaveis">
-    <img src = "imagens/carrinho.svg" class = "clicaveis">
-    <input class = "caixa" type="text" placeholder="     ">
+    <div id="barraNavegacao">
+    <div class="botoes">
+        <a><img id="profile" src="imagens/profile.svg" style="width: 100%; height: auto" alt="ft de perfil"></a>
+    </div>
+    <div class="botoes">
+        <a href="homepage.html">
+        <img id="home" src="imagens/home.svg" style="width: 100%; height: auto" alt="ft da home">
+        </a>
+        </div>
+    <div class="botoes">
+        <a href="carrinho.html">
+        <img id="carrinho" src="imagens/carrinho.svg" style="width: 100%; height: auto" alt="ft de carrinho"></a>
+    </div>
+    <div class="pesquisa">
+        <a href="PaginaPesquisa.html">
+            <img src="imagens/search.svg" style="width: 100%; height: auto" alt="lupa de pesquisa">
+            <input type="text" class="desativar" style="width: 100%; height: 100%;">  
+        </a>
+    </div>
+</div>
+    
     
     </header>
 
     <style>
+
+        *{
+            margin: 0;
+        }
         .topo {
         background-color: darkblue;
         display: flex;
@@ -57,7 +79,7 @@
                     <div class="tam">M</div>
                     <div class="tam">G</div>
                 </div>
-                <div class = "botoes">    
+                <div class = "botoes_compra">    
                     <button class="comprar">Comprar agora</button>
                     <button class = "add_carrinho"> Adicionar ao carrinho <img src="imagens/carrinho.svg"></button>
                 </div>
@@ -129,7 +151,7 @@
         margin-top: 15px;
         align-items: center;
         }
-        .botoes{
+        .botoes_compra{
             display: flex;
             align-items: center;
             justify-content: flex-start;
