@@ -11,46 +11,51 @@
     *{
         box-sizing: border-box;
     }
+    .dados{
+        margin-right: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        border: 1px solid black;
+        border-radius: 20px;
+        flex-direction: column;
+        min-width: 30%;
+        max-width: 40%;
+        overflow: auto;
+    }
 
-    .dado-maior{
+    .dados-chart{
         flex: 2;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        border: 1px solid black;
+        border-radius: 20px;
+    }
+
+    .titulo{
+        p{
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        margin-left: 5%;
+        font-size: 20px;
+    }
+    .cont{
+        padding:0 10px;
+        h3{
+            margin-top: 30px;
+        }
+        align-self: center;
+        font-size: 40px;
     }
 
     #pag{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
-    
+        justify-content: space-between;
+
         #cabecalho{
             display: block;
-        }
-        .dados{
-            margin-right: 20px;
-            margin-bottom: 20px;
-            display: flex;
-            border: 1px solid black;
-            border-radius: 20px;
-            flex-direction: column;
-            min-width: 30%;
-
-            overflow: auto;
-
-            .titulo{
-                p{
-                    margin-top: 0;
-                    margin-bottom: 0;
-                }
-                margin-left: 5%;
-                font-size: 20px;
-            }
-            .cont{
-                h3{
-                    margin-top: 30px;
-                }
-                align-self: center;
-                font-size: 40px;
-            }
         }
     }
 
@@ -145,6 +150,10 @@
         margin-top: -30px;
     }
 
+    .charts-css.pie tbody{
+        background-color: transparent;
+    }
+
     .legenda{
         display: flex;
         flex-direction: column;
@@ -225,7 +234,7 @@
                         <h3>145 visitas</h3>
                     </div>
                 </div>
-                <div class="dados dado-maior">
+                <div class="dados-chart">
                     <div class="titulo">
                         <p>Vendas por mês</p>
                     </div>
