@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="barra_navegacao.css">
+    <title>Pesquisa</title>
+</head>
+<style>
+    #PesquisaFiltro{
+        display: flex;
+        padding: 10px;
+        .filtragens{
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+        .cat{
+            padding-bottom: 10px;
+        }
+        h2{
+            font-size: 120%;
+            margin-bottom: 0;
+            padding-left: 20px;
+            padding-bottom: 5px;
+        }
+        .lista{
+            width: 91%;
+            font-size: 125%;
+            max-height: 160px;
+            overflow-y: auto;
+            padding-left: 20px;
+            padding-top: 0;
+            padding-bottom: 10px;
+            input[type="checkbox"] {
+                accent-color: blue;
+                cursor: pointer;
+                width: 20px;
+                height: 20px;
+            }
+            
+            .opcao{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                padding-bottom: 5px;
+            } 
+
+        }
+
+        .nrol{
+            overflow-y: hidden;
+        }
+
+        .camisasFiltros{
+            padding-left: 100px;
+            h2{
+                margin-left: 27px;
+                margin-top: 0;
+                font-size: 200%;
+            }
+            .bloco{
+                display: flex;
+                justify-content: space-around;
+                padding-bottom: 30px;
+            }
+            .camisa{
+                cursor: pointer;
+                background-color: white;
+                width: calc(18% + 8px); 
+                color: black;
+                border: 0.1em solid black;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                border-radius: 15px;
+                padding: 0.1%;
+                p, h1{
+                    text-align: center;
+                }
+                p{
+                    font-size: 1.5em;
+                }
+                h1{
+                    font-size: 2em;
+                    margin-top: -7%;
+                }
+                button, img{
+                    margin: 0 auto;
+                    display: block;
+                }
+                button{
+                    border-color: blue;
+                    border-radius: 10px;
+                    background-color: blue;
+                    color: white;
+                    width: 80%;
+                    height: 5vh;
+                    margin-top: -5%;
+                    margin-bottom: 7%;
+                    font-size: 1em;
+                    cursor: pointer;
+                    img{
+                        margin-left: 5%;
+                        top: 0.15em;
+                        width: 1em;
+                        position: relative;
+                        display: inline;
+                    }
+                }
+            }
+        }
+    }
+
+    #PesquisaFiltro .lista input[type="checkbox"] + label{
+        cursor: pointer;
+    }
+
+    #PesquisaFiltro .lista label:hover{
+        font-weight: 600;
+        color: #170b9b; 
+    }
+
+    #PesquisaFiltro .lista input:checked + label {
+        font-weight: 600;
+        color: #170b9b;;
+    }
+
+
+</style>
+<body>
+    <div id="barraNavegacao">
+        <div class="botoes">
+            <a><img id="profile" src="imagens/profile.svg" style="width: 100%; height: auto" alt="ft de perfil"></a>
+        </div>
+        <div class="botoes">
+            <a href="homepage.html">
+            <img id="home" src="imagens/home.svg" style="width: 100%; height: auto" alt="ft de favorito">
+        </a>
+            </div>
+        <div class="botoes">
+            <a href="carrinho.html">
+            <img id="carrinho" src="imagens/carrinho.svg" style="width: 100%; height: auto" alt="ft de carrinho"></a>
+        </div>
+        <div class="pesquisa">
+            <img src="imagens/search.svg" style="width: 100%; height: auto" alt="lupa de pesquisa">
+            <input type="text" style="width: 100%; height: 100%;">
+        </div>
+    </div>
+
+    <div id="PesquisaFiltro">
+        <div class="filtragens" style="width: 20%">
+            <div class="cat">
+                <h2>TIMES</h2>
+                <div class="lista">
+                    <div class="opcao">
+                        <input type="checkbox" id="op1">
+                        <label for="op1">FORTALEZA</label>
+                    </div>
+                    <div class="opcao">
+                        <input type="checkbox" id="op2">
+                        <label for="op2">CORINTHIANS</label>
+                    </div>
+                    <div class="opcao">
+                        <input type="checkbox" id="op3">
+                        <label for="op3">CEARÁ</label>
+                    </div>
+                    <div class="opcao">
+                        <input type="checkbox" id="op4">
+                        <label for="op4">FLAMENGO</label>
+                    </div>
+                    <div class="opcao">
+                        <input type="checkbox" id="op5">
+                        <label for="op5">PSG</label>
+                    </div>
+                    <div class="opcao">
+                        <input type="checkbox" id="op6">
+                        <label for="op6">PALMEIRAS</label>
+                    </div>
+                    <div class="opcao">
+                        <input type="checkbox" id="op7">
+                        <label for="op7">REAL MADRID</label>
+                    </div>
+                </div>
+            </div>
+            <div class="cat">
+                <h2>TAMANHOS</h2>
+                <div class="lista nrol">
+                    <div class="opcao">
+                        <input type="checkbox" id="tam1">
+                        <label for="tam1">PP</label>
+                    </div>
+                    <div class="opcao">
+                        <input type="checkbox" id="tam2">
+                        <label for="tam2">P</label>
+                    </div>
+                    <div class="opcao">
+                        <input type="checkbox" id="tam3">
+                        <label for="tam3">M</label>
+                    </div>
+                    <div class="opcao">
+                        <input type="checkbox" id="tam4">
+                        <label for="tam4">G</label>
+                    </div>
+                    <div class="opcao">
+                        <input type="checkbox" id="tam5">
+                        <label for="tam5">GG</label>
+                    </div>
+                </div>
+            </div>
+            <div class="cat">
+                <h2>CAMPEONATOS</h2>
+                <div class="lista">
+                    <div class="opcao">
+                        <input type="checkbox" id="camp1">
+                        <label for="camp1">CHAMPIONS LEAGUE</label>
+                    </div>
+                    <div class="opcao">
+                        <input type="checkbox" id="camp2">
+                        <label for="camp2">LA LIGA</label>
+                    </div>
+                    <div class="opcao">
+                        <input type="checkbox" id="camp3">
+                        <label for="camp3">PREMIER LEAGUE</label>
+                    </div>
+                    <div class="opcao">
+                        <input type="checkbox" id="camp4">
+                        <label for="camp4">COPA LIBERTADORES</label>
+                    </div>
+                    <div class="opcao">
+                        <input type="checkbox" id="camp5">
+                        <label for="camp5">COPA SUL-AMERICANA</label>
+                    </div>
+                    <div class="opcao">
+                        <input type="checkbox" id="camp6">
+                        <label for="camp6">BRASILEIRÃO</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="camisasFiltros" style="width: 80%">
+            <h2>Camisas</h2>
+            <div class="bloco">
+                <div class="camisa">
+                    <img src="imagens/camisa.png" >
+                    <p>Descrição</p>
+                    <h1>Preço</h1>
+                    <button>
+                        Adicionar ao carrinho
+                        <img src="imagens/carrinho.svg" alt="ft de carrinho">
+                    </button>
+                </div>
+                <div class="camisa">
+                    <img src="imagens/camisa.png" >
+                    <p>Descrição</p>
+                    <h1>Preço</h1>
+                    <button>
+                        Adicionar ao carrinho
+                        <img src="imagens/carrinho.svg" alt="ft de carrinho">
+                    </button>
+                </div>
+                <div class="camisa">
+                    <img src="imagens/camisa.png" >
+                    <p>Descrição</p>
+                    <h1>Preço</h1>
+                    <button>
+                        Adicionar ao carrinho
+                        <img src="imagens/carrinho.svg" alt="ft de carrinho">
+                    </button>
+                </div>
+                <div class="camisa">
+                    <img src="imagens/camisa.png" >
+                    <p>Descrição</p>
+                    <h1>Preço</h1>
+                    <button>
+                        Adicionar ao carrinho
+                        <img src="imagens/carrinho.svg" alt="ft de carrinho">
+                    </button>
+                </div>
+            </div>
+            <div class="bloco">
+                <div class="camisa">
+                    <img src="imagens/camisa.png" >
+                    <p>Descrição</p>
+                    <h1>Preço</h1>
+                    <button>
+                        Adicionar ao carrinho
+                        <img src="imagens/carrinho.svg" alt="ft de carrinho">
+                    </button>
+                </div>
+                <div class="camisa">
+                    <img src="imagens/camisa.png" >
+                    <p>Descrição</p>
+                    <h1>Preço</h1>
+                    <button>
+                        Adicionar ao carrinho
+                        <img src="imagens/carrinho.svg" alt="ft de carrinho">
+                    </button>
+                </div>
+                <div class="camisa">
+                    <img src="imagens/camisa.png" >
+                    <p>Descrição</p>
+                    <h1>Preço</h1>
+                    <button>
+                        Adicionar ao carrinho
+                        <img src="imagens/carrinho.svg" alt="ft de carrinho">
+                    </button>
+                </div>
+                <div class="camisa">
+                    <img src="imagens/camisa.png" >
+                    <p>Descrição</p>
+                    <h1>Preço</h1>
+                    <button>
+                        Adicionar ao carrinho
+                        <img src="imagens/carrinho.svg" alt="ft de carrinho">
+                    </button>
+                </div>
+            </div>
+            <div class="bloco">
+                <div class="camisa">
+                    <img src="imagens/camisa.png" >
+                    <p>Descrição</p>
+                    <h1>Preço</h1>
+                    <button>
+                        Adicionar ao carrinho
+                        <img src="imagens/carrinho.svg" alt="ft de carrinho">
+                    </button>
+                </div>
+                <div class="camisa">
+                    <img src="imagens/camisa.png" >
+                    <p>Descrição</p>
+                    <h1>Preço</h1>
+                    <button>
+                        Adicionar ao carrinho
+                        <img src="imagens/carrinho.svg" alt="ft de carrinho">
+                    </button>
+                </div>
+                <div class="camisa">
+                    <img src="imagens/camisa.png" >
+                    <p>Descrição</p>
+                    <h1>Preço</h1>
+                    <button>
+                        Adicionar ao carrinho
+                        <img src="imagens/carrinho.svg" alt="ft de carrinho">
+                    </button>
+                </div>
+                <div class="camisa">
+                    <img src="imagens/camisa.png" >
+                    <p>Descrição</p>
+                    <h1>Preço</h1>
+                    <button>
+                        Adicionar ao carrinho
+                        <img src="imagens/carrinho.svg" alt="ft de carrinho">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

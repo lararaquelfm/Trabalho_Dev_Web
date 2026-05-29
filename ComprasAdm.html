@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <link rel="stylesheet" href="barra_navegacao_adm.css">
+    <style>
+    .cabecalhocompras{
+        margin-left: 4%;
+        width: 90%;
+        margin: 0 auto;
+        h1{
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 3.5em;
+        }
+        .filtrar{
+            width: 50%;
+            font-family: "Poppins", sans-serif;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            border: 2px solid gray;
+            border-radius: 15px;
+            margin-bottom: 2%;
+            select{ 
+                cursor: pointer;
+                outline: none;
+                border-style: none;
+            }
+            
+        }
+    }
+    .Compras{
+        display: flex;
+        padding: 8px;
+        border-radius: 15px;
+        width: 90%;
+        margin: 0 auto;
+        border: 2px solid gray;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        margin-bottom: 1%;
+        p{
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 2px;
+            margin-left: 1%;
+        }
+        .div1, .div2, .div3{
+            width: 33%;
+        }
+    }
+        </style>
+</head>
+<body>
+    <div id="cabecalhoAdm">
+        <div class="pcima">
+            <img id="profile" src="imagens/profile.svg" style="width: 3%; height: auto" alt="ft de perfil">
+            <h1>Administrador</h1>
+        </div>
+        <div class="plado">
+            <div class="menu" style="width:15%;">
+                <a href="DashBoardAdm.html">Dashboard</a>
+                <div id="ativo">
+                    <img src="imagens/arrowright.svg" alt="seta direita">
+                    <a href="ComprasAdm.html">Compras</a>
+                </div>
+                <a href="CadastrosAdm.html">Cadastros</a>
+                <a href="ItensAdm.html">Itens</a>
+                <a href="CategoriasAdm.html">Categorias</a>
+            </div>
+            <div class="conteudo" style="width: 85%">
+                <div class="cabecalhocompras">
+                    <h1>Compras</h1>
+                    <div class="filtrar">
+                        <img src="imagens/filter.svg" style="width: 26px; color: gray">
+                        <select name="Filtro" id="filtragem" style="width: 100%; height: 100%">
+                            <option value="Há uma semana">Há uma semana</option>
+                            <option value="Há um mês">Há um mês</option>
+                            <option value="Há um ano">Há um ano</option>
+                            <option value="Há mais de um ano">Há mais de um ano</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="Compras">
+                    <div class="div1">
+                        <p><span class = "dados"><b>Item:</b></span> Camisa do Corinthians </p>
+                        <p><span class = "dados"><b>Tamanho:</b></span> Tamanho </p>
+                        <p><span class = "dados"><b>Quantidade:</b></span> 1 </p>
+                        <p><span class = "dados"><b>Preço total:</b></span> R$280 </p>
+                    </div>
+                    <div class="div2">
+                        <p><span class = "dados"><b>Nome do comprador:</b></span> Nome do comprador </p>
+                        <p><span class = "dados"><b>Endereço:</b></span> Endereço </p>
+                        <p><span class = "dados"><b>E-mail:</b></span> xxxxxx@gmail.com </p>
+                        <p><span class = "dados"><b>Telefone:</b></span> (00) 90000-0000 </p>
+                    </div>
+                    <div class="div3">
+                        <p><span class = "dados"><b>Data da compra:</b></span> 00/00/0000 </p>
+                        <p><span class = "dados"><b>Dia da entrega:</b></span> 00/00/0000 </p>
+                        <p><span class = "dados"><b>Forma de pagamento: </b></span> pix </p>
+                    </div>
+                </div>
+                <div class="Compras">
+                    <div class="div1">
+                        <p><span class = "dados"><b>Item:</b></span> Camisa do Corinthians </p>
+                        <p><span class = "dados"><b>Tamanho:</b></span> Tamanho </p>
+                        <p><span class = "dados"><b>Quantidade:</b></span> 1 </p>
+                        <p><span class = "dados"><b>Preço total:</b></span> R$280 </p>
+                    </div>
+                    <div class="div2">
+                        <p><span class = "dados"><b>Nome do comprador:</b></span> Nome do comprador </p>
+                        <p><span class = "dados"><b>Endereço:</b></span> Endereço </p>
+                        <p><span class = "dados"><b>E-mail:</b></span> xxxxxx@gmail.com </p>
+                        <p><span class = "dados"><b>Telefone:</b></span> (00) 90000-0000 </p>
+                    </div>
+                    <div class="div3">
+                        <p><span class = "dados"><b>Data da compra:</b></span> 00/00/0000 </p>
+                        <p><span class = "dados"><b>Dia da entrega:</b></span> 00/00/0000 </p>
+                        <p><span class = "dados"><b>Forma de pagamento: </b></span> pix </p>
+                    </div>
+                </div>
+                <div class="Compras">
+                    <div class="div1">
+                        <p><span class = "dados"><b>Item:</b></span> Camisa do Corinthians </p>
+                        <p><span class = "dados"><b>Tamanho:</b></span> Tamanho </p>
+                        <p><span class = "dados"><b>Quantidade:</b></span> 1 </p>
+                        <p><span class = "dados"><b>Preço total:</b></span> R$280 </p>
+                    </div>
+                    <div class="div2">
+                        <p><span class = "dados"><b>Nome do comprador:</b></span> Nome do comprador </p>
+                        <p><span class = "dados"><b>Endereço:</b></span> Endereço </p>
+                        <p><span class = "dados"><b>E-mail:</b></span> xxxxxx@gmail.com </p>
+                        <p><span class = "dados"><b>Telefone:</b></span> (00) 90000-0000 </p>
+                    </div>
+                    <div class="div3">
+                        <p><span class = "dados"><b>Data da compra:</b></span> 00/00/0000 </p>
+                        <p><span class = "dados"><b>Dia da entrega:</b></span> 00/00/0000 </p>
+                        <p><span class = "dados"><b>Forma de pagamento: </b></span> pix </p>
+                    </div>
+                </div>
+                <div class="Compras">
+                    <div class="div1">
+                        <p><span class = "dados"><b>Item:</b></span> Camisa do Corinthians </p>
+                        <p><span class = "dados"><b>Tamanho:</b></span> Tamanho </p>
+                        <p><span class = "dados"><b>Quantidade:</b></span> 1 </p>
+                        <p><span class = "dados"><b>Preço total:</b></span> R$280 </p>
+                    </div>
+                    <div class="div2">
+                        <p><span class = "dados"><b>Nome do comprador:</b></span> Nome do comprador </p>
+                        <p><span class = "dados"><b>Endereço:</b></span> Endereço </p>
+                        <p><span class = "dados"><b>E-mail:</b></span> xxxxxx@gmail.com </p>
+                        <p><span class = "dados"><b>Telefone:</b></span> (00) 90000-0000 </p>
+                    </div>
+                    <div class="div3">
+                        <p><span class = "dados"><b>Data da compra:</b></span> 00/00/0000 </p>
+                        <p><span class = "dados"><b>Dia da entrega:</b></span> 00/00/0000 </p>
+                        <p><span class = "dados"><b>Forma de pagamento: </b></span> pix </p>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
