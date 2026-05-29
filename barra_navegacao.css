@@ -46,3 +46,76 @@ body{
         padding-left: 7%;
     }
 }
+
+ .menulateral{
+    font-size: 115%;
+    top: 5.3%;
+    left: 0;
+    height: 32%;    
+    border-radius: 5px;
+    padding-top: 5px;
+    width: 0;      
+    position: absolute;      
+    overflow: hidden;     
+    transition: 0.3s;      
+    background-color: #170b9b;
+    z-index: 1000;
+    .itens_menu_lateral{
+        color: white;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        padding-left: 20px;
+        a{
+            display: flex;       
+            align-items: center;
+            text-decoration: none; 
+            color: inherit;        
+            outline: none;        
+            border: none;
+        }
+    }
+}
+    .menulateral.active{
+        width: 250px;
+    }
+    
+    .menulateral a:hover{
+        font-weight: 700;
+        color: #FFFF; 
+    }
+    
+    .deletar{
+        width: 70%;
+        margin-left: 20px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #FFFF;
+        border-radius: 8px;
+        border-color: #FFFF;
+    }
+
+    .deletar:hover{
+        background-color: #FFFF;
+        a{
+            color: #170b9b;
+        }
+    }
+
+    .linhavertical{
+        border-left: 3.1px solid white; 
+        height: 20px;                 
+        margin: 0 15px;              
+        display: inline-block;        
+        vertical-align: middle;
+        align-items: center;
+        justify-content: center;
+    }
+    .bemvindo{
+        font-size: 120%;
+        color: #FFFF;
+
+    }

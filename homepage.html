@@ -120,32 +120,122 @@
             button{
                 font-size: 85%;
             }
-        }
-        
+        }  
     }
+    .menulateral{
+        font-size: 115%;
+        top: 5.3%;
+        left: 0;
+        height: 32%;    
+        border-radius: 5px;
+        padding-top: 5px;
+        width: 0;      
+        position: absolute;      
+        overflow: hidden;     
+        transition: 0.3s;      
+        background-color: #170b9b;
+        z-index: 1000;
+        .itens_menu_lateral{
+            color: white;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            padding-left: 20px;
+            a{
+                display: flex;       
+                align-items: center;
+                text-decoration: none; 
+                color: inherit;        
+                outline: none;        
+                border: none;
+            }
+        }
+    }
+    .menulateral.active{
+        width: 250px;
+    }
+    
+    .menulateral a:hover{
+        font-weight: 700;
+        color: #FFFF; 
+    }
+    
+    .deletar{
+        width: 70%;
+        margin-left: 20px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #FFFF;
+        border-radius: 8px;
+        border-color: #FFFF;
+    }
+
+    .deletar:hover{
+        background-color: #FFFF;
+        a{
+            color: #170b9b;
+        }
+    }
+
+    .linhavertical{
+        border-left: 3.1px solid white; 
+        height: 20px;                 
+        margin: 0 15px;              
+        display: inline-block;        
+        vertical-align: middle;
+        align-items: center;
+        justify-content: center;
+    }
+    .bemvindo{
+        font-size: 120%;
+        color: #FFFF;
+
+    }
+    
 </style>
 <body>
 
 <div id="barraNavegacao">
     <div class="botoes">
-        <a><img id="profile" src="imagens/profile.svg" style="width: 100%; height: auto" alt="ft de perfil"></a>
+        <a onclick="toggleMenu()" alt="Menu"><img id="profile" src="imagens/profile.svg" style="width: 100%; height: auto" alt="ft de perfil"></a>
     </div>
     <div class="botoes">
         <a href="homepage.html">
         <img id="home" src="imagens/home.svg" style="width: 100%; height: auto" alt="ft da home">
-        </a>
-        </div>
+    </a>
+    </div>
     <div class="botoes">
         <a href="carrinho.html">
-        <img id="carrinho" src="imagens/carrinho.svg" style="width: 100%; height: auto" alt="ft de carrinho"></a>
+            <img id="carrinho" src="imagens/carrinho.svg" style="width: 100%; height: auto; " alt="ft de carrinho"></a>
     </div>
-    <div class="pesquisa">
-        <a href="PaginaPesquisa.html">
-            <img src="imagens/search.svg" style="width: 100%; height: auto" alt="lupa de pesquisa">
-            <input type="text" class="desativar" style="width: 100%; height: 100%;">  
-        </a>
-    </div>
+
+        <div class="linhavertical"></div>
+        <span class="bemvindo">Bem-vindo(a), cliente!</span>
+        <div class="pesquisa">
+            <a href="PaginaPesquisa.html">
+                <img src="imagens/search.svg" style="width: 100%; height: auto" alt="lupa de pesquisa">
+                <input type="text" class="desativar" style="width: 100%; height: 100%;">  
+            </a>
+        </div>
 </div>
+    
+        <div id="Menu" class="menulateral">
+            <div class="itens_menu_lateral">
+                <a href="Meus_pedidos.html"><img src="imagens/arrowright.svg" alt="">Meus pedidos</a>
+                <a href="myprofile.html"><img src="imagens/arrowright.svg" alt="">Meus dados</a>
+                <div class="sair">
+                    <a href="#" style="padding-top: 35px; padding-bottom: 20px;"><img src="imagens/logout.svg" alt="">Sair</a> 
+                </div>
+                <div class="deletar">
+                    <a href="#"><img src="imagens/delete.svg" alt="">Deletar perfil</a>
+                </div>
+            </div>
+    
+        </div>
+
 <img id="background" src="imagens/background.png" style="width: 100%; height: auto" alt="background da pagina">
 <div id="camisas">
     <div class="camisa">
@@ -270,5 +360,14 @@
         </div>
     </div>
 </div>
+
+<script>
+    function toggleMenu(event) {
+        if (event) event.preventDefault();
+        const menu = document.getElementById("Menu");
+        menu.classList.toggle("active");
+    }
+</script>
+
 </body>
 </html> 
