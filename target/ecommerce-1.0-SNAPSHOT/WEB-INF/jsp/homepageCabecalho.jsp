@@ -1,0 +1,272 @@
+<%@page import="modelo.usuario.Usuario"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+if (session.getAttribute("usuario") != null && session.getAttribute("usuario") instanceof Usuario) {
+    Usuario usuario = (Usuario) session.getAttribute("usuario"); 
+%>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    body{
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+    }
+
+    #barraNavegacao {
+        background-color: #170b9b;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        height: 6vh;
+    }
+
+    .botoes{
+        cursor: pointer;
+        width: 40px;
+        position: relative;
+        margin-left: 1%;
+        img{
+                width: 100%;
+                height: auto;
+        }
+    }
+
+    .pesquisa{
+        position: absolute;
+        margin-left: 66%;
+        margin-bottom: 0.5%;
+        width: 25%;
+        height: 4%;
+        max-width: 30%;
+        max-height: 3%;
+        align-items: center;
+        img{
+            max-width: 5%;
+            position: absolute; 
+            left: 1.5%;
+            margin-top: 1%;
+        }
+        .desativar{
+            pointer-events: none;
+        }
+        input{
+            border-radius: 15px;
+            padding-left: 7%;
+        }
+    }
+
+    .linhavertical{
+        border-left: 3.1px solid white; 
+        height: 20px;                 
+        margin: 0 15px;              
+        display: inline-block;        
+        vertical-align: middle;
+        align-items: center;
+        justify-content: center;
+    }
+    .bemvindo{
+        font-size: 120%;
+        color: #FFFF;
+
+    }
+    #background{
+        width: 100%;
+    }
+
+    #camisas{
+        display: flex;
+        gap: 1vw;
+        position: relative;
+        bottom: 15vh;
+        padding: 1vw;
+    }
+
+    .camisa{
+        cursor: pointer;
+        background-color: white;
+        width: calc(18% + 8px); 
+        color: black;
+        border: 0.1em solid black;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        border-radius: 15px;
+        padding: 0.1%;
+        p, h1{
+            text-align: center;
+        }
+        p{
+            font-size: 1.5em;
+        }
+        h1{
+            font-size: 2em;
+            margin-top: -7%;
+        }
+        button, img{
+            margin: 0 auto;
+            display: block;
+        }
+        button{
+            border-color: blue;
+            border-radius: 10px;
+            background-color: blue;
+            color: white;
+            width: 80%;
+            height: 5vh;
+            margin-top: -5%;
+            margin-bottom: 7%;
+            font-size: 1em;
+            cursor: pointer;
+            img{
+                margin-left: 5%;
+                top: 0.15em;
+                width: 1em;
+                position: relative;
+                display: inline;
+            }
+        }
+    }
+    #ofertas{
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 3em;
+        margin-left: 1vw;
+    }
+    .deslizar{
+        position: relative;
+        width: 100%;
+        .e_d{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            img{
+                padding-top: 5px;
+                width: 23px;
+            }
+        }
+        .esquerda{
+            margin-left: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .direita{
+            margin-right: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+    }
+    .deslizar .seta {
+        border-radius: 50%;
+        background: rgba(224, 214, 214, 0.5);
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #carrossel{
+        display: flex;
+        gap: 30px;
+        margin: auto; 
+        overflow: hidden;
+        justify-content: center;
+        .camisa{
+            padding: 15px;
+            width:calc((0.8)*(18% + 8px)) ;
+            min-width: 100px;
+            height: 350px;
+            flex-shrink: 0;
+            button{
+                font-size: 85%;
+            }
+        }  
+    }
+    .menulateral{
+        font-size: 115%;
+        top: 5.3%;
+        left: 0;
+        height: 210px;    
+        border-radius: 5px;
+        padding-top: 5px;
+        width: 0;      
+        position: absolute;      
+        overflow: hidden;     
+        transition: 0.3s;      
+        background-color: #170b9b;
+        z-index: 1000;
+        .itens_menu_lateral{
+            color: white;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            padding-left: 20px;
+            a{
+                display: flex;       
+                align-items: center;
+                text-decoration: none; 
+                color: inherit;        
+                outline: none;        
+                border: none;
+            }
+        }
+    }
+    .menulateral.active{
+        width: 250px;
+    }
+    
+    .menulateral a:hover{
+        font-weight: 700;
+        color: #FFFF; 
+    }
+    
+    .deletar{
+        width: 70%;
+        margin-left: 20px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #FFFF;
+        border-radius: 8px;
+        border-color: #FFFF;
+    }
+
+    .deletar:hover{
+        background-color: #FFFF;
+        a{
+            color: #170b9b;
+        }
+    }
+
+    .linhavertical{
+        border-left: 3.1px solid white; 
+        height: 20px;                 
+        margin: 0 15px;              
+        display: inline-block;        
+        vertical-align: middle;
+        align-items: center;
+        justify-content: center;
+    }
+    .bemvindo{
+        font-size: 120%;
+        color: #FFFF;
+
+    }
+    
+</style>
+<script>
+    function toggleMenu(event) {
+        if (event) event.preventDefault();
+        const menu = document.getElementById("Menu");
+        menu.classList.toggle("active");
+    }
+</script>
