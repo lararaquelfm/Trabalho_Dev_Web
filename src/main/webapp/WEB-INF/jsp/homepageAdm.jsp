@@ -14,7 +14,7 @@
             <a >Compras</a>
             <a >Cadastros</a>
             <a href="Produto">Itens</a>
-            <a >Categorias</a>
+<a href="<%= request.getContextPath() %>/adm/ListarCategoriaServlet">Categorias</a>
         </div>
         <div id="conteudo" style="width: 85%">
             <div id="pag">
