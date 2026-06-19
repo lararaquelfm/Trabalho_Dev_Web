@@ -1,24 +1,20 @@
-<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@include file="/WEB-INF/jsp/homepageAdmCabecalho.jsp"%>
 <%@page import="java.util.List"%>
-<%@page import="modelo.categoria.Categoria"%>
+<%@page import="modelo.time.Time"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrador</title>
+    <title>Administrador - Times</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
-
-    <%-- CORREÇÃO: caminho correto para o CSS da barra --%>
-    <link rel="stylesheet" href="<%= request.getContextPath() %>/css/barra_navegacao_adm.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@0,100;0,400;0,500;0,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/barra_navegacao_adm.css">
     <style>
-
         #pag {
-            width: 90%;
             margin: 0 auto;
+            width: 90%;
         }
         #cabecalho {
             height: 15%;
@@ -70,7 +66,6 @@
             gap: 8px;
         }
         #cabecalho button img { width: 2em; }
-
         #tabela { margin-top: 3%; }
         #tabela table {
             width: 80%;
@@ -95,7 +90,6 @@
             background: none;
         }
         #tabela button img { width: 75%; }
-
         .msg-sucesso {
             background-color: #d4edda;
             color: #155724;
@@ -105,8 +99,6 @@
             margin-top: 10px;
             font-family: "Poppins", sans-serif;
         }
-
-        /* ── MODAL ── */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -118,7 +110,6 @@
             align-items: center;
         }
         .modal-overlay.aberto { display: flex; }
-
         .modal {
             background: white;
             border-radius: 15px;
@@ -128,7 +119,6 @@
             font-family: "Poppins", sans-serif;
         }
         .modal h2 { margin-top: 0; color: #170b9b; }
-
         .modal label {
             display: block;
             margin-top: 12px;
@@ -173,45 +163,37 @@
     </style>
 </head>
 <body>
-
-    <%-- ── BARRA SUPERIOR ── --%>
     <div class="pcima">
         <img id="profile" src="<%= request.getContextPath() %>/imagens/profile.svg" style="width: 3%; height: auto" alt="ft de perfil">
         <h1>Administrador</h1>
     </div>
-
-    <%-- ── BARRA LATERAL + CONTEÚDO ── --%>
     <div class="plado">
-        <div class="menu">
-            <a href="<%= request.getContextPath() %>/DashBoardAdm.html">Dashboard</a>
-            <a href="<%= request.getContextPath() %>/ComprasAdm.html">Compras</a>
-            <a href="<%= request.getContextPath() %>/CadastrosAdm.html">Cadastros</a>
-            <a href="<%= request.getContextPath() %>/ItensAdm.html">Itens</a>
+        <div class="menu" style="width:15%;">
+            <a href="<%= request.getContextPath() %>/HomepageAdm">Dashboard</a>
+            <a href="#">Compras</a>
+            <a href="#">Cadastros</a>
+            <a href="<%= request.getContextPath() %>/Produto">Itens</a>
+            <a href="<%= request.getContextPath() %>/adm/ListarCategoriaServlet">Categorias</a>
             <div id="ativo">
                 <img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="seta direita">
-                <a href="<%= request.getContextPath() %>/adm/ListarCategoriaServlet">Categorias</a>
+                <a href="<%= request.getContextPath() %>/adm/ListarTimeServlet">Times</a>
             </div>
-            <a href="<%= request.getContextPath() %>/adm/ListarTimeServlet">Times</a>
-            <a href="<%= request.getContextPath() %>/adm/ListarCampeonatoServlet">Campeonatos</a>
-            <a href="<%= request.getContextPath() %>/adm/ListarTimeCampeonatoServlet">Times por Campeonato</a>
-            
         </div>
 
         <div class="conteudo" style="width: 85%">
             <div id="pag">
                 <div id="cabecalho">
-                    <h1>Categorias</h1>
+                    <h1>Times</h1>
                     <div class="pesquisa">
                         <img src="<%= request.getContextPath() %>/imagens/search.svg" alt="lupa">
-                        <input type="text" id="campoBusca" placeholder="Buscar categoria" onkeyup="filtrarTabela()">
+                        <input type="text" id="campoBusca" placeholder="Buscar time" onkeyup="filtrarTabela()">
                     </div>
                     <button onclick="abrirModalInserir()">
                         <img src="<%= request.getContextPath() %>/imagens/mais.svg" alt="mais">
-                        <strong>Adicionar nova categoria</strong>
+                        <strong>Adicionar novo time</strong>
                     </button>
                 </div>
 
-                <%-- Mensagem de sucesso/erro --%>
                 <%
                     String msg = (String) request.getAttribute("msg");
                     if (msg != null) {
@@ -220,39 +202,36 @@
                 <% } %>
 
                 <div id="tabela">
-                    <table id="tabelaCategorias">
+                    <table id="tabelaTimes">
                         <thead>
                             <tr>
                                 <th>Nome</th>
-                                <th>Temporada</th>
-                                <th>Estilo</th>
+                                <th>Nacionalidade</th>
                                 <th>ID</th>
-                                <th>Ações</th>
+                                <th>A��es</th>
                             </tr>
                         </thead>
                         <tbody>
                             <%
-                                List<Categoria> categorias = (List<Categoria>) request.getAttribute("categorias");
-                                if (categorias != null && !categorias.isEmpty()) {
-                                    for (Categoria c : categorias) {
+                                List<Time> times = (List<Time>) request.getAttribute("times");
+                                if (times != null && !times.isEmpty()) {
+                                    for (Time t : times) {
                             %>
                             <tr>
-                                <td><%= c.getNome() %></td>
-                                <td><%= c.getTemporada() %></td>
-                                <td><%= c.getEstilo() %></td>
-                                <td><%= c.getId() %></td>
+                                <td><%= t.getNome() %></td>
+                                <td><%= t.getNacionalidade() %></td>
+                                <td><%= t.getId() %></td>
                                 <td>
-                                    <a href="<%= request.getContextPath() %>/adm/DeletarCategoriaServlet?id=<%= c.getId() %>"
-                                       onclick="return confirm('Deseja realmente remover esta categoria?')">
+                                    <a href="<%= request.getContextPath() %>/adm/DeletarTimeServlet?id=<%= t.getId() %>"
+                                       onclick="return confirm('Deseja realmente remover este time?')">
                                         <button>
                                             <img src="<%= request.getContextPath() %>/imagens/lixeira_preta.svg" alt="deletar">
                                         </button>
                                     </a>
                                     <button onclick="abrirModalEditar(
-                                        '<%= c.getId() %>',
-                                        '<%= c.getNome().replace("'", "\\'") %>',
-                                        '<%= c.getTemporada().replace("'", "\\'") %>',
-                                        '<%= c.getEstilo().replace("'", "\\'") %>'
+                                        '<%= t.getId() %>',
+                                        '<%= t.getNome().replace("'", "\\'") %>',
+                                        '<%= t.getNacionalidade().replace("'", "\\'") %>'
                                     )">
                                         <img src="<%= request.getContextPath() %>/imagens/editar.svg" alt="editar">
                                     </button>
@@ -263,7 +242,7 @@
                                 } else {
                             %>
                             <tr>
-                                <td colspan="5">Nenhuma categoria cadastrada.</td>
+                                <td colspan="4">Nenhum time cadastrado.</td>
                             </tr>
                             <% } %>
                         </tbody>
@@ -273,22 +252,17 @@
         </div>
     </div>
 
-    <%-- ═══════════════ MODAL INSERIR / EDITAR ═══════════════ --%>
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal">
-            <h2 id="modalTitulo">Nova Categoria</h2>
-
+            <h2 id="modalTitulo">Novo Time</h2>
             <form method="POST" id="modalForm" action="">
                 <input type="hidden" name="id" id="campoId">
 
                 <label>Nome:</label>
                 <input type="text" name="nome" id="campoNome" required>
 
-                <label>Temporada:</label>
-                <input type="text" name="temporada" id="campoTemporada" required>
-
-                <label>Estilo:</label>
-                <input type="text" name="estilo" id="campoEstilo" required>
+                <label>Nacionalidade:</label>
+                <input type="text" name="nacionalidade" id="campoNacionalidade" required>
 
                 <div class="modal-botoes">
                     <button type="button" class="btn-cancelar" onclick="fecharModal()">Cancelar</button>
@@ -302,22 +276,20 @@
         const ctxPath = '<%= request.getContextPath() %>';
 
         function abrirModalInserir() {
-            document.getElementById('modalTitulo').textContent = 'Nova Categoria';
-            document.getElementById('modalForm').action = ctxPath + '/adm/InserirCategoriaServlet';
+            document.getElementById('modalTitulo').textContent = 'Novo Time';
+            document.getElementById('modalForm').action = ctxPath + '/adm/InserirTimeServlet';
             document.getElementById('campoId').value = '';
             document.getElementById('campoNome').value = '';
-            document.getElementById('campoTemporada').value = '';
-            document.getElementById('campoEstilo').value = '';
+            document.getElementById('campoNacionalidade').value = '';
             document.getElementById('modalOverlay').classList.add('aberto');
         }
 
-        function abrirModalEditar(id, nome, temporada, estilo) {
-            document.getElementById('modalTitulo').textContent = 'Editar Categoria';
-            document.getElementById('modalForm').action = ctxPath + '/adm/AtualizarCategoriaServlet';
+        function abrirModalEditar(id, nome, nacionalidade) {
+            document.getElementById('modalTitulo').textContent = 'Editar Time';
+            document.getElementById('modalForm').action = ctxPath + '/adm/AtualizarTimeServlet';
             document.getElementById('campoId').value = id;
             document.getElementById('campoNome').value = nome;
-            document.getElementById('campoTemporada').value = temporada;
-            document.getElementById('campoEstilo').value = estilo;
+            document.getElementById('campoNacionalidade').value = nacionalidade;
             document.getElementById('modalOverlay').classList.add('aberto');
         }
 
@@ -325,18 +297,20 @@
             document.getElementById('modalOverlay').classList.remove('aberto');
         }
 
-        document.getElementById('modalOverlay').addEventListener( 'click', function(e) {
+        document.getElementById('modalOverlay').addEventListener('click', function(e) {
             if (e.target === this) fecharModal();
         });
 
         function filtrarTabela() {
             const busca = document.getElementById('campoBusca').value.toLowerCase();
-            const linhas = document.querySelectorAll('#tabelaCategorias tbody tr');
+            const linhas = document.querySelectorAll('#tabelaTimes tbody tr');
             linhas.forEach(function(linha) {
                 linha.style.display = linha.textContent.toLowerCase().includes(busca) ? '' : 'none';
             });
         }
     </script>
-
 </body>
 </html>
+<%
+    }
+%>

@@ -26,9 +26,7 @@ public class AtualizarCategoriaServlet extends HttpServlet {
         CategoriaDAO dao = new CategoriaDAO();
         boolean sucesso = dao.atualizar(id, nome, estilo, temporada);
 
-        request.setAttribute("msg", sucesso
-                ? "Categoria atualizada com sucesso!"
-                : "Erro ao atualizar categoria.");
+        request.setAttribute("msg", sucesso ? "Categoria atualizada com sucesso!" : "Erro ao atualizar categoria.");
 
         List<Categoria> categorias = dao.obterTodos();
         request.setAttribute("categorias", categorias);

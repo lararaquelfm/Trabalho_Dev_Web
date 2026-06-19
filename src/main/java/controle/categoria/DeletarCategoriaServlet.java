@@ -28,6 +28,7 @@ public class DeletarCategoriaServlet extends HttpServlet {
                 } else {
                     request.setAttribute("msg", "Não foi possível remover a categoria.");
                 }
+                
             } catch (NumberFormatException e) {
                 request.setAttribute("msg", "ID inválido.");
             }

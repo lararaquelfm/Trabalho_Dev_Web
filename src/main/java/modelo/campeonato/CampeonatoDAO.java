@@ -22,7 +22,7 @@ public class CampeonatoDAO {
             while (resultSet.next()) {
                 Campeonato campeonato = new Campeonato();
                 campeonato.setId(resultSet.getInt("id"));
-                campeonato.setNome(resultSet.getString("foto"));
+                campeonato.setNome(resultSet.getString("nome"));
                 resultado.add(campeonato);
             }
             resultSet.close();
