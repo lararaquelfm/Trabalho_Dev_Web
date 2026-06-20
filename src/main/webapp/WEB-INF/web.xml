@@ -89,6 +89,10 @@
         <servlet-name>MyProfileAdmServlet</servlet-name>
         <servlet-class>controle.usuario.MyProfileAdmServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CompeticoesServlet</servlet-name>
+        <servlet-class>controle.competicao.CompeticoesServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -168,5 +172,73 @@
     <servlet-mapping>
         <servlet-name>MyProfileAdmServlet</servlet-name>
         <url-pattern>/MyProfileAdm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CompeticoesServlet</servlet-name>
+        <url-pattern>/Competicoes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarCategoriaServlet</servlet-name>
+        <url-pattern>/Categorias</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InserirCategoriaServlet</servlet-name>
+        <url-pattern>/InserirCategoria</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletarCategoriaServlet</servlet-name>
+        <url-pattern>/DeletarCategoria</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AtualizarCategoriaServlet</servlet-name>
+        <url-pattern>/AtualizarCategoria</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarTimeServlet</servlet-name>
+        <url-pattern>/Times</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InserirTimeServlet</servlet-name>
+        <url-pattern>/InserirTime</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletarTimeServlet</servlet-name>
+        <url-pattern>/DeletarTime</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AtualizarTimeServlet</servlet-name>
+        <url-pattern>/AtualizarTime</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarCampeonatoServlet</servlet-name>
+        <url-pattern>/Campeonatos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InserirCampeonatoServlet</servlet-name>
+        <url-pattern>/InserirCampeonato</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletarCampeonatoServlet</servlet-name>
+        <url-pattern>/DeletarCampeonato</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AtualizarCampeonatoServlet</servlet-name>
+        <url-pattern>/AtualizarCampeonato</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarAuxCampTimeServlet</servlet-name>
+        <url-pattern>/AuxCampTime</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InserirAuxCampTimeServlet</servlet-name>
+        <url-pattern>/InserirAuxCampTime</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletarAuxCampTimeServlet</servlet-name>
+        <url-pattern>/DeletarAuxCampTime</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AtualizarAuxCampTimeServlet</servlet-name>
+        <url-pattern>/AtualizarAuxCampTime</url-pattern>
     </servlet-mapping>
 </web-app>

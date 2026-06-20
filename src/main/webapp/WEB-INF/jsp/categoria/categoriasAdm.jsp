@@ -182,19 +182,16 @@
 
     <%-- ── BARRA LATERAL + CONTEÚDO ── --%>
     <div class="plado">
-        <div class="menu">
-            <a href="<%= request.getContextPath() %>/DashBoardAdm.html">Dashboard</a>
-            <a href="<%= request.getContextPath() %>/ComprasAdm.html">Compras</a>
-            <a href="<%= request.getContextPath() %>/CadastrosAdm.html">Cadastros</a>
-            <a href="<%= request.getContextPath() %>/ItensAdm.html">Itens</a>
+        <div class="menu" style="width:15%;">
+            <a href="HomepageAdm">Dashboard</a>
+            <a href="ComprasAdm.html">Compras</a>
+            <a href="CadastrosAdm.html">Cadastros</a>
+            <a href="Produto">Itens</a>
             <div id="ativo">
                 <img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="seta direita">
-                <a href="<%= request.getContextPath() %>/adm/ListarCategoriaServlet">Categorias</a>
+                <a href="Categorias">Categorias</a>
             </div>
-            <a href="<%= request.getContextPath() %>/adm/ListarTimeServlet">Times</a>
-            <a href="<%= request.getContextPath() %>/adm/ListarCampeonatoServlet">Campeonatos</a>
-            <a href="<%= request.getContextPath() %>/adm/ListarTimeCampeonatoServlet">Times por Campeonato</a>
-            
+            <a href="Competicoes">Competições</a>
         </div>
 
         <div class="conteudo" style="width: 85%">

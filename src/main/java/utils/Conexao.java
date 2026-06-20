@@ -14,7 +14,7 @@ public class Conexao {
         }
         String JDBC_URL = "jdbc:postgresql://localhost:5432/ecommerce";
         String JDBC_USUARIO = "postgres";
-        String JDBC_SENHA = "Dessa eu mudei!";
+        String JDBC_SENHA = "Net@7122006";
         return DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
     }
 }

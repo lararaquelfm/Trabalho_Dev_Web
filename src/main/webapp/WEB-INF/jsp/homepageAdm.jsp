@@ -14,10 +14,9 @@
             <a >Compras</a>
             <a >Cadastros</a>
             <a href="Produto">Itens</a>
-            <a href="<%= request.getContextPath() %>/adm/ListarCategoriaServlet">Categorias</a>
-            <a href="<%= request.getContextPath() %>/adm/ListarTimeServlet">Times</a>
-            <a href="<%= request.getContextPath() %>/adm/ListarCampeonatoServlet">Campeonatos</a>
-            <a href="<%= request.getContextPath() %>/adm/ListarAuxCampTimeServlet">Times por Campeonato</a>??????        </div>
+            <a href="Categorias">Categorias</a>
+            <a href="Competicoes">Competicoes</a>       
+        </div>
         <div id="conteudo" style="width: 85%">
             <div id="pag">
                 <div id="cabecalho">
