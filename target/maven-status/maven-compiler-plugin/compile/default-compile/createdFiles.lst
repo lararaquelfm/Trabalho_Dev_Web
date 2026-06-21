@@ -3,6 +3,7 @@ controle\campeonato\AtualizarCampeonatoServlet.class
 controle\produto\ProdutoServlet.class
 controle\usuario\LogoutServlet.class
 controle\homepage\HomepageAdmServlet.class
+modelo\filtro\Filtro.class
 controle\homepage\HomepageServlet.class
 modelo\campeonato\CampeonatoDAO.class
 controle\aux_camp_time\InserirAuxCampTimeServlet.class
@@ -11,8 +12,10 @@ controle\foto\EditarFotoServlet.class
 controle\aux_camp_time\ListarAuxCampTimeServlet.class
 modelo\aux_venda_produto\AuxVendaProdutoDAO.class
 controle\usuario\MyProfileServlet.class
+controle\competicao\CompeticoesServlet.class
 controle\time\InserirTimeServlet.class
 modelo\time\TimeDAO.class
+modelo\atributo\AtributoDAO.class
 modelo\venda\VendaDAO.class
 modelo\aux_camp_time\AuxCampTime.class
 modelo\categoria\Categoria.class
@@ -29,6 +32,7 @@ modelo\aux_venda_produto\AuxVendaProduto.class
 modelo\aux_camp_time\AuxCampTimeDAO.class
 modelo\produto\ProdutoDAO.class
 modelo\usuario\UsuarioDAO.class
+modelo\atributo\Atributo.class
 controle\categoria\ListarCategoriaServlet.class
 modelo\campeonato\Campeonato.class
 controle\foto\RemoverFotoServlet.class
@@ -36,6 +40,7 @@ controle\produto\AdicionarProdutoServlet.class
 controle\produto\EditarProdutoServlet.class
 controle\usuario\CadastrarServlet.class
 modelo\foto\FotoDAO.class
+modelo\filtro\FiltroDAO.class
 controle\categoria\InserirCategoriaServlet.class
 controle\foto\AdicionarFotoServlet.class
 controle\usuario\MyProfileAdmServlet.class
