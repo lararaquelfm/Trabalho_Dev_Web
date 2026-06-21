@@ -185,6 +185,10 @@
         <servlet-name>ListarFiltroServlet</servlet-name>
         <servlet-class>controle.filtro.ListarFiltroServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeletarAtributoServlet</servlet-name>
+        <servlet-class>controle.atributo.DeletarAtributoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -335,30 +339,34 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>InserirAtributoServlet</servlet-name>
-        <url-pattern>/InserirAtributoServlet</url-pattern>
+        <url-pattern>/InserirAtributo</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AtualizarAtributoServlet</servlet-name>
-        <url-pattern>/AtualizarAtributoServlet</url-pattern>
+        <url-pattern>/AtualizarAtributo</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListarAtributoServlet</servlet-name>
-        <url-pattern>/ListarAtributoServlet</url-pattern>
+        <url-pattern>/ListarAtributos</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>InserirFiltroBDServlet</servlet-name>
-        <url-pattern>/InserirFiltroBDServlet</url-pattern>
+        <url-pattern>/InserirFiltro</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DeletarFiltroServlet</servlet-name>
-        <url-pattern>/DeletarFiltroServlet</url-pattern>
+        <url-pattern>/DeletarFiltro</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AtualizarFiltroServlet</servlet-name>
-        <url-pattern>/AtualizarFiltroServlet</url-pattern>
+        <url-pattern>/AtualizarFiltro</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListarFiltroServlet</servlet-name>
-        <url-pattern>/ListarFiltroServlet</url-pattern>
+        <url-pattern>/ListarFiltro</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletarAtributoServlet</servlet-name>
+        <url-pattern>/DeletarAtributo</url-pattern>
     </servlet-mapping>
 </web-app>

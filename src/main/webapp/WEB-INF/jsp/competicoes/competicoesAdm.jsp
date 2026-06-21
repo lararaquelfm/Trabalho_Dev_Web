@@ -46,6 +46,8 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                 <div class="cards">
                     <a class="card" href="ListarTime">Times</a>
                     <a class="card" href="ListarCampeonato">Campeonatos</a>
+                    <a class="card" href="ListarFiltro">Filtros</a>
+                    <a class="card" href="ListarAtributos">Atributos</a>
                 </div>
             </div>
         </div>

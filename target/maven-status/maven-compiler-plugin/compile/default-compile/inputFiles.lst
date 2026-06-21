@@ -1,7 +1,9 @@
+C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\atributo\ListarAtributoServlet.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\foto\MostrarFotoServlet.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\modelo\campeonato\CampeonatoDAO.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\time\ListarTimeServlet.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\foto\AdicionarFotoServlet.java
+C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\filtro\DeletarFiltroServlet.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\modelo\venda\VendaDAO.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\produto\AdicionarProdutoServlet.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\modelo\aux_venda_produto\AuxVendaProduto.java
@@ -16,6 +18,8 @@ C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\ja
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\aux_camp_time\ListarAuxCampTimeServlet.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\homepage\HomepageAdmServlet.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\usuario\DeletarUsuarioServlet.java
+C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\atributo\DeletarAtributoServlet.java
+C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\filtro\ListarFiltroServlet.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\time\AtualizarTimeServlet.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\modelo\usuario\Usuario.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\categoria\InserirCategoriaServlet.java
@@ -30,13 +34,16 @@ C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\ja
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\utils\main.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\homepage\HomepageServlet.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\aux_camp_time\AtualizarAuxCampTimeServlet.java
+C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\filtro\AtualizarFiltroServlet.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\modelo\filtro\FiltroDAO.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\campeonato\AtualizarCampeonatoServlet.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\com\mycompany\smdecommerce\SmdEcommerce.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\campeonato\DeletarCampeonatoServlet.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\foto\RemoverFotoServlet.java
+C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\filtro\InserirFiltroBDServlet.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\produto\EditarProdutoServlet.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\modelo\venda\Venda.java
+C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\atributo\AtualizarAtributoServlet.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\usuario\MyProfileServlet.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\modelo\aux_venda_produto\AuxVendaProdutoDAO.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\modelo\aux_camp_time\AuxCampTimeDAO.java
@@ -44,6 +51,7 @@ C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\ja
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\modelo\usuario\UsuarioDAO.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\categoria\AtualizarCategoriaServlet.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\usuario\MyProfileAdmServlet.java
+C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\atributo\InserirAtributoServlet.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\modelo\produto\Produto.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\produto\MostrarProdutoServlet.java
 C:\Users\tktgu\OneDrive\Documentos\NetBeansProjects\Trabalho_Dev_Web\src\main\java\controle\campeonato\InserirCampeonatoServlet.java
