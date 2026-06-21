@@ -32,7 +32,8 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                 <img src="imagens/arrowright.svg" alt="seta direita">
                 <a href="ItensAdm.html">Itens</a>
             </div>
-            <a href="CategoriasAdm.html">Categorias</a>
+            <a href="ListarCategoria">Categorias</a>
+            <a href="Competicoes">Competições</a>
         </div>
         <div id="conteudo" style="width: 85%">
             <div id="pag">

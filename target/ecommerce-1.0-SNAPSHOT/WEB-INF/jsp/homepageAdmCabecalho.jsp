@@ -10,258 +10,199 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DashBoard</title>
-    <link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/charts.css@1.2.0/dist/charts.min.css ">
-</head>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-    *{
-        box-sizing: border-box;
-    }
-    body{
-        margin: 0;
-        font-family: "Poppins", sans-serif;
-    }
-
-    #pag{
-        margin-left: 4%;
-        width: 90%;
-        margin: 0 auto;
-    }
-    #cabecalho{
-        height: 15%;
-        width: 100%;
-        display: flex;
-        gap: 20px;
-        align-items: center;
-        justify-content: flex-start;
-        h1{
-            margin-top: 20px;
-            font-size: 3.5em;
-            display: inline-block;
-
-        }
-    }
-
-    .pcima{
-        background-color: #170b9b;
-        display: flex; 
-        padding: 15px;
-        align-items: center;
-        color: white;
-        img{
-            margin-right: 10px;
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css@1.2.0/dist/charts.min.css">
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/css/barra_navegacao_adm.css">
+    
+    <style>
+        * { box-sizing: border-box; }
+        
+        body, #conteudo {
+            margin: 0;
+            font-family: "Poppins", sans-serif !important; 
         }
 
-    }
-    .plado{
-        display: flex;
-        max-width: 1600px;
-        .menu{
+        #conteudo { 
+            background-color: #f6f6f6; 
+        }
+
+        /* --- CONTAINER FLEXÍVEL (Corrige o alinhamento torto) --- */
+        #pag {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap; /* Permite quebrar linha perfeitamente */
+            justify-content: space-between;
+        }
+
+        #cabecalho {
+            width: 100%;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 16px 0 8px 0;
+            margin-bottom: 15px;
+        }
+        #cabecalho h1 {
+            font-size: 2.2em !important;
+            margin: 0 !important;
+            white-space: nowrap;
+        }
+
+        /* --- CARDS (RETANGULARES COMO ANTES) --- */
+        .dados {
+            background-color: #fff;
+            width: 32%; /* 3 cards lado a lado = ~96% */
+            height: 160px; /* Altura retangular original */
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 25px;
             display: flex;
             flex-direction: column;
-            color: white;
-            background-color: #170b9b;
-            min-height: 90vh;
-            width: 10%;
-            a{  
-                font-size: 1.5em;         /* Tamanho padrão do h1 */
-                font-weight: bold;      /* Deixa em negrito */
-                display: inline-block;  /* Permite aplicar margens se necessário */
-                text-decoration: none;  /* Remove o sublinhado */
-                color: white;         /* Faz o link herdar a cor do texto ao redor (ou defina uma cor) */
-                cursor: pointer;
-                margin-left: 27%;
-                margin-top: 10%;
-            }
-            #ativo{
-                margin-bottom: 0;
-                margin-top: 10%;
-                display: flex;
-                align-items: center;
-                margin-left: 13.5%;
-                img{
-                    width: 15%;
-                    margin-left: 0;
-                }
-                a{
-                    margin-top: 0;
-                    margin-left: 0;
-                    margin-bottom: 0;
-                }
-            }
-
-        }
-        .conteudo{
-            position: relative;
         }
 
-    }
-    .dados{
-        margin-right: 20px;
-        margin-bottom: 20px;
-        display: flex;
-        border: 1px solid black;
-        border-radius: 20px;
-        flex-direction: column;
-        min-width: 30%;
-        max-width: 40%;
-        overflow: auto;
-    }
-
-    .dados-chart{
-        flex: 2;
-        margin-right: 20px;
-        margin-bottom: 20px;
-        border: 1px solid black;
-        border-radius: 20px;
-    }
-
-    .titulo{
-        p{
-            margin-top: 0;
-            margin-bottom: 0;
+        .dados-chart {
+            background-color: #fff;
+            width: 65.5%; /* Card do gráfico mais largo */
+            height: 330px; /* Mais alto */
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
         }
-        margin-left: 5%;
-        font-size: 20px;
-    }
-    .cont{
-        padding:0 10px;
-        h3{
-            margin-top: 30px;
+
+        /* Faz o último card "Vendas por time" ficar alto como o gráfico */
+        .dados:last-of-type {
+            height: 330px;
         }
-        align-self: center;
-        font-size: 40px;
-    }
 
-    #pag{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-
-        #cabecalho{
-            display: block;
+        .titulo {
+            margin-left: 20px;
+            border-bottom: 1px solid #ccc;
         }
-    }
 
-    #camisaV{
-        display: flex;
-        margin-top: 10px;
-        width: 95%;
-    }
-
-    .camisa{
-        display: flex;
-        align-items: start;
-        background-color: white;
-        color: black;
-        width: 100%;
-        p {
-            width: 100%;  
-            margin-top: 0;
-            margin-bottom: 0;
-            font-size: 15px;
+        .titulo p {
+            font-size: 20px !important;
+            font-weight: normal !important;
+            margin: 15px 0 10px 0 !important;
         }
-        .foto{
-            display: block;
-            img{
-                width: 65%;
-                height: auto;
-                margin: 0 auto;
-                display: block;
-            }
+
+        /* --- CONTEÚDOS DOS CARDS --- */
+        .cont {
+            color: #170b9b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1; /* Centraliza perfeitamente o texto no resto do bloco */
         }
-    }
-
-    #colunas{
-        display: flex;
-        position: relative;
-        margin: 10px 10px 10px 40px;
-    }
-
-    #colunas .axis{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        list-style: none;
-        margin: 0;
-        padding: 0 10px 35px 0;
-        text-align: right;
-        color: #888;
-        font-size: 14px;
-    }
-
-    .charts-css.column td{
-        font-weight: normal;
-        color: transparent;
-        font-size: 31.2px;
-        line-height: 1;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-    }
-
-    .charts-css.column th {
-        font-weight: normal;
-        font-size: 20px;
-        text-align: center;
-    }
-
-    .charts-css.column td:hover {
-        color: black;
-        opacity: 0.8;
-        filter: brightness(1.2);
-        transition: all 0.3s ease;
-        cursor: pointer;
-        white-space: nowrap;
-    }
-
-    #grafico_pizza{
-        height: 200px;
-        width: 200px;
-        margin: 0 auto;
-        margin-top: 80px;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
         
-    }
+        .cont h3 {
+            font-size: 32px;
+            margin: 0;
+        }
 
-    .charts-css.pie td{
-        color: transparent;
-        font-size: 30px;
-        position: relative;
-        margin-top: -30px;
-    }
+        #camisaV {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            padding: 0 15px;
+        }
 
-    .charts-css.pie tbody{
-        background-color: transparent;
-    }
+        .camisa {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+        }
 
-    .legenda{
-        display: flex;
-        flex-direction: column;
-        gap: 1px;
-        font-size: 16px;
-        margin-top: -10px;
-    }
+        .foto {
+            width: 80px; 
+            height: 90px; 
+            background-color: #d9d9d9;
+            border-radius: 5px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
 
-    .cor{
-        display: inline-block;
-        width: 12px;
-        height: 12px;
-        margin-right: 8px;
-        border-radius: 3px;
-    }
+        .foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-    .charts-css.pie tr:nth-child(1) td { --color: #4f7de3; }
-    .charts-css.pie tr:nth-child(2) td { --color: #9b7ddf; }
-    .charts-css.pie tr:nth-child(3) td { --color: #e6b066; }
-    .charts-css.pie tr:nth-child(4) td { --color: #f2d04f; }
-    .ceara{ background: #4f7de3;}
-    .ferroviaria{ background: #9b7ddf;}
-    .corinthians{ background: #e6b066;}
-    .outros{ background: #f2d04f;}
+        #descricao { flex: 1; }
+        
+        #descricao p {
+            margin: 3px 0 !important;
+            font-size: 15px !important;
+        }
 
-</style>
+        /* --- GRÁFICOS (MANTIDOS ORIGINAIS) --- */
+        #grafico_coluna {
+            height: 230px;
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        .charts-css.column td { color: transparent; }
+        .charts-css.column th {
+            font-weight: normal;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .charts-css.column td:hover {
+            color: black;
+            opacity: 0.8;
+            filter: brightness(1.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        #grafico_pizza {
+            height: 180px;
+            width: 180px;
+            margin: 0 auto;
+            margin-top: 40px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .charts-css.pie td {
+            color: transparent;
+            font-size: 30px;
+            position: relative;
+            margin-top: -30px;
+        }
+        
+        .charts-css.pie tbody { background-color: transparent; }
+
+        .legenda {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        
+        .cor {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+    </style>
+</head>
