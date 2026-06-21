@@ -11,7 +11,7 @@ import java.util.List;
 import modelo.time.Time;
 import modelo.time.TimeDAO;
  
-@WebServlet(name = "DeletarTimeServlet", urlPatterns = {"/adm/DeletarTimeServlet"})
+@WebServlet(name = "DeletarTimeServlet", urlPatterns = {"/DeletarTime"})
 
 public class DeletarTimeServlet extends HttpServlet{
     

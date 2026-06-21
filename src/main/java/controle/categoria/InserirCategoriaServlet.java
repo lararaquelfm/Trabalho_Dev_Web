@@ -11,7 +11,7 @@ import java.util.List;
 import modelo.categoria.Categoria;
 import modelo.categoria.CategoriaDAO;
 
-@WebServlet(name = "InserirCategoriaServlet", urlPatterns = {"/adm/InserirCategoriaServlet"})
+@WebServlet(name = "InserirCategoriaServlet", urlPatterns = {"/InserirCategoriat"})
 public class InserirCategoriaServlet extends HttpServlet {
 
     @Override

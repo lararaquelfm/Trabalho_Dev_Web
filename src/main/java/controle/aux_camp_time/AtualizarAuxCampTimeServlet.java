@@ -10,12 +10,10 @@ import java.io.IOException;
 import java.util.List;
 import modelo.aux_camp_time.AuxCampTime;
 import modelo.aux_camp_time.AuxCampTimeDAO;
-import modelo.campeonato.Campeonato;
 import modelo.campeonato.CampeonatoDAO;
-import modelo.time.Time;
 import modelo.time.TimeDAO;
 
-@WebServlet(name = "AtualizarAuxCampTimeServlet", urlPatterns = {"/adm/AtualizarAuxCampTimeServlet"})
+@WebServlet(name = "AtualizarAuxCampTimeServlet", urlPatterns = {"/AtualizarAuxCampTime"})
 public class AtualizarAuxCampTimeServlet extends HttpServlet {
 //so da pra atualizar o ano porque time e campeonato sao id 
     @Override

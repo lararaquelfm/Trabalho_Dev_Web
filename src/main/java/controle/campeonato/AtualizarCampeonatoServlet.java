@@ -11,7 +11,7 @@ import java.util.List;
 import modelo.campeonato.Campeonato;
 import modelo.campeonato.CampeonatoDAO;
 
-@WebServlet(name = "AtualizarCampeonatoServlet", urlPatterns = {"/adm/AtualizarCampeonatoServlet"})
+@WebServlet(name = "AtualizarCampeonatoServlet", urlPatterns = {"/AtualizarCampeonato"})
 
 public class AtualizarCampeonatoServlet extends HttpServlet {
     

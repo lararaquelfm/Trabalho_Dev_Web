@@ -7,7 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "CompeticoesServlet", urlPatterns = {"/adm/CompeticoesServlet"})
+@WebServlet(name = "CompeticoesServlet", urlPatterns = {"/Competicoes"})
 public class CompeticoesServlet extends HttpServlet {
 
     @Override

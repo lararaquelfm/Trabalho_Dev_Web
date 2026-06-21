@@ -1,22 +1,24 @@
 <%@include file="homepageAdmCabecalho.jsp" %>
 <body>
      <div class="pcima">
-        <img id="profile" src="imagens/profile.svg" style="width: 3%; height: auto" alt="ft de perfil">
+        <img id="profile" src="<%= request.getContextPath() %>/imagens/profile.svg" style="width: 3%; height: auto" alt="ft de perfil">
         <h1>Administrador: <%= usuario.getNome() %></h1>
     </div>
+    
     <div class="plado">
         <div class="menu" style="width:15%;">
             <a href="MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
             <div id="ativo">
-                <img src="imagens/arrowright.svg" alt="seta direita">
+                <img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="seta direita">
                 <a href="HomepageAdm">Dashboard</a>
             </div>
-            <a >Compras</a>
-            <a >Cadastros</a>
+            <a href="ComprasAdm.html">Compras</a>
+            <a href="CadastrosAdm.html">Cadastros</a>
             <a href="Produto">Itens</a>
-            <a href="Categorias">Categorias</a>
-            <a href="Competicoes">Competicoes</a>       
+            <a href="ListarCategoria">Categorias</a>
+            <a href="Competicoes">Competições</a>       
         </div>
+        
         <div id="conteudo" style="width: 85%">
             <div id="pag">
                 <div id="cabecalho">
@@ -37,7 +39,7 @@
                     <div id="camisaV">
                         <div class="camisa">
                             <div class="foto">
-                                <img src="imagens/camisa.png">
+                                <img src="<%= request.getContextPath() %>/imagens/camisa.png">
                             </div>
                             <div id="descricao">
                                 <p style="font-size: 17px;"><strong>Camisa da Seleção Brasileira</strong></p>

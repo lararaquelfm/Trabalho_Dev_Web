@@ -11,7 +11,7 @@ import java.util.List;
 import modelo.time.Time;
 import modelo.time.TimeDAO;
 
-@WebServlet(name = "InserirTimeServlet", urlPatterns = {"/adm/InserirTimeServlet"})
+@WebServlet(name = "InserirTimeServlet", urlPatterns = {"/InserirTime"})
 public class InserirTimeServlet extends HttpServlet {
     
     @Override
@@ -24,7 +24,7 @@ public class InserirTimeServlet extends HttpServlet {
         request.setAttribute("msg", sucesso ? "Time inserido com sucesso" : "Erro ao inserir o time");
         List<Time> times = dao.obterTodos();
         request.setAttribute("times", times);
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/time/times.Adm.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/time/timesAdm.jsp");
         rd.forward(request, response);
     }
 

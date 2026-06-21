@@ -10,12 +10,10 @@ import java.io.IOException;
 import java.util.List;
 import modelo.aux_camp_time.AuxCampTime;
 import modelo.aux_camp_time.AuxCampTimeDAO;
-import modelo.campeonato.Campeonato;
 import modelo.campeonato.CampeonatoDAO;
-import modelo.time.Time;
 import modelo.time.TimeDAO;
  
-@WebServlet(name = "InserirAuxCampTimeServlet", urlPatterns = {"/adm/InserirAuxCampTimeServlet"})
+@WebServlet(name = "InserirAuxCampTimeServlet", urlPatterns = {"/InserirAuxCampTime"})
 
 public class InserirAuxCampTimeServlet extends HttpServlet {
  

@@ -28,7 +28,7 @@ Usuario usuario = (Usuario) request.getAttribute("usuario");
             <a href="ComprasAdm.html">Compras</a>
             <a href="CadastrosAdm.html">Cadastros</a>
             <a href="Produto">Itens</a>
-            <a href="Categorias">Categorias</a>
+            <a href="ListarCategoria">Categorias</a>
             <a href="Competicoes">Competições</a>       
         </div>
         <div class="conteudo" style="width: 85%">

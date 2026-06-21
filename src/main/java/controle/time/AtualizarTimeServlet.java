@@ -11,7 +11,7 @@ import java.util.List;
 import modelo.time.Time;
 import modelo.time.TimeDAO;
 
-@WebServlet(name = "AtualizarTimeServlet", urlPatterns = {"/adm/AtualizarTimeServlet"})
+@WebServlet(name = "AtualizarTimeServlet", urlPatterns = {"/AtualizarTime"})
 
 public class AtualizarTimeServlet extends HttpServlet {
     

@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import modelo.categoria.CategoriaDAO;
 
-@WebServlet(name = "DeletarCategoriaServlet", urlPatterns = {"/adm/DeletarCategoriaServlet"})
+@WebServlet(name = "DeletarCategoriaServlet", urlPatterns = {"/DeletarCategoria"})
 public class DeletarCategoriaServlet extends HttpServlet {
 
     @Override
@@ -37,7 +37,7 @@ public class DeletarCategoriaServlet extends HttpServlet {
         }
 
         // Redireciona de volta para o listar, que recarrega a lista do banco
-        request.getRequestDispatcher("/adm/ListarCategoriaServlet")
+        request.getRequestDispatcher("/ListarCategoria")
                .forward(request, response);
     }
 }

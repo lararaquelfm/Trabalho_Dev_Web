@@ -11,7 +11,7 @@ import java.util.List;
 import modelo.campeonato.Campeonato;
 import modelo.campeonato.CampeonatoDAO;
 
-@WebServlet(name = "DeletarCampeonatoServlet", urlPatterns = {"/adm/DeletarCampeonatoServlet"})
+@WebServlet(name = "DeletarCampeonatoServlet", urlPatterns = {"/DeletarCampeonato"})
 
 public class DeletarCampeonatoServlet extends HttpServlet{
     @Override

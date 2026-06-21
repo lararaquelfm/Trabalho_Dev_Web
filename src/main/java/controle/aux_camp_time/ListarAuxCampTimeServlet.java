@@ -15,7 +15,7 @@ import modelo.campeonato.CampeonatoDAO;
 import modelo.time.Time;
 import modelo.time.TimeDAO;
  
-@WebServlet(name = "ListarAuxCampTimeServlet", urlPatterns = {"/adm/ListarAuxCampTimeServlet"})
+@WebServlet(name = "ListarAuxCampTimeServlet", urlPatterns = {"/ListarAuxCampTime"})
 
 public class ListarAuxCampTimeServlet extends HttpServlet {
     

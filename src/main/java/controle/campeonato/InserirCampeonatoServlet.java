@@ -11,7 +11,7 @@ import java.util.List;
 import modelo.campeonato.Campeonato;
 import modelo.campeonato.CampeonatoDAO;
 
-@WebServlet(name = "InserirCampeonatoServlet", urlPatterns = {"/adm/InserirCampeonatoServlet"})
+@WebServlet(name = "InserirCampeonatoServlet", urlPatterns = {"/InserirCampeonato"})
 public class InserirCampeonatoServlet extends HttpServlet {
 
     @Override
