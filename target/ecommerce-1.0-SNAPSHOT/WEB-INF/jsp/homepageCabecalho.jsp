@@ -84,6 +84,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
         position: relative;
         bottom: 15vh;
         padding: 1vw;
+        flex-wrap: wrap;
     }
 
     .camisa{
@@ -261,6 +262,13 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
         color: #FFFF;
 
     }
+    
+    .itens-img {
+                width: 150px;
+                flex-shrink: 0; 
+                height: 150px;
+
+            }
     
 </style>
 <script>

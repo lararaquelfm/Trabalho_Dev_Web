@@ -7,6 +7,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import java.util.List;
+import modelo.produto.Produto;
+import modelo.produto.ProdutoDAO;
 import modelo.usuario.Usuario;
 import modelo.usuario.UsuarioDAO;
 import utils.Utils;
@@ -28,6 +31,8 @@ public class LoginServlet extends HttpServlet {
             if(usuario.isAdministrador()){
                 requestDispatcher = request.getRequestDispatcher("/HomepageAdm");
             }else{
+                List<Produto> produtos = new ProdutoDAO().obterEstoque();
+                request.setAttribute("produtos", produtos);
                 requestDispatcher = request.getRequestDispatcher("/Homepage");
             }
             requestDispatcher.forward(request, response);

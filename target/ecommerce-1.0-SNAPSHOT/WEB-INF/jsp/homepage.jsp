@@ -1,3 +1,7 @@
+<%@page import="modelo.foto.FotoDAO"%>
+<%@page import="modelo.foto.Foto"%>
+<%@page import="modelo.produto.Produto"%>
+<%@page import="java.util.List"%>
 <%@include file="homepageCabecalho.jsp" %>
 <body>
 <div id="barraNavegacao">
@@ -40,127 +44,36 @@
 
         <img id="background" src="${pageContext.request.contextPath}/imagens/background.png" style="width: 100%; height: auto" alt="background da pagina">
 <div id="camisas">
-    <div class="camisa">
-        <a  style="text-decoration: none; color: inherit;">
-            <img src="${pageContext.request.contextPath}/imagens/camisa.png" >
-            <p>Descrição</p>
-            <h1>Preço</h1>
-            <button>
-                Adicionar ao carrinho
-                <img src="${pageContext.request.contextPath}/imagens/carrinho.svg" alt="ft de carrinho">
-            </button>
-        </div>
-        </a>
-    <div class="camisa">
-        <img src="${pageContext.request.contextPath}/imagens/camisa.png" >
-        <p>Descrição</p>
-        <h1>Preço</h1>
-        <button>
-            Adicionar ao carrinho
-            <img src="${pageContext.request.contextPath}/imagens/carrinho.svg" alt="ft de carrinho">
-        </button>
-    </div>
-
-    <div class="camisa">
-        <img src="${pageContext.request.contextPath}/imagens/camisa.png" >
-        <p>Descrição</p>
-        <h1>Preço</h1>
-        <button>
-            Adicionar ao carrinho
-            <img src="${pageContext.request.contextPath}/imagens/carrinho.svg" alt="ft de carrinho">
-        </button>
-    </div>
-    <div class="camisa">
-        <img src="${pageContext.request.contextPath}/imagens/camisa.png" >
-        <p>Descrição</p>
-        <h1>Preço</h1>
-        <button>
-            Adicionar ao carrinho
-            <img src="${pageContext.request.contextPath}/imagens/carrinho.svg" alt="ft de carrinho">
-        </button>
-    </div>
-    <div class="camisa">
-        <img src="${pageContext.request.contextPath}/imagens/camisa.png" >
-        <p>Descrição</p>
-        <h1>Preço</h1>
-        <button>
-            Adicionar ao carrinho
-            <img src="${pageContext.request.contextPath}/imagens/carrinho.svg" alt="ft de carrinho">
-        </button>
-    </div>
-</div>
-<h1 id="ofertas">Ofertas</h1>
-<div class="deslizar">
-    <div class="e_d">
-            <button class="seta esquerda"><img src="${pageContext.request.contextPath}/imagens/seta-esquerda.png" alt="seta_esquerda "></button>
-            <button class="seta direita"><img src="${pageContext.request.contextPath}/imagens/seta-direita.png" alt="seta_direita"></button>
-    </div>
-    <div id="carrossel">
-        <div class="camisa">
-            <img src="${pageContext.request.contextPath}/imagens/camisa.png" >
-            <p>Descrição</p>
-            <h1>Preço</h1>
-            <button>
-                Adicionar ao carrinho
-                <img src="${pageContext.request.contextPath}/imagens/carrinho.svg" alt="ft de carrinho">
-            </button>
-        </div>
-        <div class="camisa">
-            <img src="${pageContext.request.contextPath}/imagens/camisa.png" >
-            <p>Descrição</p>
-            <h1>Preço</h1>
-            <button>
-                Adicionar ao carrinho
-                <img src="${pageContext.request.contextPath}/imagens/carrinho.svg" alt="ft de carrinho">
-            </button>
-        </div>
-    
-        <div class="camisa">
-            <img src="${pageContext.request.contextPath}/imagens/camisa.png" >
-            <p>Descrição</p>
-            <h1>Preço</h1>
-            <button>
-                Adicionar ao carrinho
-                <img src="${pageContext.request.contextPath}/imagens/carrinho.svg" alt="ft de carrinho">
-            </button>
-        </div>
-        <div class="camisa">
-            <img src="${pageContext.request.contextPath}/imagens/camisa.png" >
-            <p>Descrição</p>
-            <h1>Preço</h1>
-            <button>
-                Adicionar ao carrinho
-                <img src="${pageContext.request.contextPath}/imagens/carrinho.svg" alt="ft de carrinho">
-            </button>
-        </div>
-        <div class="camisa">
-            <img src="${pageContext.request.contextPath}/imagens/camisa.png" >
-            <p>Descrição</p>
-            <h1>Preço</h1>
-            <button>
-                Adicionar ao carrinho
-                <img src="${pageContext.request.contextPath}/imagens/carrinho.svg" alt="ft de carrinho">
-            </button>
-        </div>
-        <div class="camisa">
-            <img src="${pageContext.request.contextPath}/imagens/camisa.png" >
-            <p>Descrição</p>
-            <h1>Preço</h1>
-            <button>
-                Adicionar ao carrinho
-                <img src="${pageContext.request.contextPath}/imagens/carrinho.svg" alt="ft de carrinho">
-            </button>
-        </div>
-        <div class="camisa">
-            <img src="${pageContext.request.contextPath}/imagens/camisa.png" >
-            <p>Descrição</p>
-            <h1>Preço</h1>
-            <button>
-                Adicionar ao carrinho
-                <img src="${pageContext.request.contextPath}/imagens/carrinho.svg" alt="ft de carrinho">
-            </button>
-        </div>
-    </div>
+    <%
+    List<Produto> produtos = (List<Produto>) request.getAttribute("produtos");
+        if (produtos != null && !produtos.isEmpty()) {
+            for (int i = 0; i < produtos.size(); i++) {
+                Produto c = produtos.get(i);
+    %>
+                <div class="camisa">
+                <% 
+                List<Foto> fotos = new FotoDAO().obterPeloProduto(c.getId());
+                if (fotos.isEmpty()){
+                %>
+                    <img src="${pageContext.request.contextPath}/imagens/Image-not-found.png" class="itens-img" alt="Camiseta">
+                <%
+                } else {
+                %>
+                    <img src="<%= request.getContextPath() %>/MostrarProduto?id=<%= c.getId()%>" class="itens-img" alt="Camiseta">
+                <%
+                }
+                %>
+                    <p><%= c.getDescricao()%></p>
+                    <h1>R$: <%= c.getPreco()%></h1>
+                    <button>
+                        Adicionar ao carrinho
+                        <img src="${pageContext.request.contextPath}/imagens/carrinho.svg" alt="ft de carrinho">
+                    </button>
+                </div>
+    <%
+            }
+        }
+    %>
 </div>
 </body>
 </html> 

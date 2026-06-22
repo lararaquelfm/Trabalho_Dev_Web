@@ -116,6 +116,7 @@
         position: relative;
         bottom: 15vh;
         padding: 1vw;
+        flex-wrap: wrap;
     }
 
     .camisa{
@@ -249,5 +250,12 @@
         align-items: center;
         justify-content: center;
     }
+    
+    .itens-img {
+                width: 150px;
+                flex-shrink: 0; 
+                height: 150px;
+
+            }
     
 </style>
