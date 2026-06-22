@@ -25,10 +25,6 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
             font-family: "Poppins", sans-serif !important; 
         }
 
-        #conteudo { 
-            background-color: #f6f6f6; 
-        }
-
         /* --- CONTAINER FLEXÍVEL (Corrige o alinhamento torto) --- */
         #pag {
             width: 90%;
