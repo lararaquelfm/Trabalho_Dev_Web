@@ -34,7 +34,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                 <img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="seta direita">
                 <a href="Categorias">Categorias</a>
             </div>
-            <a href="Competicoes">Competições</a>
+            <a href="Competicoes">Tabelas</a>
         </div>
 
         <div class="conteudo" style="flex: 1; min-width: 0;">

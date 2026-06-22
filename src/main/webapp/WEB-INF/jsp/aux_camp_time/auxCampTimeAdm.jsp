@@ -35,7 +35,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
             <a href="CadastrosAdm.html">Cadastros</a>
             <a href="Produto">Itens</a>
             <a href="ListarCategoria">Categorias</a>
-            <a href="Competicoes">Competi&ccedil;&otilde;es</a>
+            <a href="Competicoes">Tabelas</a>
             <a href="ListarCampeonato">Campeonatos</a>
             <div id="ativo">
                 <img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="seta direita">

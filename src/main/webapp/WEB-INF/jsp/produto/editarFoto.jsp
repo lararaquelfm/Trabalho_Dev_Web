@@ -33,7 +33,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                     <a href="Produto">Itens</a>
                 </div>
                 <a href="ListarCategoria">Categorias</a>
-                <a href="Competicoes">Competições</a>
+                <a href="Competicoes">Tabelas</a>
             </div>
             <div class="conteudo" style="width: 85%">
                 <div id="pag">

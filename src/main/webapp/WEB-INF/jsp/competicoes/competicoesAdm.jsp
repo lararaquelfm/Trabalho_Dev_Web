@@ -33,14 +33,14 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
             <a href="ListarCategoria">Categorias</a>
             <div id="ativo">
                 <img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="seta direita">
-                <a href="Competicoes">Competições</a>
+                <a href="Competicoes">Tabelas</a>
             </div>
         </div>
 
         <div class="conteudo" style="flex: 1; min-width: 0;">
             <div id="pag">
                 <div id="cabecalho">
-                    <h1>Competições</h1>
+                    <h1>Tabelas</h1>
                 </div>
 
                 <div class="cards">
