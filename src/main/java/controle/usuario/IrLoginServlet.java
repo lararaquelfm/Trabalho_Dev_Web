@@ -1,4 +1,4 @@
-package controle.homepage;
+package controle.usuario;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -10,13 +10,11 @@ import java.util.List;
 import modelo.produto.Produto;
 import modelo.produto.ProdutoDAO;
 
-public class HomepageServlet extends HttpServlet {
+public class IrLoginServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Produto> produtos = new ProdutoDAO().obterEstoque();
-        request.setAttribute("produtos", produtos);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/jsp/homepage.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/login.jsp");
         requestDispatcher.forward(request, response);
     }
 

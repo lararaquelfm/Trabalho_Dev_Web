@@ -11,16 +11,16 @@ Usuario usuarioBean = (Usuario) request.getAttribute("usuario");
         <div class="botoes">
             <div class="botoes">
     <a href="<%= request.getContextPath()%>/secure/Homepage">
-        <img id="home" src="imagens/home.svg" style="width: 100%; height: auto" alt="ft de favorito">
+        <img id="home" src="${pageContext.request.contextPath}/imagens/home.svg" style="width: 100%; height: auto" alt="ft de favorito">
     </a>
             </div>
         </div>
         <div class="botoes">
             <a >
-                <img id="carrinho" src="imagens/carrinho.svg" style="width: 100%; height: auto" alt="ft de carrinho"></a>
+                <img id="carrinho" src="${pageContext.request.contextPath}/imagens/carrinho.svg" style="width: 100%; height: auto" alt="ft de carrinho"></a>
         </div>
         <div class="pesquisa">
-            <img src="imagens/search.svg" style="width: 100%; height: auto" alt="lupa de pesquisa">
+            <img src="${pageContext.request.contextPath}/imagens/search.svg" style="width: 100%; height: auto" alt="lupa de pesquisa">
             <input type="text" style="width: 100%; height: 100%;">
         </div>
     </div>

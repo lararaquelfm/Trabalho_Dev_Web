@@ -37,10 +37,10 @@ public class AtualizarUsuarioServlet extends HttpServlet {
             request.setAttribute("mensagem", "Não foi possível atualizar seus dados");
         }
         if (usuarioDAO.obter(id).isAdministrador()){
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/HomepageAdm");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/admin/HomepageAdm");
             requestDispatcher.forward(request, response);
         } else {
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/Homepage");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/secure/Homepage");
             requestDispatcher.forward(request, response);
         }
     }

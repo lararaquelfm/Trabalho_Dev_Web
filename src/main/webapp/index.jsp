@@ -6,7 +6,7 @@
 <body>
 <div id="barraNavegacao">
         <div class="botoes">
-            <a href="login.jsp" class="imagem_texto_login">
+            <a href="<%= request.getContextPath()%>/IrLogin" class="imagem_texto_login">
                 <img id="login" src="${pageContext.request.contextPath}/imagens/profile.svg" class="profile" alt="ft da home">
                 <img id="login" src="${pageContext.request.contextPath}/imagens/arrowright.svg" class="seta" alt="ft de seta">
                 <span>Faça seu login</span>

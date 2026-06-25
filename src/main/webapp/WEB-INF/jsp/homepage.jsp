@@ -33,7 +33,7 @@
                 <a ><img src="${pageContext.request.contextPath}/imagens/arrowright.svg" alt="">Meus pedidos</a>
                 <a href="<%= request.getContextPath()%>/secure/MyProfile?id=<%= usuario.getId() %>"><img src="${pageContext.request.contextPath}/imagens/arrowright.svg" alt="">Meus dados</a>
                 <div class="sair">
-                    <a href="Logout" style="padding-top: 35px; padding-bottom: 20px;"><img src="${pageContext.request.contextPath}/imagens/logout.svg" alt="">Sair</a> 
+                    <a href="<%= request.getContextPath()%>/secure/Logout" style="padding-top: 35px; padding-bottom: 20px;"><img src="${pageContext.request.contextPath}/imagens/logout.svg" alt="">Sair</a> 
                 </div>
                 <div class="deletar">
                     <a href="<%= request.getContextPath()%>/secure/DeletarUsuario?id=<%= usuario.getId() %>"><img src="${pageContext.request.contextPath}/imagens/delete.svg" alt="">Deletar perfil</a>
@@ -63,8 +63,8 @@
                 <%
                 }
                 %>
-                    <p><%= c.getDescricao()%></p>
-                    <h1>R$: <%= c.getPreco()%></h1>
+                    <p style=" padding: 2px; white-space: nowrap; overflow: auto; text-overflow: ellipsis;"><%= c.getDescricao()%></p>
+                    <h1>R$: <%= String.format("%.2f", c.getPreco())%></h1>
                     <button>
                         Adicionar ao carrinho
                         <img src="${pageContext.request.contextPath}/imagens/carrinho.svg" alt="ft de carrinho">

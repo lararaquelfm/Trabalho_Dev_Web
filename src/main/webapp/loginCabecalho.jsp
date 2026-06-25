@@ -16,7 +16,7 @@
     }
 
     body {
-        background-image: url('./imagens/arena_background.png'); 
+        background-image: url('${pageContext.request.contextPath}/imagens/arena_background.png'); 
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
