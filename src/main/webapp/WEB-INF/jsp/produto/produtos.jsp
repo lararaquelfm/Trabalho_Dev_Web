@@ -24,16 +24,16 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
         </div>
         <div class="plado">
             <div class="menu" style="width:15%;">
-                <a href="MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
-                <a href="HomepageAdm">Dashboard</a>
-                <a href="ComprasAdm.html">Compras</a>
-                <a href="CadastrosAdm.html">Cadastros</a>
+                <a href="<%= request.getContextPath()%>/admin/MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
+                <a href="<%= request.getContextPath()%>/admin/HomepageAdm">Dashboard</a>
+                <a href="">Compras</a>
+                <a href="">Cadastros</a>
                 <div id="ativo">
                     <img src="${pageContext.request.contextPath}/imagens/arrowright.svg" alt="seta direita">
-                    <a href="Produto">Itens</a>
+                    <a href="<%= request.getContextPath()%>/admin/Produto">Itens</a>
                 </div>
-                <a href="ListarCategoria">Categorias</a>
-                <a href="Competicoes">Tabelas</a>
+                <a href="<%= request.getContextPath()%>/admin/ListarCategoria">Categorias</a>
+                <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a>
             </div>
             <div class="conteudo" style="width: 85%">
                 <div id="pag">
@@ -90,10 +90,10 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                             </div>
 
                             <div class="lado-direito">
-                                <a href="EditarProduto?id=<%= c.getId()%>" class="botao-editar">
+                                <a href="<%= request.getContextPath()%>/admin/EditarProduto?id=<%= c.getId()%>" class="botao-editar">
                                     <img src="${pageContext.request.contextPath}/imagens/edit_icon.png" alt="Editar">
                                 </a>
-                                <a href="RemoverProduto?id=<%= c.getId()%>" class="botao-editar">
+                                <a href="<%= request.getContextPath()%>/admin/RemoverProduto?id=<%= c.getId()%>" class="botao-editar">
                                     <img src="${pageContext.request.contextPath}/imagens/lixeira_preta.svg" alt="icone para deletar">
                                 </a>
                             </div>
@@ -117,7 +117,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                                 <h1 style='font-size: 1.5em; color: #808080;'>Clique no botão abaixo para adicionar um produto</h1>
                             </div>
                             <div style="display: flex; justify-content: center; padding: 20px;">
-                                <a href="AdicionarProduto" style="display: flex; align-items: center; justify-content: center; width: 75px; height: 75px; background-color: #170b9b; border-radius: 50%;">
+                                <a href="<%= request.getContextPath()%>/admin/AdicionarProduto" style="display: flex; align-items: center; justify-content: center; width: 75px; height: 75px; background-color: #170b9b; border-radius: 50%;">
                                     <img src="${pageContext.request.contextPath}/imagens/mais.svg" alt="Adicionar" style="width: 50%; height: auto;">
                                 </a>
                             </div>

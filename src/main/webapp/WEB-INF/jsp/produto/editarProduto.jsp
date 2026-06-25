@@ -26,23 +26,23 @@
     </div>
     <div class="plado">
         <div class="menu" style="width:15%;">
-            <a href="MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
-            <a href="HomepageAdm">Dashboard</a>
-            <a href="ComprasAdm.html">Compras</a>
-            <a href="CadastrosAdm.html">Cadastros</a>
+            <a href="<%= request.getContextPath()%>/admin/MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
+            <a href="<%= request.getContextPath()%>/admin/HomepageAdm">Dashboard</a>
+            <a href="">Compras</a>
+            <a href="">Cadastros</a>
             <div id="ativo">
                 <img src="imagens/arrowright.svg" alt="seta direita">
-                <a href="Produto">Itens</a>
+                <a href="<%= request.getContextPath()%>/admin/Produto">Itens</a>
             </div>
-            <a href="ListarCategoria">Categorias</a>
-            <a href="Competicoes">Tabelas</a>
+            <a href="<%= request.getContextPath()%>/admin/ListarCategoria">Categorias</a>
+            <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a>
         </div>
         <div id="conteudo" style="width: 85%">
             <div id="pag">
                 <div id="cabecalho">
                     <h1>Editar Item</h1>
                 </div>
-                <form action="InserirProdutoBD" method="post">
+                <form action="<%= request.getContextPath()%>/admin/InserirProdutoBD" method="post">
                     <section class="card">
                     <div class="grade">
                         <div class="col">
@@ -94,11 +94,11 @@
                             </div>
                             <div class="campo">
                                  <strong>Adicionar Fotos ao Item:</strong>
-                                <a href="AdicionarFoto?id=<%= produto.getId() %>" class="botao">Adicionar</a>
+                                <a href="<%= request.getContextPath()%>/admin/AdicionarFoto?id=<%= produto.getId() %>" class="botao">Adicionar</a>
                             </div>
                             <div class="campo">
                                 <strong>Editar Fotos do Item:</strong>
-                                <a href="EditarFoto?id=<%= produto.getId() %>" class="botao">Editar</a>
+                                <a href="<%= request.getContextPath()%>/admin/EditarFoto?id=<%= produto.getId() %>" class="botao">Editar</a>
                             </div>
                         </div>
                     </div>

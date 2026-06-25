@@ -27,16 +27,16 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
 
     <div class="plado">
         <div class="menu">
-            <a href="MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
-            <a href="HomepageAdm">Dashboard</a>
-            <a href="ComprasAdm.html">Compras</a>
-            <a href="CadastrosAdm.html">Cadastros</a>
-            <a href="Produto">Itens</a>
-            <a href="ListarCategoria">Categorias</a>
-            <a href="Competicoes">Tabelas</a>
+            <a href="<%= request.getContextPath()%>/admin/MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
+            <a href="<%= request.getContextPath()%>/admin/HomepageAdm">Dashboard</a>
+            <a href="">Compras</a>
+            <a href="">Cadastros</a>
+            <a href="<%= request.getContextPath()%>/admin/Produto">Itens</a>
+            <a href="<%= request.getContextPath()%>/admin/ListarCategoria">Categorias</a>
+            <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a>
             <div id="ativo">
                 <img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="seta direita">
-                <a href="ListarTime">Times</a>
+                <a href="<%= request.getContextPath()%>/admin/ListarTime">Times</a>
             </div>
         </div>
 
@@ -82,7 +82,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                                 <td><%= t.getNacionalidade() %></td>
                                 <td><%= t.getId() %></td>
                                 <td>
-                                    <a href="<%= request.getContextPath() %>/DeletarTime?id=<%= t.getId() %>"
+                                    <a href="<%= request.getContextPath() %>/admin/DeletarTime?id=<%= t.getId() %>"
                                        onclick="return confirm('Deseja realmente remover este time?')">
                                         <button>
                                             <img src="<%= request.getContextPath() %>/imagens/lixeira_preta.svg" alt="deletar">
@@ -138,7 +138,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
 
         function abrirModalTime() {
             document.getElementById('tituloTime').textContent = 'Novo Time';
-            document.getElementById('formTime').action = ctxPath + '/InserirTime';
+            document.getElementById('formTime').action = ctxPath + '/admin/InserirTime';
             document.getElementById('campoTimeId').value = '';
             document.getElementById('campoTimeNome').value = '';
             document.getElementById('campoTimeNacionalidade').value = '';
@@ -147,7 +147,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
 
         function abrirModalEditarTime(id, nome, nacionalidade) {
             document.getElementById('tituloTime').textContent = 'Editar Time';
-            document.getElementById('formTime').action = ctxPath + '/AtualizarTime';
+            document.getElementById('formTime').action = ctxPath + '/admin/AtualizarTime';
             document.getElementById('campoTimeId').value = id;
             document.getElementById('campoTimeNome').value = nome;
             document.getElementById('campoTimeNacionalidade').value = nacionalidade;

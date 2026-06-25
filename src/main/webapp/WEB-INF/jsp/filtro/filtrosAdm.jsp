@@ -27,16 +27,16 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
 
     <div class="plado">
         <div class="menu">
-            <a href="MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
-            <a href="HomepageAdm">Dashboard</a>
-            <a href="ComprasAdm.html">Compras</a>
-            <a href="CadastrosAdm.html">Cadastros</a>
-            <a href="Produto">Itens</a>
-            <a href="ListarCategoria">Categorias</a>
-            <a href="Competicoes">Tabelas</a>
+            <a href="<%= request.getContextPath()%>/admin/MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
+            <a href="<%= request.getContextPath()%>/admin/HomepageAdm">Dashboard</a>
+            <a href="">Compras</a>
+            <a href="">Cadastros</a>
+            <a href="<%= request.getContextPath()%>/admin/Produto">Itens</a>
+            <a href="<%= request.getContextPath()%>/admin/ListarCategoria">Categorias</a>
+            <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a>
             <div id="ativo">
                 <img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="seta direita">
-                <a href="ListarFiltro">Filtros</a>
+                <a href="<%= request.getContextPath()%>/admin/ListarFiltro">Filtros</a>
             </div>
         </div>
 
@@ -82,7 +82,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                                 <td><%= t.getId() %></td>
                                 <td><%= t.getChecked() %></td>
                                 <td>
-                                    <a href="<%= request.getContextPath() %>/DeletarFiltro?id=<%= t.getId() %>"
+                                    <a href="<%= request.getContextPath() %>/admin/DeletarFiltro?id=<%= t.getId() %>"
                                        onclick="return confirm('Deseja realmente remover este filtro?')">
                                         <button>
                                             <img src="<%= request.getContextPath() %>/imagens/lixeira_preta.svg" alt="deletar">
@@ -138,7 +138,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
 
         function abrirModalFiltro() {
             document.getElementById('tituloFiltro').textContent = 'Novo Filtro';
-            document.getElementById('formFiltro').action = ctxPath + '/InserirFiltro';
+            document.getElementById('formFiltro').action = ctxPath + '/admin/InserirFiltro';
             document.getElementById('campoFiltroId').value = '';
             document.getElementById('campoFiltroNome').value = '';
             document.getElementById('campoFiltroChecked').value = '';
@@ -147,7 +147,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
 
         function abrirModalEditarFiltro(id, nome, checked) {
             document.getElementById('tituloFiltro').textContent = 'Editar Filtro';
-            document.getElementById('formFiltro').action = ctxPath + '/AtualizarFiltro';
+            document.getElementById('formFiltro').action = ctxPath + '/admin/AtualizarFiltro';
             document.getElementById('campoFiltroId').value = id;
             document.getElementById('campoFiltroNome').value = nome;
             document.getElementById('campoFiltroChecked').value = checked;

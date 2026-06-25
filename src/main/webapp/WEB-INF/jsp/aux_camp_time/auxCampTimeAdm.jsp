@@ -29,17 +29,17 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
 
     <div class="plado">
         <div class="menu">
-            <a href="MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
-            <a href="HomepageAdm">Dashboard</a>
-            <a href="ComprasAdm.html">Compras</a>
-            <a href="CadastrosAdm.html">Cadastros</a>
-            <a href="Produto">Itens</a>
-            <a href="ListarCategoria">Categorias</a>
-            <a href="Competicoes">Tabelas</a>
-            <a href="ListarCampeonato">Campeonatos</a>
+            <a href="<%= request.getContextPath()%>/admin/MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
+            <a href="<%= request.getContextPath()%>/admin/HomepageAdm">Dashboard</a>
+            <a href="">Compras</a>
+            <a href="">Cadastros</a>
+            <a href="<%= request.getContextPath()%>/admin/Produto">Itens</a>
+            <a href="<%= request.getContextPath()%>/admin/ListarCategoria">Categorias</a>
+            <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a>
+            <a href="<%= request.getContextPath()%>/admin/ListarCampeonato">Campeonatos</a>
             <div id="ativo">
                 <img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="seta direita">
-                <a href="ListarAuxCampTime">Times por Campeonato</a>
+                <a href="<%= request.getContextPath()%>/admin/ListarAuxCampTime">Times por Campeonato</a>
             </div>
         </div>
 
@@ -102,7 +102,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                                 <td><%= nomeTime %></td>
                                 <td><%= v.getAno() %></td>
                                 <td>
-                                    <a href="<%= request.getContextPath() %>/DeletarAuxCampTime?id_campeonato=<%= v.getIdCampeonato() %>&id_time=<%= v.getIdTime() %>"
+                                    <a href="<%= request.getContextPath() %>/admin/DeletarAuxCampTime?id_campeonato=<%= v.getIdCampeonato() %>&id_time=<%= v.getIdTime() %>"
                                        onclick="return confirm('Deseja realmente remover este v\u00ednculo?')">
                                         <button>
                                             <img src="<%= request.getContextPath() %>/imagens/lixeira_preta.svg" alt="deletar">
@@ -179,7 +179,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
 
         function abrirModalInserir() {
             document.getElementById('modalTitulo').textContent = 'Vincular Time a Campeonato';
-            document.getElementById('modalForm').action = ctxPath + '/InserirAuxCampTime';
+            document.getElementById('modalForm').action = ctxPath + '/admin/InserirAuxCampTime';
             document.getElementById('campoCampeonato').value = '';
             document.getElementById('campoTime').value = '';
             document.getElementById('campoAno').value = '';
@@ -190,7 +190,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
 
         function abrirModalEditar(idCampeonato, idTime, ano) {
             document.getElementById('modalTitulo').textContent = 'Editar V\u00ednculo';
-            document.getElementById('modalForm').action = ctxPath + '/AtualizarAuxCampTime';
+            document.getElementById('modalForm').action = ctxPath + '/admin/AtualizarAuxCampTime';
             document.getElementById('campoCampeonato').value = idCampeonato;
             document.getElementById('campoTime').value = idTime;
             document.getElementById('campoAno').value = ano;

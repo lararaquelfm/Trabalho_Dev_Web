@@ -25,15 +25,15 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
 
     <div class="plado">
         <div class="menu">
-            <a href="MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
-            <a href="HomepageAdm">Dashboard</a>
-            <a href="ComprasAdm.html">Compras</a>
-            <a href="CadastrosAdm.html">Cadastros</a>
-            <a href="Produto">Itens</a>
-            <a href="ListarCategoria">Categorias</a>
+            <a href="<%= request.getContextPath()%>/admin/MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
+            <a href="<%= request.getContextPath()%>/admin/HomepageAdm">Dashboard</a>
+            <a href="">Compras</a>
+            <a href="">Cadastros</a>
+            <a href="<%= request.getContextPath()%>/admin/Produto">Itens</a>
+            <a href="<%= request.getContextPath()%>/admin/ListarCategoria">Categorias</a>
             <div id="ativo">
                 <img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="seta direita">
-                <a href="Competicoes">Tabelas</a>
+                <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a>
             </div>
         </div>
 
@@ -44,10 +44,10 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                 </div>
 
                 <div class="cards">
-                    <a class="card" href="ListarTime">Times</a>
-                    <a class="card" href="ListarCampeonato">Campeonatos</a>
-                    <a class="card" href="ListarFiltro">Filtros</a>
-                    <a class="card" href="ListarAtributos">Atributos</a>
+                    <a class="card" href="<%= request.getContextPath()%>/admin/ListarTime">Times</a>
+                    <a class="card" href="<%= request.getContextPath()%>/admin/ListarCampeonato">Campeonatos</a>
+                    <a class="card" href="<%= request.getContextPath()%>/admin/ListarFiltro">Filtros</a>
+                    <a class="card" href="<%= request.getContextPath()%>/admin/ListarAtributos">Atributos</a>
                 </div>
             </div>
         </div>

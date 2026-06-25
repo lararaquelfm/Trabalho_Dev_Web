@@ -29,11 +29,11 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("usuario", usuario);
             RequestDispatcher requestDispatcher;
             if(usuario.isAdministrador()){
-                requestDispatcher = request.getRequestDispatcher("/HomepageAdm");
+                requestDispatcher = request.getRequestDispatcher("/admin/HomepageAdm");
             }else{
                 List<Produto> produtos = new ProdutoDAO().obterEstoque();
                 request.setAttribute("produtos", produtos);
-                requestDispatcher = request.getRequestDispatcher("/Homepage");
+                requestDispatcher = request.getRequestDispatcher("/secure/Homepage");
             }
             requestDispatcher.forward(request, response);
         } else {

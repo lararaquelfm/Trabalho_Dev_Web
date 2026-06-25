@@ -10,7 +10,7 @@ Usuario usuarioBean = (Usuario) request.getAttribute("usuario");
         </div>
         <div class="botoes">
             <div class="botoes">
-    <a href="Homepage">
+    <a href="<%= request.getContextPath()%>/secure/Homepage">
         <img id="home" src="imagens/home.svg" style="width: 100%; height: auto" alt="ft de favorito">
     </a>
             </div>
@@ -28,12 +28,12 @@ Usuario usuarioBean = (Usuario) request.getAttribute("usuario");
     <div id="Menu" class="menulateral">
             <div class="itens_menu_lateral">
                 <a ><img src="${pageContext.request.contextPath}/imagens/arrowright.svg" alt="">Meus pedidos</a>
-                <a href="MyProfile?id=<%= usuario.getId() %>"><img src="${pageContext.request.contextPath}/imagens/arrowright.svg" alt="">Meus dados</a>
+                <a href="<%= request.getContextPath()%>/secure/MyProfile?id=<%= usuario.getId() %>"><img src="${pageContext.request.contextPath}/imagens/arrowright.svg" alt="">Meus dados</a>
                 <div class="sair">
                     <a href="Logout" style="padding-top: 35px; padding-bottom: 20px;"><img src="${pageContext.request.contextPath}/imagens/logout.svg" alt="">Sair</a> 
                 </div>
                 <div class="deletar">
-                    <a href="DeletarUsuario?id=<%= usuario.getId() %>"><img src="${pageContext.request.contextPath}/imagens/delete.svg" alt="">Deletar perfil</a>
+                    <a href="<%= request.getContextPath()%>/secure/DeletarUsuario?id=<%= usuario.getId() %>"><img src="${pageContext.request.contextPath}/imagens/delete.svg" alt="">Deletar perfil</a>
                 </div>
             </div>
     
@@ -50,7 +50,7 @@ Usuario usuarioBean = (Usuario) request.getAttribute("usuario");
         <% }%>
         <h1>Meu perfil</h1>
         <p>Acesse ou altere seus dados</p>
-        <form action="AtualizarUsuario" method="post">
+        <form action="<%= request.getContextPath()%>/secure/AtualizarUsuario" method="post">
             <input type="hidden" name="id" value="<%= usuarioBean.getId() %>" />
             <section class="card">
             <div class="grade">

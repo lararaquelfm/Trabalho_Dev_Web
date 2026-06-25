@@ -27,16 +27,16 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
 
     <div class="plado">
         <div class="menu">
-            <a href="MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
-            <a href="HomepageAdm">Dashboard</a>
-            <a href="ComprasAdm.html">Compras</a>
-            <a href="CadastrosAdm.html">Cadastros</a>
-            <a href="Produto">Itens</a>
-            <a href="ListarCategoria">Categorias</a>
-            <a href="Competicoes">Tabelas</a>
+            <a href="<%= request.getContextPath()%>/admin/MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
+            <a href="<%= request.getContextPath()%>/admin/HomepageAdm">Dashboard</a>
+            <a href="">Compras</a>
+            <a href="">Cadastros</a>
+            <a href="<%= request.getContextPath()%>/admin/Produto">Itens</a>
+            <a href="<%= request.getContextPath()%>/admin/ListarCategoria">Categorias</a>
+            <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a>
             <div id="ativo">
                 <img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="seta direita">
-                <a href="ListarCampeonato">Campeonatos</a>
+                <a href="<%= request.getContextPath()%>/admin/ListarCampeonato">Campeonatos</a>
             </div>
         </div>
 
@@ -52,7 +52,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                         <img src="<%= request.getContextPath() %>/imagens/mais.svg" alt="mais">
                         <strong>Novo campeonato</strong>
                     </button>
-                    <a class="btn-verde" href="<%= request.getContextPath() %>/ListarAuxCampTime">
+                    <a class="btn-verde" href="<%= request.getContextPath() %>/admin/ListarAuxCampTime">
                         <img src="<%= request.getContextPath() %>/imagens/mais.svg" alt="mais">
                         <strong>Adicionar time</strong>
                     </a>
@@ -87,7 +87,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                                 <td><%= c.getNome() %></td>
                                 <td><%= c.getId() %></td>
                                 <td>
-                                    <a href="<%= request.getContextPath() %>/DeletarCampeonato?id=<%= c.getId() %>"
+                                    <a href="<%= request.getContextPath() %>/admin/DeletarCampeonato?id=<%= c.getId() %>"
                                        onclick="return confirm('Deseja realmente remover este campeonato?')">
                                         <button>
                                             <img src="<%= request.getContextPath() %>/imagens/lixeira_preta.svg" alt="deletar">
@@ -133,14 +133,14 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
 
         function abrirModalCampeonato() {
             document.getElementById('tituloCampeonato').textContent = 'Novo Campeonato';
-            document.getElementById('formCampeonato').action = ctxPath + '/InserirCampeonato';
+            document.getElementById('formCampeonato').action = ctxPath + '/admin/InserirCampeonato';
             document.getElementById('campoCampId').value = '';
             document.getElementById('campoCampNome').value = '';
             document.getElementById('modalCampeonato').classList.add('aberto');
         }
         function abrirModalEditarCampeonato(id, nome) {
             document.getElementById('tituloCampeonato').textContent = 'Editar Campeonato';
-            document.getElementById('formCampeonato').action = ctxPath + '/AtualizarCampeonato';
+            document.getElementById('formCampeonato').action = ctxPath + '/admin/AtualizarCampeonato';
             document.getElementById('campoCampId').value = id;
             document.getElementById('campoCampNome').value = nome;
             document.getElementById('modalCampeonato').classList.add('aberto');

@@ -27,16 +27,16 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
 
     <div class="plado">
         <div class="menu">
-            <a href="MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
-            <a href="HomepageAdm">Dashboard</a>
-            <a href="ComprasAdm.html">Compras</a>
-            <a href="CadastrosAdm.html">Cadastros</a>
-            <a href="Produto">Itens</a>
-            <a href="ListarCategoria">Categorias</a>
-            <a href="Competicoes">Tabelas</a>
+            <a href="<%= request.getContextPath()%>/admin/MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
+            <a href="<%= request.getContextPath()%>/admin/HomepageAdm">Dashboard</a>
+            <a href="">Compras</a>
+            <a href="">Cadastros</a>
+            <a href="<%= request.getContextPath()%>/admin/Produto">Itens</a>
+            <a href="<%= request.getContextPath()%>/admin/ListarCategoria">Categorias</a>
+            <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a>
             <div id="ativo">
                 <img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="seta direita">
-                <a href="ListarAtributos">Atributos</a>
+                <a href="<%= request.getContextPath()%>/admin/ListarAtributos">Atributos</a>
             </div>
         </div>
 
@@ -82,7 +82,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                                 <td><%= t.getTabela() %></td>
                                 <td><%= t.getId() %></td>
                                 <td>
-                                    <a href="<%= request.getContextPath() %>/DeletarAtributo?id=<%= t.getId() %>"
+                                    <a href="<%= request.getContextPath() %>/admin/DeletarAtributo?id=<%= t.getId() %>"
                                        onclick="return confirm('Deseja realmente remover este atributo?')">
                                         <button>
                                             <img src="<%= request.getContextPath() %>/imagens/lixeira_preta.svg" alt="deletar">
@@ -138,7 +138,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
 
         function abrirModalAtributo() {
             document.getElementById('tituloAtributo').textContent = 'Novo Atributo';
-            document.getElementById('formAtributo').action = ctxPath + '/InserirAtributo';
+            document.getElementById('formAtributo').action = ctxPath + '/admin/InserirAtributo';
             document.getElementById('campoAtributoId').value = '';
             document.getElementById('campoAtributoAtributo').value = '';
             document.getElementById('campoAtributoTabela').value = '';
@@ -147,7 +147,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
 
         function abrirModalEditarAtributo(id, atributo, tabela) {
             document.getElementById('tituloAtributo').textContent = 'Editar Atributo';
-            document.getElementById('formAtributo').action = ctxPath + '/AtualizarAtributo';
+            document.getElementById('formAtributo').action = ctxPath + '/admin/AtualizarAtributo';
             document.getElementById('campoAtributoId').value = id;
             document.getElementById('campoAtributoAtributo').value = atributo;
             document.getElementById('campoAtributoTabela').value = tabela;

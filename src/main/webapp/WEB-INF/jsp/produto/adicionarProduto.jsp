@@ -19,28 +19,28 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
 </head>
 <body>
      <div class="pcima">
-        <img id="profile" src="imagens/profile.svg" style="width: 3%; height: auto" alt="ft de perfil">
+        <img id="profile" src="${pageContext.request.contextPath}/imagens/profile.svg" style="width: 3%; height: auto" alt="ft de perfil">
         <h1>Administrador</h1>
     </div>
     <div class="plado">
         <div class="menu" style="width:15%;">
-            <a href="MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
-            <a href="HomepageAdm">Dashboard</a>
-            <a href="ComprasAdm.html">Compras</a>
-            <a href="CadastrosAdm.html">Cadastros</a>
+            <a href="<%= request.getContextPath()%>/admin/MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
+            <a href="<%= request.getContextPath()%>/admin/HomepageAdm">Dashboard</a>
+            <a href="">Compras</a>
+            <a href="">Cadastros</a>
             <div id="ativo">
-                <img src="imagens/arrowright.svg" alt="seta direita">
-                <a href="ItensAdm.html">Itens</a>
+                <img src="${pageContext.request.contextPath}/imagens/arrowright.svg" alt="seta direita">
+                <a href="<%= request.getContextPath()%>/admin/ItensAdm.html">Itens</a>
             </div>
-            <a href="ListarCategoria">Categorias</a>
-            <a href="Competicoes">Tabelas</a>
+            <a href="<%= request.getContextPath()%>/admin/ListarCategoria">Categorias</a>
+            <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a>
         </div>
         <div id="conteudo" style="width: 85%">
             <div id="pag">
                 <div id="cabecalho">
                     <h1>Adicionar Item</h1>
                 </div>
-                <form action="InserirProdutoBD" method="post">
+                <form action="<%= request.getContextPath()%>/admin/InserirProdutoBD" method="post">
                     <section class="card">
                     <div class="grade">
                         <div class="col">

@@ -25,16 +25,16 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
     </div>
     <div class="plado">
         <div class="menu">
-            <a href="MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
-            <a href="HomepageAdm">Dashboard</a>
-            <a href="ComprasAdm.html">Compras</a>
-            <a href="CadastrosAdm.html">Cadastros</a>
-            <a href="Produto">Itens</a>
+            <a href="<%= request.getContextPath()%>/admin/MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
+            <a href="<%= request.getContextPath()%>/admin/HomepageAdm">Dashboard</a>
+            <a href="">Compras</a>
+            <a href="">Cadastros</a>
+            <a href="<%= request.getContextPath()%>/admin/Produto">Itens</a>
             <div id="ativo">
                 <img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="seta direita">
-                <a href="Categorias">Categorias</a>
+                <a href="<%= request.getContextPath()%>/admin/Categorias">Categorias</a>
             </div>
-            <a href="Competicoes">Tabelas</a>
+            <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a>
         </div>
 
         <div class="conteudo" style="flex: 1; min-width: 0;">
@@ -81,7 +81,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                                 <td><%= c.getTemporada() %></td>
                                 <td><%= c.getEstilo() %></td>
                                 <td>
-                                    <a href="<%= request.getContextPath() %>/DeletarCategoria?id=<%= c.getId() %>"
+                                    <a href="<%= request.getContextPath() %>/admin/DeletarCategoria?id=<%= c.getId() %>"
                                        onclick="return confirm('Deseja realmente remover esta categoria?')">
                                         <button>
                                             <img src="<%= request.getContextPath() %>/imagens/lixeira_preta.svg" alt="deletar">
@@ -140,7 +140,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
 
         function abrirModalInserir() {
             document.getElementById('modalTitulo').textContent = 'Nova Categoria';
-            document.getElementById('modalForm').action = ctxPath + '/InserirCategoria';
+            document.getElementById('modalForm').action = ctxPath + '/admin/InserirCategoria';
             document.getElementById('campoId').value = '';
             document.getElementById('campoNome').value = '';
             document.getElementById('campoTemporada').value = '';
@@ -150,7 +150,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
 
         function abrirModalEditar(id, nome, temporada, estilo) {
             document.getElementById('modalTitulo').textContent = 'Editar Categoria';
-            document.getElementById('modalForm').action = ctxPath + '/AtualizarCategoria';
+            document.getElementById('modalForm').action = ctxPath + '/admin/AtualizarCategoria';
             document.getElementById('campoId').value = id;
             document.getElementById('campoNome').value = nome;
             document.getElementById('campoTemporada').value = temporada;

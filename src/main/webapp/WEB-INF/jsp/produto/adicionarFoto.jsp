@@ -29,23 +29,23 @@
     </div>
     <div class="plado">
         <div class="menu" style="width:15%;">
-            <a href="MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
-            <a href="HomepageAdm">Dashboard</a>
-            <a href="ComprasAdm.html">Compras</a>
-            <a href="CadastrosAdm.html">Cadastros</a>
+            <a href="<%= request.getContextPath()%>/admin/MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
+            <a href="<%= request.getContextPath()%>/admin/HomepageAdm">Dashboard</a>
+            <a href="">Compras</a>
+            <a href="">Cadastros</a>
             <div id="ativo">
                 <img src="imagens/arrowright.svg" alt="seta direita">
-                <a href="Produto">Itens</a>
+                <a href="<%= request.getContextPath()%>/admin/Produto">Itens</a>
             </div>
-            <a href="ListarCategoria">Categorias</a>
-            <a href="Competicoes">Tabelas</a>
+            <a href="<%= request.getContextPath()%>/admin/ListarCategoria">Categorias</a>
+            <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a>
         </div>
         <div id="conteudo" style="width: 85%">
             <div id="pag">
                 <div id="cabecalho">
                     <h1>Adicionar Foto</h1>
                 </div>
-                <form action="AdicionarFotoBD?id=<%= produto.getId() %>" method="post" enctype="multipart/form-data">
+                <form action="<%= request.getContextPath()%>/admin/AdicionarFotoBD?id=<%= produto.getId() %>" method="post" enctype="multipart/form-data">
                     <section class="card">
                     <div class="grade2">
                         <div class="col">

@@ -22,14 +22,14 @@ Usuario usuario = (Usuario) request.getAttribute("usuario");
         <div class="menu" style="width:15%;">
             <div id="ativo">
                 <img src="${pageContext.request.contextPath}/imagens/arrowright.svg" alt="seta direita">
-                <a href="MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
+                <a href="<%= request.getContextPath()%>/admin/MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
             </div>
-            <a href="HomepageAdm">Dashboard</a>
-            <a href="ComprasAdm.html">Compras</a>
-            <a href="CadastrosAdm.html">Cadastros</a>
-            <a href="Produto">Itens</a>
-            <a href="ListarCategoria">Categorias</a>
-            <a href="Competicoes">Tabelas</a>       
+            <a href="<%= request.getContextPath()%>/admin/HomepageAdm">Dashboard</a>
+            <a href="">Compras</a>
+            <a href="">Cadastros</a>
+            <a href="<%= request.getContextPath()%>/admin/Produto">Itens</a>
+            <a href="<%= request.getContextPath()%>/admin/ListarCategoria">Categorias</a>
+            <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a>       
         </div>
         <div class="conteudo" style="width: 85%">
             <div id="pag">
@@ -52,7 +52,7 @@ Usuario usuario = (Usuario) request.getAttribute("usuario");
                     <% }%>
                     <h1>Dados do administrador</h1>
                     <p>Acesse, altere ou exclua seus dados</p>
-                    <form action="AtualizarUsuario" method="post">
+                    <form action="<%= request.getContextPath()%>/secure/AtualizarUsuario" method="post">
                         <input type="hidden" name="id" value="<%= usuario.getId() %>" />
                         <section class="card">
                             <div class="grade">
@@ -84,7 +84,7 @@ Usuario usuario = (Usuario) request.getAttribute("usuario");
                             
                             <div style="display: flex; gap: 25px;">
                                 <input type="submit" class="botao-alterar" value="Alterar Dados" />
-                                <a href="DeletarUsuario?id=<%= usuario.getId() %>" class="botao-deletar"><img src="${pageContext.request.contextPath}/imagens/delete.svg" alt="">Deletar perfil</a>
+                                <a href="<%= request.getContextPath()%>/secure/DeletarUsuario?id=<%= usuario.getId() %>" class="botao-deletar"><img src="${pageContext.request.contextPath}/imagens/delete.svg" alt="">Deletar perfil</a>
                             </div>
                         </section>
                     </form> 

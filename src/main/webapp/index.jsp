@@ -40,8 +40,8 @@
                 <%
                 }
                 %>
-                    <p><%= c.getDescricao()%></p>
-                    <h1>R$: <%= c.getPreco()%></h1>
+                <p style=" padding: 2px; white-space: nowrap; overflow: auto; text-overflow: ellipsis;"><%= c.getDescricao()%></p>
+                <h1>R$: <%= String.format("%.2f", c.getPreco())%></h1>
                     <button>
                         Adicionar ao carrinho
                         <img src="${pageContext.request.contextPath}/imagens/carrinho.svg" alt="ft de carrinho">
