@@ -24,7 +24,7 @@
 </head>
 <body>
      <div class="pcima">
-        <img id="profile" src="imagens/profile.svg" style="width: 3%; height: auto" alt="ft de perfil">
+        <img id="profile" src="<%= request.getContextPath()%>/imagens/profile.svg" style="width: 3%; height: auto" alt="ft de perfil">
         <h1>Administrador: <%= usuario.getNome() %></h1>
     </div>
     <div class="plado">
@@ -34,7 +34,7 @@
             <a href="">Compras</a>
             <a href="">Cadastros</a>
             <div id="ativo">
-                <img src="imagens/arrowright.svg" alt="seta direita">
+                <img src="<%= request.getContextPath()%>/imagens/arrowright.svg" alt="seta direita">
                 <a href="<%= request.getContextPath()%>/admin/Produto">Itens</a>
             </div>
             <a href="<%= request.getContextPath()%>/admin/ListarCategoria">Categorias</a>

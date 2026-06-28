@@ -21,7 +21,7 @@
         <div class="linhavertical"></div>
         <span class="bemvindo">Bem-vindo(a), <%= usuario.getNome() %>!</span>
         <div class="pesquisa">
-            <a href="PaginaPesquisa.html">
+            <a href="<%= request.getContextPath()%>/secure/PaginaPesquisa">
                 <img src="${pageContext.request.contextPath}/imagens/search.svg" style="width: 100%; height: auto" alt="lupa de pesquisa">
                 <input type="text" class="desativar" style="width: 100%; height: 100%;">  
             </a>

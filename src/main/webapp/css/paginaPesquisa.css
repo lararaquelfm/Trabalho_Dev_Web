@@ -1,0 +1,182 @@
+    #PesquisaFiltro{
+        display: flex;
+        padding: 10px;
+        .filtragens{
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+        .cat{
+            padding-bottom: 10px;
+        }
+        h2{
+            font-size: 120%;
+            margin-bottom: 0;
+            padding-left: 20px;
+            padding-bottom: 5px;
+        }
+        .lista{
+            width: 91%;
+            font-size: 125%;
+            max-height: 160px;
+            overflow-y: auto;
+            padding-left: 20px;
+            padding-top: 0;
+            padding-bottom: 10px;
+            input[type="checkbox"] {
+                accent-color: blue;
+                cursor: pointer;
+                width: 20px;
+                height: 20px;
+            }
+            
+            .opcao{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                padding-bottom: 5px;
+            } 
+
+        }
+
+        .nrol{
+            overflow-y: hidden;
+        }
+
+        .camisasFiltros{
+            padding-left: 100px;
+            h2{
+                margin-left: 27px;
+                margin-top: 0;
+                font-size: 200%;
+            }
+            .bloco{
+                display: flex;
+                gap: 1vw;
+                position: relative;
+                padding: 1vw;
+                flex-wrap: wrap;
+                
+            }
+            .camisa{
+                cursor: pointer;
+                background-color: white;
+                width: calc(18% + 8px); 
+                color: black;
+                border: 0.1em solid black;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                border-radius: 15px;
+                padding: 0.1%;
+                p, h1{
+                    text-align: center;
+                }
+                p{
+                    font-size: 1.5em;
+                }
+                h1{
+                    font-size: 2em;
+                    margin-top: -7%;
+                }
+                button, img{
+                    margin: 0 auto;
+                    display: block;
+                }
+                button{
+                    border-color: blue;
+                    border-radius: 10px;
+                    background-color: blue;
+                    color: white;
+                    width: 80%;
+                    height: 5vh;
+                    margin-top: -5%;
+                    margin-bottom: 7%;
+                    font-size: 1em;
+                    cursor: pointer;
+                    img{
+                        margin-left: 5%;
+                        top: 0.15em;
+                        width: 1em;
+                        position: relative;
+                        display: inline;
+                    }
+                }
+            }
+        }
+    }
+
+    #PesquisaFiltro .lista input[type="checkbox"] + label{
+        cursor: pointer;
+    }
+
+    #PesquisaFiltro .lista label:hover{
+        font-weight: 600;
+        color: #170b9b; 
+    }
+
+    #PesquisaFiltro .lista input:checked + label {
+        font-weight: 600;
+        color: #170b9b;;
+    }
+    
+    .itens-img {
+                width: 100px;
+                flex-shrink: 0; 
+                height: 100px;
+
+    }
+    .menulateral{
+        font-size: 115%;
+        top: 5.3%;
+        left: 0;
+        height: 210px;    
+        border-radius: 5px;
+        padding-top: 5px;
+        width: 0;      
+        position: absolute;      
+        overflow: hidden;     
+        transition: 0.3s;      
+        background-color: #170b9b;
+        z-index: 1000;
+        .itens_menu_lateral{
+            color: white;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            padding-left: 20px;
+            a{
+                display: flex;       
+                align-items: center;
+                text-decoration: none; 
+                color: inherit;        
+                outline: none;        
+                border: none;
+            }
+        }
+    }
+    .menulateral.active{
+        width: 250px;
+    }
+    
+    .menulateral a:hover{
+        font-weight: 700;
+        color: #FFFF; 
+    }
+    
+    .deletar{
+        width: 70%;
+        margin-left: 20px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #FFFF;
+        border-radius: 8px;
+        border-color: #FFFF;
+    }
+
+    .deletar:hover{
+        background-color: #FFFF;
+        a{
+            color: #170b9b;
+        }
+    }

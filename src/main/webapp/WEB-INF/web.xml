@@ -209,6 +209,34 @@
         <servlet-name>IrLoginServlet</servlet-name>
         <servlet-class>controle.usuario.IrLoginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PaginaPesquisaServlet</servlet-name>
+        <servlet-class>controle.produto.PaginaPesquisaServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListrarAuxFiltroAtributoServlet</servlet-name>
+        <servlet-class>controle.aux_filtro_atributo.ListrarAuxFiltroAtributoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListarAuxFiltroAtributoServlet</servlet-name>
+        <servlet-class>controle.aux_filtro_atributo.ListarAuxFiltroAtributoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditarAuxFiltroAtributoServlet</servlet-name>
+        <servlet-class>controle.aux_filtro_atributo.EditarAuxFiltroAtributoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoverAuxFiltroAtributoServlet</servlet-name>
+        <servlet-class>controle.aux_filtro_atributo.RemoverAuxFiltroAtributoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdicionarAuxFiltroAtributoBDServlet</servlet-name>
+        <servlet-class>controle.aux_filtro_atributo.AdicionarAuxFiltroAtributoBDServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdicionarAuxFiltroAtributoServlet</servlet-name>
+        <servlet-class>controle.aux_filtro_atributo.AdicionarAuxFiltroAtributoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -396,6 +424,34 @@
     <servlet-mapping>
         <servlet-name>IrLoginServlet</servlet-name>
         <url-pattern>/IrLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaginaPesquisaServlet</servlet-name>
+        <url-pattern>/secure/PaginaPesquisa</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListrarAuxFiltroAtributoServlet</servlet-name>
+        <url-pattern>/admin/ListrarAuxFiltroAtributo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarAuxFiltroAtributoServlet</servlet-name>
+        <url-pattern>/admin/ListarAuxFiltroAtributo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditarAuxFiltroAtributoServlet</servlet-name>
+        <url-pattern>/admin/EditarAuxFiltroAtributo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoverAuxFiltroAtributoServlet</servlet-name>
+        <url-pattern>/admin/RemoverAuxFiltroAtributo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdicionarAuxFiltroAtributoBDServlet</servlet-name>
+        <url-pattern>/admin/AdicionarAuxFiltroAtributoBD</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdicionarAuxFiltroAtributoServlet</servlet-name>
+        <url-pattern>/admin/AdicionarAuxFiltroAtributo</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>home</welcome-file>

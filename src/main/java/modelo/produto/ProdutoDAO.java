@@ -76,6 +76,43 @@ public class ProdutoDAO {
         }
         return resultado;
     }
+    
+    public List<Produto> obterFiltro(String tabela, String atributo) {
+        List<Produto> resultado = new ArrayList<Produto>();
+        try {
+            connection = Conexao.getConexao();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT \n" +
+                                                        "    MAX(id) AS id,\n" +
+                                                        "    descricao, \n" +
+                                                        "    id_time, \n" +
+                                                        "    id_categoria,\n" +
+                                                        "    MIN(preco) AS preco,\n" +
+                                                        "    STRING_AGG(DISTINCT tamanho, ', ' ORDER BY tamanho) AS tamanho,\n" +
+                                                        "    SUM(quantidade) AS quantidade\n" +
+                                                        "FROM " +  tabela + " \n" +
+                                                        "WHERE quantidade > 0\n" +
+                                                        "AND " + atributo + " \n" +
+                                                        "GROUP BY descricao, id_time, id_categoria;");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Produto produto = new Produto();
+                produto.setId(resultSet.getInt("id"));
+                produto.setDescricao(resultSet.getString("descricao"));
+                produto.setPreco(resultSet.getDouble("preco"));
+                produto.setTamanho(resultSet.getString("tamanho"));
+                produto.setQuantidade(resultSet.getInt("quantidade"));
+                produto.setIdTime(resultSet.getInt("id_time"));
+                produto.setIdCategoria(resultSet.getInt("id_categoria"));
+                resultado.add(produto);
+            }
+            resultSet.close();
+            connection.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return resultado;
+    }
 
     public Produto obter(int id) {
         Produto produto = null;

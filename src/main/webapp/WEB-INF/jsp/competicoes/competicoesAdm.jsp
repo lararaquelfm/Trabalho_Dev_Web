@@ -48,6 +48,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                     <a class="card" href="<%= request.getContextPath()%>/admin/ListarCampeonato">Campeonatos</a>
                     <a class="card" href="<%= request.getContextPath()%>/admin/ListarFiltro">Filtros</a>
                     <a class="card" href="<%= request.getContextPath()%>/admin/ListarAtributos">Atributos</a>
+                    <a class="card" href="<%= request.getContextPath()%>/admin/ListarAuxFiltroAtributo" style="text-align: center;">Relacionar Filtro Atributo</a>
                 </div>
             </div>
         </div>

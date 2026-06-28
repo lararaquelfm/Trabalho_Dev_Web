@@ -1,7 +1,8 @@
+<%@page import="modelo.atributo.AtributoDAO"%>
+<%@page import="modelo.aux_filtro_atributo.AuxFiltroAtributo"%>
+<%@page import="modelo.filtro.Filtro"%>
+<%@page import="modelo.filtro.FiltroDAO"%>
 <%@page import="modelo.usuario.Usuario"%>
-<%@page import="modelo.foto.FotoDAO"%>
-<%@page import="modelo.foto.Foto"%>
-<%@page import="modelo.produto.Produto"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
@@ -24,26 +25,27 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
             <h1>Administrador: <%= usuario.getNome() %></h1>
         </div>
         <div class="plado">
-            <div class="menu" style="width:15%;">
+            <div class="menu">
                 <a href="<%= request.getContextPath()%>/admin/MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
                 <a href="<%= request.getContextPath()%>/admin/HomepageAdm">Dashboard</a>
                 <a href="">Compras</a>
                 <a href="">Cadastros</a>
-                <div id="ativo">
-                    <img src="${pageContext.request.contextPath}/imagens/arrowright.svg" alt="seta direita">
-                    <a href="<%= request.getContextPath()%>/admin/Produto">Itens</a>
-                </div>
+                <a href="<%= request.getContextPath()%>/admin/Produto">Itens</a>
                 <a href="<%= request.getContextPath()%>/admin/ListarCategoria">Categorias</a>
                 <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a>
+                <div id="ativo">
+                    <img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="seta direita">
+                    <a href="<%= request.getContextPath()%>/admin/ListarAuxFiltroAtributo">Relacionar Filtro e Atributo</a>
+                </div>
             </div>
             <div class="conteudo" style="width: 85%">
                 <div id="pag">
                     <h1 
                     style="margin-top: 20px;
                     margin-left: 20px;
-                    font-size: 3.5em;
+                    font-size: 3em;
                     display: inline-block;">
-                        Itens
+                        Relação Filtro Atributo
                     </h1>
                     <% if (request.getAttribute("mensagem") != null) { %>
                     <div class="mensagem" id="aviso" role="alert">
@@ -55,46 +57,26 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                     <% }%>
                     <div id="itens">
                     <%
-                        List<Produto> produtos = (List<Produto>) request.getAttribute("produtos");
-                        if (produtos != null && !produtos.isEmpty()) {
-                            for (int i = 0; i < produtos.size(); i++) {
-                                Produto c = produtos.get(i);
+                        List<AuxFiltroAtributo> auxFiltroAtributos = (List<AuxFiltroAtributo>) request.getAttribute("aux_filtro_atributo");
+                        FiltroDAO filtroDAO = new FiltroDAO();
+                        AtributoDAO atributoDAO = new AtributoDAO();
+                        if (auxFiltroAtributos != null && !auxFiltroAtributos.isEmpty()) {
+                            for (int i = 0; i < auxFiltroAtributos.size(); i++) {
+                                AuxFiltroAtributo a = auxFiltroAtributos.get(i);
                         %>
                         <div class="itens-detalhes">
-                        <% 
-                        List<Foto> fotos = new FotoDAO().obterPeloProduto(c.getId());
-                        if (fotos.isEmpty()){
-                        %>
-                            <img src="${pageContext.request.contextPath}/imagens/Image-not-found.png" class="itens-img" alt="Camiseta">
-                        <%
-                        } else {
-                        %>
-                            <img src="<%= request.getContextPath() %>/MostrarProduto?id=<%= c.getId()%>" class="itens-img" alt="Camiseta">
-                        <%
-                        }
-                        %>
                             <div class="lado-esquerdo">
-                                <h1 style="white-space: nowrap; overflow-x: auto; max-width: 100%; padding-bottom: 8px;"><strong><%= c.getDescricao()%></strong></h1>
-                                <p><strong>Preço: </strong> R$ <%= c.getPreco()%></p>
+                                <h1 style="white-space: nowrap; overflow-x: auto; max-width: 100%; padding-bottom: 8px;"><strong><%= filtroDAO.obter(a.getIdFiltro()).getNome()%></strong></h1>
                                  <div class="tamanhos">
-                                    <p><strong>Tamanho: </strong></p>
+                                    <p><strong>Atributo: </strong></p>
                                     <div class="grupo-tamanho">
-                                        <div><%= c.getTamanho()%></div>
-                                    </div>
-                                </div>
-                                <div class="tamanhos">
-                                    <p><strong>Quantidade: </strong></p>
-                                    <div class="grupo-tamanho">                                    
-                                        <span class="qtd"><%= c.getQuantidade()%></span>   
+                                        <div><%= atributoDAO.obter(a.getIdAtributo()).getAtributo()%></div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="lado-direito">
-                                <a href="<%= request.getContextPath()%>/admin/EditarProduto?id=<%= c.getId()%>" class="botao-editar">
-                                    <img src="${pageContext.request.contextPath}/imagens/edit_icon.png" alt="Editar">
-                                </a>
-                                <a href="<%= request.getContextPath()%>/admin/RemoverProduto?id=<%= c.getId()%>" class="botao-editar">
+                                <a href="<%= request.getContextPath()%>/admin/RemoverAuxFiltroAtributo?filtro=<%= a.getIdFiltro()%>&atributo=<%= a.getIdAtributo()%>" class="botao-editar">
                                     <img src="${pageContext.request.contextPath}/imagens/lixeira_preta.svg" alt="icone para deletar">
                                 </a>
                             </div>
@@ -104,7 +86,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                         %>
                     </div>
                     <div style="display: flex; padding: 20px;">
-                        <a href="AdicionarProduto" style="display: flex; align-items: center; justify-content: center; width: 75px; height: 75px; background-color: #170b9b; border-radius: 50%;">
+                        <a href="<%= request.getContextPath()%>/admin/AdicionarAuxFiltroAtributo" style="display: flex; align-items: center; justify-content: center; width: 75px; height: 75px; background-color: #170b9b; border-radius: 50%;">
                             <img src="${pageContext.request.contextPath}/imagens/mais.svg" alt="Adicionar" style="width: 50%; height: auto;">
                         </a>
                     </div>
@@ -113,12 +95,12 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                     %>
                     <div style='display: flex; justify-content: center; width: 100%'>
                         <div style='display: block; justify-content: center;'>
-                            <h1 style='font-size: 3em; white-space: nowrap;'>Ainda não há nenhum produto cadastrado no site</h1>
+                            <h1 style='font-size: 2em; white-space: nowrap;'>Ainda não há nenhum relação de filtro e atributo cadastrado no site</h1>
                             <div style="display: flex; justify-content: center; padding-top: 10px;">
-                                <h1 style='font-size: 1.5em; color: #808080;'>Clique no botão abaixo para adicionar um produto</h1>
+                                <h1 style='font-size: 1.5em; color: #808080;'>Clique no botão abaixo para adicionar uma relação</h1>
                             </div>
-                            <div style="display: flex; justify-content: center; padding: 20px;">
-                                <a href="<%= request.getContextPath()%>/admin/AdicionarProduto" style="display: flex; align-items: center; justify-content: center; width: 75px; height: 75px; background-color: #170b9b; border-radius: 50%;">
+                            <div style="display: flex; padding: 20px; justify-content: center;">
+                                <a href="<%= request.getContextPath()%>/admin/AdicionarAuxFiltroAtributo" style="display: flex; align-items: center; justify-content: center; width: 75px; height: 75px; background-color: #170b9b; border-radius: 50%;">
                                     <img src="${pageContext.request.contextPath}/imagens/mais.svg" alt="Adicionar" style="width: 50%; height: auto;">
                                 </a>
                             </div>
