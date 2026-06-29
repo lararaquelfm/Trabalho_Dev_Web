@@ -12,7 +12,7 @@
                 <img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="seta direita">
                 <a href="HomepageAdm">Dashboard</a>
             </div>
-            <a href="">Compras</a>
+            <a href="<%= request.getContextPath()%>/admin/ListarPorVendas">Compras</a>
             <a href="<%= request.getContextPath()%>/admin/ListarTodosUsuarios">Cadastros</a>
             <a href="<%= request.getContextPath()%>/admin/Produto">Itens</a>
             <a href="<%= request.getContextPath()%>/admin/ListarCategoria">Categorias</a>

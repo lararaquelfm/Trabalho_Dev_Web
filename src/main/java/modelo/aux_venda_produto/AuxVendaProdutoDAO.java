@@ -119,4 +119,58 @@ public class AuxVendaProdutoDAO {
         }
         return sucesso;
     }
+    
+    public List<AuxVendaProduto> obterPorVenda(int id_venda) {
+        List<AuxVendaProduto> resultado = new ArrayList<>();
+
+        try {
+            connection = Conexao.getConexao();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM aux_venda_produto WHERE id_venda = ?");
+            preparedStatement.setInt(1, id_venda);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                AuxVendaProduto aux = new AuxVendaProduto();
+                aux.setIdVenda(resultSet.getInt("id_venda"));
+                aux.setIdProduto(resultSet.getInt("id_produto"));
+                aux.setQuantidade(resultSet.getInt("quantidade"));
+                aux.setPreco(resultSet.getDouble("preco"));
+                resultado.add(aux);
+            }
+
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+
+        return resultado;
+    }
+    
+    public boolean removerPorVenda(int id_venda) {
+        try {
+            connection = Conexao.getConexao();
+
+            PreparedStatement ps = connection.prepareStatement(
+                "DELETE FROM aux_venda_produto WHERE id_venda = ?"
+            );
+
+            ps.setInt(1, id_venda);
+
+            ps.executeUpdate();
+
+            ps.close();
+            connection.close();
+
+            return true;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
+    
 }

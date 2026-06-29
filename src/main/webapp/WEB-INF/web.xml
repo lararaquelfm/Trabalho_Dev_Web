@@ -241,6 +241,14 @@
         <servlet-name>DeletarUsuarioAdmServlet</servlet-name>
         <servlet-class>controle.usuario.DeletarUsuarioAdmServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListarPorVendasServlet</servlet-name>
+        <servlet-class>controle.aux_venda_produto.ListarPorVendasServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeletarAuxVendaProdutoServlet</servlet-name>
+        <servlet-class>controle.aux_venda_produto.DeletarAuxVendaProdutoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -464,6 +472,14 @@
     <servlet-mapping>
         <servlet-name>DeletarUsuarioAdmServlet</servlet-name>
         <url-pattern>/admin/DeletarUsuarioAdm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarPorVendasServlet</servlet-name>
+        <url-pattern>/admin/ListarPorVendas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletarAuxVendaProdutoServlet</servlet-name>
+        <url-pattern>/admin/DeletarAuxVendaProduto</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>home</welcome-file>

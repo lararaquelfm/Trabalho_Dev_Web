@@ -63,7 +63,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                                        onclick="return confirm('Deseja realmente remover este cadastro?')">
                             <button style="border: none; background: transparent; padding: 0; cursor: pointer; padding: 5px; margin-left: 5px">
                                             <img src="<%= request.getContextPath() %>/imagens/lixeira_preta.svg" alt="deletar">
-                                        </button>
+                            </button>
                         </a>
                     </div>
                 </div>
