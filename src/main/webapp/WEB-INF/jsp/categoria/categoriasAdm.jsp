@@ -28,7 +28,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
             <a href="<%= request.getContextPath()%>/admin/MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
             <a href="<%= request.getContextPath()%>/admin/HomepageAdm">Dashboard</a>
             <a href="">Compras</a>
-            <a href="">Cadastros</a>
+            <a href="<%= request.getContextPath()%>/admin/ListarTodosUsuarios">Cadastros</a>
             <a href="<%= request.getContextPath()%>/admin/Produto">Itens</a>
             <div id="ativo">
                 <img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="seta direita">
