@@ -241,6 +241,10 @@
         <servlet-name>DeletarUsuarioAdmServlet</servlet-name>
         <servlet-class>controle.usuario.DeletarUsuarioAdmServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>java</servlet-name>
+        <servlet-class>controle.dashboard.DashboardServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -464,6 +468,10 @@
     <servlet-mapping>
         <servlet-name>DeletarUsuarioAdmServlet</servlet-name>
         <url-pattern>/admin/DeletarUsuarioAdm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>java</servlet-name>
+        <url-pattern>/java</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>home</welcome-file>

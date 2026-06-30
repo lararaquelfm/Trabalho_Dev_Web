@@ -1,5 +1,7 @@
 <%@page import="modelo.usuario.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="modelo.produto.Produto"%>
+<%@page import="java.util.Map"%>
 <%
 if (session.getAttribute("usuario") != null && session.getAttribute("usuario") instanceof Usuario) {
     Usuario usuario = (Usuario) session.getAttribute("usuario"); 
