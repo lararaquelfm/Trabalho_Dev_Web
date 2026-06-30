@@ -29,7 +29,8 @@ Usuario usuario = (Usuario) request.getAttribute("usuario");
             <a href="<%= request.getContextPath()%>/admin/ListarTodosUsuarios">Cadastros</a>
             <a href="<%= request.getContextPath()%>/admin/Produto">Itens</a>
             <a href="<%= request.getContextPath()%>/admin/ListarCategoria">Categorias</a>
-            <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a>       
+            <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a> 
+            <a href="<%= request.getContextPath()%>/admin/ListarRelatorio">Relatorios</a>
         </div>
         <div class="conteudo" style="width: 85%">
             <div id="pag">

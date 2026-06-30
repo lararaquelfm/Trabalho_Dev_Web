@@ -36,6 +36,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                 <img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="seta direita">
                 <a href="<%= request.getContextPath()%>/admin/ListarAuxFiltroAtributo">Relacionar Filtro e Atributo</a>
             </div>
+            <a href="<%= request.getContextPath()%>/admin/ListarRelatorio">Relatorios</a>
         </div>
         <div id="conteudo" style="width: 85%">
             <div id="pag">

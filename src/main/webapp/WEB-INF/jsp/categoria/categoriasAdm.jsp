@@ -35,6 +35,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                 <a href="<%= request.getContextPath()%>/admin/Categorias">Categorias</a>
             </div>
             <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a>
+            <a href="<%= request.getContextPath()%>/admin/ListarRelatorio">Relatorios</a>
         </div>
 
         <div class="conteudo" style="flex: 1; min-width: 0;">

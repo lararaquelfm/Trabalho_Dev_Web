@@ -253,6 +253,18 @@
         <servlet-name>BuscaProdutoServlet</servlet-name>
         <servlet-class>controle.produto.BuscaProdutoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListarRelatorioServlet</servlet-name>
+        <servlet-class>controle.relatorio.ListarRelatorioServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TotalComprasClienteServlet</servlet-name>
+        <servlet-class>controle.relatorio.TotalComprasClienteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RelatorioComprasServlet</servlet-name>
+        <servlet-class>controle.relatorio.RelatorioComprasServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -488,6 +500,18 @@
     <servlet-mapping>
         <servlet-name>BuscaProdutoServlet</servlet-name>
         <url-pattern>/secure/BuscaProdutoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarRelatorioServlet</servlet-name>
+        <url-pattern>/admin/ListarRelatorio</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TotalComprasClienteServlet</servlet-name>
+        <url-pattern>/admin/TotalComprasCliente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioComprasServlet</servlet-name>
+        <url-pattern>/admin/RelatorioCompras</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>home</welcome-file>
