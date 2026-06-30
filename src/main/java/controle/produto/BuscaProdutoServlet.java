@@ -1,0 +1,37 @@
+package controle.produto;
+
+import jakarta.servlet.RequestDispatcher;
+import java.io.IOException;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.util.List;
+import modelo.atributo.Atributo;
+import modelo.atributo.AtributoDAO;
+import modelo.aux_filtro_atributo.AuxFiltroAtributo;
+import modelo.aux_filtro_atributo.AuxFiltroAtributoDAO;
+import modelo.filtro.Filtro;
+import modelo.filtro.FiltroDAO;
+import modelo.produto.Produto;
+import modelo.produto.ProdutoDAO;
+
+public class BuscaProdutoServlet extends HttpServlet {
+
+    @Override
+    protected void service(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String descricao = request.getParameter("descricao");
+        ProdutoDAO produtoDAO = new ProdutoDAO();
+        List<Produto> produtos = produtoDAO.obterPorDescricao(descricao);
+        request.setAttribute("produtos", produtos);
+        List<Filtro> filtros = new FiltroDAO().obterTodos();
+        List<Atributo> atributos = new AtributoDAO().obterTodos();
+        List<AuxFiltroAtributo> auxFiltroAtributos = new AuxFiltroAtributoDAO().obterTodos();
+        request.setAttribute("filtros", filtros);
+        request.setAttribute("atributos", atributos);
+        request.setAttribute("auxFiltroAtributos", auxFiltroAtributos);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/jsp/paginaPesquisa.jsp");
+        requestDispatcher.forward(request, response);
+    }
+}

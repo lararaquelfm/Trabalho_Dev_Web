@@ -1,6 +1,7 @@
 package modelo.produto;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -109,6 +110,48 @@ public class ProdutoDAO {
             connection.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
+            return null;
+        }
+        return resultado;
+    }
+    
+    public List<Produto> obterPorDescricao(String descricao) {
+        if (descricao == null || descricao.trim().length() == 0) {
+            descricao = "%";
+        } else {
+            descricao = "%" + descricao + "%";
+        }
+        List<Produto> resultado = new ArrayList<Produto>();
+        try {
+            connection = Conexao.getConexao();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT \n" +
+                                                        "    MAX(id) AS id,\n" +
+                                                        "    descricao, \n" +
+                                                        "    id_time, \n" +
+                                                        "    id_categoria,\n" +
+                                                        "    MIN(preco) AS preco,\n" +
+                                                        "    STRING_AGG(DISTINCT tamanho, ', ' ORDER BY tamanho) AS tamanho,\n" +
+                                                        "    SUM(quantidade) AS quantidade\n" +
+                                                        "FROM produto \n" +
+                                                        "WHERE UPPER(descricao) LIKE UPPER(?)\n" +
+                                                        "GROUP BY descricao, id_time, id_categoria;");
+            preparedStatement.setString(1, descricao);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Produto produto = new Produto();
+                produto.setId(resultSet.getInt("id"));
+                produto.setDescricao(resultSet.getString("descricao"));
+                produto.setPreco(resultSet.getDouble("preco"));
+                produto.setTamanho(resultSet.getString("tamanho"));
+                produto.setQuantidade(resultSet.getInt("quantidade"));
+                produto.setIdTime(resultSet.getInt("id_time"));
+                produto.setIdCategoria(resultSet.getInt("id_categoria"));
+                resultado.add(produto);
+            }
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException ex) {
             return null;
         }
         return resultado;

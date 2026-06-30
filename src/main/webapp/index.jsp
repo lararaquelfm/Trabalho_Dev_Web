@@ -12,12 +12,7 @@
                 <span>Faça seu login</span>
             </a>
         </div>
-        <div class="pesquisa">
-            <a href="PaginaPesquisa.html">
-                <img src="${pageContext.request.contextPath}/imagens/search.svg" style="width: 100%; height: auto" alt="lupa de pesquisa">
-                <input type="text" class="desativar" style="width: 100%; height: 100%;">  
-            </a>
-        </div>
+        
 </div>
 <img id="background" src="${pageContext.request.contextPath}/imagens/background.png" style="width: 100%; height: auto" alt="background da pagina">
 <div id="camisas">

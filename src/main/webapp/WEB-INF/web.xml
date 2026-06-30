@@ -249,6 +249,10 @@
         <servlet-name>DeletarAuxVendaProdutoServlet</servlet-name>
         <servlet-class>controle.aux_venda_produto.DeletarAuxVendaProdutoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BuscaProdutoServlet</servlet-name>
+        <servlet-class>controle.produto.BuscaProdutoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -480,6 +484,10 @@
     <servlet-mapping>
         <servlet-name>DeletarAuxVendaProdutoServlet</servlet-name>
         <url-pattern>/admin/DeletarAuxVendaProduto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BuscaProdutoServlet</servlet-name>
+        <url-pattern>/secure/BuscaProdutoServlet</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>home</welcome-file>
