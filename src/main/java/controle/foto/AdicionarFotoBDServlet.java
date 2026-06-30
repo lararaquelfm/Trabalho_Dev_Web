@@ -30,7 +30,7 @@ public class AdicionarFotoBDServlet extends HttpServlet {
             List<Foto> fotos = fotoDAO.obterPeloProduto(id);
             int qnt = fotos.size();
             String extensao = foto.getSubmittedFileName().substring(foto.getSubmittedFileName().lastIndexOf("."));
-            String nomeArquivo = String.format("%d|%d%s", qnt+1, id, extensao);
+            String nomeArquivo = String.format("%d_%d%s", qnt+1, id, extensao);
             boolean sucesso = false;
             sucesso = fotoDAO.inserir(Utils.UPLOAD_PATH + File.separator + nomeArquivo, id);
             if (sucesso) {

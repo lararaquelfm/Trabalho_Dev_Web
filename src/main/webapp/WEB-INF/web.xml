@@ -253,6 +253,10 @@
         <servlet-name>BuscaProdutoServlet</servlet-name>
         <servlet-class>controle.produto.BuscaProdutoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>VerProdutoServlet</servlet-name>
+        <servlet-class>controle.produto.VerProdutoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -488,6 +492,10 @@
     <servlet-mapping>
         <servlet-name>BuscaProdutoServlet</servlet-name>
         <url-pattern>/secure/BuscaProdutoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VerProdutoServlet</servlet-name>
+        <url-pattern>/secure/VerProduto</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>home</welcome-file>

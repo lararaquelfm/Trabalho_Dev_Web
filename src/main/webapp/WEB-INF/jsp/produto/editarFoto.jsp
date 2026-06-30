@@ -3,6 +3,7 @@
 <%@page import="modelo.foto.FotoDAO"%>
 <%@page import="modelo.foto.Foto"%>
 <%@page import="java.util.List"%>
+<%@page import="java.io.File"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
 if (session.getAttribute("usuario") != null && session.getAttribute("usuario") instanceof Usuario) {
@@ -57,9 +58,9 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                         FotoDAO fotoDAO = new FotoDAO();
                         int id = Integer.parseInt(request.getParameter("id"));
                         List<Foto> fotos = (List<Foto>) fotoDAO.obterPeloProduto(id);
-                        fotos.sort(Comparator.comparingInt(foto ->{
-                            String nomeArquivo = foto.getFoto().substring(foto.getFoto().lastIndexOf("/") + 1);                            
-                            String[] partes = nomeArquivo.split("\\|");
+                        fotos.sort(Comparator.comparingInt(foto -> {
+                            String nomeArquivo = new File(foto.getFoto()).getName();
+                            String[] partes = nomeArquivo.split("_");
                             return Integer.parseInt(partes[0].trim());
                         }));
                         if (fotos != null && !fotos.isEmpty()) {

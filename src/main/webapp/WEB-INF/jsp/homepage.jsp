@@ -51,6 +51,7 @@
                 Produto c = produtos.get(i);
     %>
                 <div class="camisa">
+                <a href="<%= request.getContextPath() %>/secure/VerProduto?id=<%= c.getId() %>" style="text-decoration:none; color:inherit;">
                 <% 
                 List<Foto> fotos = new FotoDAO().obterPeloProduto(c.getId());
                 if (fotos.isEmpty()){
@@ -65,6 +66,7 @@
                 %>
                     <p style=" padding: 2px; white-space: nowrap; overflow: auto; text-overflow: ellipsis;"><%= c.getDescricao()%></p>
                     <h1>R$: <%= String.format("%.2f", c.getPreco())%></h1>
+                </a>
                     <button>
                         Adicionar ao carrinho
                         <img src="${pageContext.request.contextPath}/imagens/carrinho.svg" alt="ft de carrinho">

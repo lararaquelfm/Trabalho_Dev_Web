@@ -244,4 +244,40 @@ public class ProdutoDAO {
         }
         return sucesso;
     }
+    
+    
+    public List<Produto> obterVariacoes(String descricao, int idTime, int idCategoria) {
+    List<Produto> resultado = new ArrayList<Produto>();
+    try {
+        connection = Conexao.getConexao();
+        PreparedStatement preparedStatement = connection.prepareStatement(
+            "SELECT id, descricao, preco, tamanho, quantidade, id_time, id_categoria " +
+            "FROM produto " +
+            "WHERE descricao = ? AND id_time = ? AND id_categoria = ? " +
+            "ORDER BY tamanho;"
+        );
+        preparedStatement.setString(1, descricao);
+        preparedStatement.setInt(2, idTime);
+        preparedStatement.setInt(3, idCategoria);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while (resultSet.next()) {
+            Produto produto = new Produto();
+            produto.setId(resultSet.getInt("id"));
+            produto.setDescricao(resultSet.getString("descricao"));
+            produto.setPreco(resultSet.getDouble("preco"));
+            produto.setTamanho(resultSet.getString("tamanho"));
+            produto.setQuantidade(resultSet.getInt("quantidade"));
+            produto.setIdTime(resultSet.getInt("id_time"));
+            produto.setIdCategoria(resultSet.getInt("id_categoria"));
+            resultado.add(produto);
+        }
+        resultSet.close();
+        preparedStatement.close();
+        connection.close();
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+        return null;
+    }
+    return resultado;
+}
 }

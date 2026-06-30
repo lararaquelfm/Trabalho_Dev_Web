@@ -76,7 +76,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
         List<AuxFiltroAtributo> auxFiltroAtributos = (List<AuxFiltroAtributo>) request.getAttribute("auxFiltroAtributos");
         Set<String> tabelasUnicas = new LinkedHashSet<>();
         for (var filtro : filtros) {
-            String[] dados = filtro.getNome().split("\\|");
+            String[] dados = filtro.getNome().split("_");
             tabelasUnicas.add(dados[0]);
         }
         List<String> tabelas = new ArrayList<>(tabelasUnicas);
@@ -88,7 +88,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                 <div class="lista">
                     <%
                     for (var filtro : filtros){
-                        if (filtro.getNome().split("\\|")[0].equals(tabelas.get(i))){
+                        if (filtro.getNome().split("_")[0].equals(tabelas.get(i))){
                             boolean checked = filtroAtivo != null && filtroAtivo.equals(String.valueOf(filtro.getId()));
                             AuxFiltroAtributoDAO auxFiltroAtributoDAO = new AuxFiltroAtributoDAO();
                             AuxFiltroAtributo auxFiltroAtributo = auxFiltroAtributoDAO.obterFiltro(filtro.getId());
@@ -100,7 +100,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                                        class="filtro-check"
                                        <%= checked ? "checked" : "" %>
                                        >
-                                <label for="filtro_<%= filtro.getId() %>"><%= filtro.getNome().split("\\|")[1] %></label>
+                                <label for="filtro_<%= filtro.getId() %>"><%= filtro.getNome().split("_")[1] %></label>
                             </div>
                     <%
                         }
