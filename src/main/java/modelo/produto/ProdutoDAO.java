@@ -229,6 +229,30 @@ public class ProdutoDAO {
         return sucesso;
     }
 
+    // Reduz o estoque de um produto em "quantidade" unidades.
+    // Usado pelo FinalizarCompraServlet depois de registrar a venda.
+    // O "WHERE quantidade >= ?" evita que o estoque fique negativo
+    // caso duas compras concorrentes tentem usar a última unidade.
+    public boolean baixarEstoque(int idProduto, int quantidade) {
+        boolean sucesso = false;
+        try {
+            connection = Conexao.getConexao();
+            PreparedStatement preparedStatement = connection.prepareStatement(
+                "UPDATE produto SET quantidade = quantidade - ? WHERE id = ? AND quantidade >= ?"
+            );
+            preparedStatement.setInt(1, quantidade);
+            preparedStatement.setInt(2, idProduto);
+            preparedStatement.setInt(3, quantidade);
+            sucesso = (preparedStatement.executeUpdate() == 1);
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
+        return sucesso;
+    }
+
     public boolean remover(int id) {
         boolean sucesso = false;
         try {
