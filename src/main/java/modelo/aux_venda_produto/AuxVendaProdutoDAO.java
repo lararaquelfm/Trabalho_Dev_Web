@@ -120,34 +120,52 @@ public class AuxVendaProdutoDAO {
         return sucesso;
     }
     
-    public List<AuxVendaProduto> obterPorVenda(int id_venda) {
-        List<AuxVendaProduto> resultado = new ArrayList<>();
-
+    public double faturamentoMes() {
+        double total = 0;
         try {
             connection = Conexao.getConexao();
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM aux_venda_produto WHERE id_venda = ?");
-            preparedStatement.setInt(1, id_venda);
+            PreparedStatement preparedStatement = connection.prepareStatement(
+                    "SELECT COALESCE(SUM(a.preco * a.quantidade), 0) AS total \n" +
+                    "FROM aux_venda_produto a \n" +
+                    "JOIN venda v ON v.id = a.id_venda \n" +
+                    "WHERE EXTRACT(MONTH FROM v.data_hora) = EXTRACT(MONTH FROM CURRENT_DATE) \n" +
+                    "AND EXTRACT(YEAR FROM v.data_hora) = EXTRACT(YEAR FROM CURRENT_DATE)");
             ResultSet resultSet = preparedStatement.executeQuery();
-
-            while (resultSet.next()) {
-                AuxVendaProduto aux = new AuxVendaProduto();
-                aux.setIdVenda(resultSet.getInt("id_venda"));
-                aux.setIdProduto(resultSet.getInt("id_produto"));
-                aux.setQuantidade(resultSet.getInt("quantidade"));
-                aux.setPreco(resultSet.getDouble("preco"));
-                resultado.add(aux);
+            if (resultSet.next()) {
+                total = resultSet.getDouble("total");
             }
-
             resultSet.close();
             preparedStatement.close();
             connection.close();
-
         } catch (SQLException ex) {
             ex.printStackTrace();
-            return null;
+            return 0;
         }
+        return total;
+    }
 
-        return resultado;
+    public int[] vendasPorMes() {
+        int[] meses = new int[13];
+        try {
+            connection = Conexao.getConexao();
+            PreparedStatement preparedStatement = connection.prepareStatement(
+                    "SELECT EXTRACT(MONTH FROM v.data_hora) AS mes, SUM(a.quantidade) AS total \n" +
+                    "FROM aux_venda_produto a \n" +
+                    "JOIN venda v ON v.id = a.id_venda \n" +
+                    "WHERE EXTRACT(YEAR FROM v.data_hora) = EXTRACT(YEAR FROM CURRENT_DATE) \n" +
+                    "GROUP BY EXTRACT(MONTH FROM v.data_hora)");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                meses[resultSet.getInt("mes")] = resultSet.getInt("total");
+            }
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return meses;
+        }
+        return meses;
     }
     
     public boolean removerPorVenda(int id_venda) {
@@ -172,5 +190,4 @@ public class AuxVendaProdutoDAO {
             return false;
         }
     }
-    
 }

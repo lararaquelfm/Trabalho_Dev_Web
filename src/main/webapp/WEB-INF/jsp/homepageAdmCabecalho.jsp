@@ -1,5 +1,7 @@
 <%@page import="modelo.usuario.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="modelo.produto.Produto"%>
+<%@page import="java.util.Map"%>
 <%
 if (session.getAttribute("usuario") != null && session.getAttribute("usuario") instanceof Usuario) {
     Usuario usuario = (Usuario) session.getAttribute("usuario"); 
@@ -63,13 +65,14 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
 
         .dados-chart {
             background-color: #fff;
-            width: 65.5%; /* Card do gráfico mais largo */
+            width: 100%; /* Card do gráfico mais largo */
             height: 330px; /* Mais alto */
             border-radius: 10px;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
             margin-bottom: 25px;
             display: flex;
             flex-direction: column;
+            overflow: auto;
         }
 
         /* Faz o último card "Vendas por time" ficar alto como o gráfico */
@@ -141,7 +144,29 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
             margin: 3px 0 !important;
             font-size: 15px !important;
         }
+        #colunas {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
 
+.axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0 10px 0 0; /* Espaço para não grudar no gráfico */
+    height: 150%;
+    font-size: 12px;
+}
+
+.charts-css.column {
+    flex: 1;
+    height: 100%;
+    margin: 0;
+}
         /* --- GRÁFICOS (MANTIDOS ORIGINAIS) --- */
         #grafico_coluna {
             height: 230px;

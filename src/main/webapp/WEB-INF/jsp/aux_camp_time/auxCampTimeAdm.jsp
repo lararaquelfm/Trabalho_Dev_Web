@@ -41,6 +41,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                 <img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="seta direita">
                 <a href="<%= request.getContextPath()%>/admin/ListarAuxCampTime">Times por Campeonato</a>
             </div>
+            <a href="<%= request.getContextPath()%>/admin/ListarRelatorio">Relatorios</a>
         </div>
 
         <div class="conteudo" style="flex: 1; min-width: 0;">

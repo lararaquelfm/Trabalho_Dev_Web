@@ -284,6 +284,28 @@
     <servlet>
         <servlet-name>ComprarAgoraServlet</servlet-name>
         <servlet-class>controle.venda.ComprarAgoraServlet</servlet-class>
+        <servlet-name>ListarRelatorioServlet</servlet-name>
+        <servlet-class>controle.relatorio.ListarRelatorioServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TotalComprasClienteServlet</servlet-name>
+        <servlet-class>controle.relatorio.TotalComprasClienteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RelatorioComprasServlet</servlet-name>
+        <servlet-class>controle.relatorio.RelatorioComprasServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProdutosEmFaltaServlet</servlet-name>
+        <servlet-class>controle.relatorio.ProdutosEmFaltaServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FaturamentoPorDiasServlet</servlet-name>
+        <servlet-class>controle.relatorio.FaturamentoPorDiasServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ValorTotalDiasServlet</servlet-name>
+        <servlet-class>controle.relatorio.ValorTotalDiasServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -552,6 +574,28 @@
     <servlet-mapping>
         <servlet-name>ComprarAgoraServlet</servlet-name>
         <url-pattern>/secure/ComprarAgora</url-pattern>
+        <servlet-name>ListarRelatorioServlet</servlet-name>
+        <url-pattern>/admin/ListarRelatorio</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TotalComprasClienteServlet</servlet-name>
+        <url-pattern>/admin/TotalComprasCliente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioComprasServlet</servlet-name>
+        <url-pattern>/admin/RelatorioCompras</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProdutosEmFaltaServlet</servlet-name>
+        <url-pattern>/admin/ProdutosEmFalta</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FaturamentoPorDiasServlet</servlet-name>
+        <url-pattern>/admin/FaturamentoPorDias</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ValorTotalDiasServlet</servlet-name>
+        <url-pattern>/admin/ValorTotalDias</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>home</welcome-file>

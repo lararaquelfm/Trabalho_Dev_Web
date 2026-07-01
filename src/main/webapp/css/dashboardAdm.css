@@ -1,0 +1,170 @@
+*{
+        box-sizing: border-box;
+    }
+    .dados{
+        margin-right: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        border: 1px solid black;
+        border-radius: 20px;
+        flex-direction: column;
+        min-width: 30%;
+        max-width: 40%;
+        overflow: auto;
+    }
+
+    .dados-chart{
+        flex: 2;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        border: 1px solid black;
+        border-radius: 20px;
+    }
+
+    .titulo{
+        p{
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        margin-left: 5%;
+        font-size: 20px;
+    }
+    .cont{
+        padding:0 10px;
+        h3{
+            margin-top: 30px;
+        }
+        align-self: center;
+        font-size: 40px;
+    }
+
+    #pag{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        #cabecalho{
+            display: block;
+        }
+    }
+
+    #camisaV{
+        display: flex;
+        margin-top: 10px;
+        width: 95%;
+    }
+
+    .camisa{
+        display: flex;
+        align-items: start;
+        background-color: white;
+        color: black;
+        width: 100%;
+        p {
+            width: 100%;  
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 15px;
+        }
+        .foto{
+            display: block;
+            img{
+                width: 65%;
+                height: auto;
+                margin: 0 auto;
+                display: block;
+            }
+        }
+    }
+
+    #colunas{
+        display: flex;
+        position: relative;
+        margin: 10px 10px 10px 40px;
+    }
+
+    #colunas .axis{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        list-style: none;
+        margin: 0;
+        padding: 0 10px 35px 0;
+        text-align: right;
+        color: #888;
+        font-size: 14px;
+    }
+
+    .charts-css.column td{
+        font-weight: normal;
+        color: transparent;
+        font-size: 31.2px;
+        line-height: 1;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .charts-css.column th {
+        font-weight: normal;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .charts-css.column td:hover {
+        color: black;
+        opacity: 0.8;
+        filter: brightness(1.2);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+    #grafico_pizza{
+        height: 200px;
+        width: 200px;
+        margin: 0 auto;
+        margin-top: 80px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+
+    .charts-css.pie td{
+        color: transparent;
+        font-size: 30px;
+        position: relative;
+        margin-top: -30px;
+    }
+
+    .charts-css.pie tbody{
+        background-color: transparent;
+    }
+
+    .legenda{
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        font-size: 16px;
+        margin-top: -10px;
+    }
+
+    .cor{
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-right: 8px;
+        border-radius: 3px;
+    }
+
+    .charts-css.pie tr:nth-child(1) td { --color: #4f7de3; }
+    .charts-css.pie tr:nth-child(2) td { --color: #9b7ddf; }
+    .charts-css.pie tr:nth-child(3) td { --color: #e6b066; }
+    .charts-css.pie tr:nth-child(4) td { --color: #f2d04f; }
+    .ceara{ background: #4f7de3;}
+    .ferroviaria{ background: #9b7ddf;}
+    .corinthians{ background: #e6b066;}
+    .outros{ background: #f2d04f;}
