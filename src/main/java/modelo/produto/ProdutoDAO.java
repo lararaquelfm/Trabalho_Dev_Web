@@ -229,10 +229,7 @@ public class ProdutoDAO {
         return sucesso;
     }
 
-    // Reduz o estoque de um produto em "quantidade" unidades.
-    // Usado pelo FinalizarCompraServlet depois de registrar a venda.
-    // O "WHERE quantidade >= ?" evita que o estoque fique negativo
-    // caso duas compras concorrentes tentem usar a última unidade.
+    
     public boolean baixarEstoque(int idProduto, int quantidade) {
         boolean sucesso = false;
         try {

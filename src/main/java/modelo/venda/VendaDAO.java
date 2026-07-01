@@ -38,7 +38,6 @@ public class VendaDAO {
         return resultado;
     }
 
-    // Busca somente as vendas de um usuário específico (usado em "Minhas Compras")
     public List<Venda> obterPorUsuario(int idUsuario) {
         List<Venda> resultado = new ArrayList<Venda>();
         try {
@@ -108,9 +107,7 @@ public class VendaDAO {
         return sucesso;
     }
 
-    // Igual ao inserir() acima, mas devolve o ID gerado pela venda.
-    // Precisamos desse ID na hora de finalizar a compra, pra usar como
-    // id_venda em cada linha de aux_venda_produto.
+    
     public int inserirRetornandoId(LocalDateTime data_hora, int id_usuario) {
         int idGerado = -1;
         try {

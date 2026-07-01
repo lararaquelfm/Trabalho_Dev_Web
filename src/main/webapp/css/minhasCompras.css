@@ -1,0 +1,133 @@
+.linhavertical {
+    border-left: 3.1px solid white;
+    height: 20px;
+    margin: 0 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.bemvindo {
+    font-size: 120%;
+    color: #FFFF;
+}
+
+.menulateral {
+    font-size: 115%;
+    top: 5.3%;
+    left: 0;
+    height: 210px;
+    border-radius: 5px;
+    padding-top: 5px;
+    width: 0;
+    position: absolute;
+    overflow: hidden;
+    transition: 0.3s;
+    background-color: #170b9b;
+    z-index: 1000;
+}
+
+.menulateral .itens_menu_lateral {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 20px;
+}
+
+.menulateral .itens_menu_lateral a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+    border: none;
+}
+
+.menulateral.active {
+    width: 250px;
+}
+
+.menulateral a:hover {
+    font-weight: 700;
+    color: #FFFF;
+}
+
+.deletar {
+    width: 70%;
+    margin-left: 20px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #FFFF;
+    border-radius: 8px;
+    border-color: #FFFF;
+}
+
+.deletar:hover {
+    background-color: #FFFF;
+}
+
+.deletar:hover a {
+    color: #170b9b;
+}
+
+h1.titulo {
+    margin-left: 2%;
+    font-size: 2rem;
+}
+
+#pedidos {
+    margin-left: 2%;
+    margin-right: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 40px;
+}
+
+.pedido {
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 15px 20px;
+    font-family: sans-serif;
+}
+
+.pedido-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.pedido-cabecalho h2 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.pedido-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+}
+
+.pedido-total {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.sem-compras {
+    text-align: center;
+    margin-top: 10%;
+    font-size: 1.5rem;
+    color: gray;
+    font-family: sans-serif;
+}

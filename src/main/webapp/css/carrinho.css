@@ -1,0 +1,225 @@
+.linhavertical {
+    border-left: 3.1px solid white;
+    height: 20px;
+    margin: 0 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.bemvindo {
+    font-size: 120%;
+    color: #FFFF;
+}
+
+.menulateral {
+    font-size: 115%;
+    top: 5.3%;
+    left: 0;
+    height: 210px;
+    border-radius: 5px;
+    padding-top: 5px;
+    width: 0;
+    position: absolute;
+    overflow: hidden;
+    transition: 0.3s;
+    background-color: #170b9b;
+    z-index: 1000;
+}
+
+.menulateral .itens_menu_lateral {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 20px;
+}
+
+.menulateral .itens_menu_lateral a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+    border: none;
+}
+
+.menulateral.active {
+    width: 250px;
+}
+
+.menulateral a:hover {
+    font-weight: 700;
+    color: #FFFF;
+}
+
+.deletar {
+    width: 70%;
+    margin-left: 20px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #FFFF;
+    border-radius: 8px;
+    border-color: #FFFF;
+}
+
+.deletar:hover {
+    background-color: #FFFF;
+}
+
+.deletar:hover a {
+    color: #170b9b;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#camisas {
+    margin-left: 2%;
+    margin-right: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    padding-bottom: 120px;
+}
+
+.camisa {
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: calc(95%);
+    color: black;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.camisa img {
+    max-width: 100px;
+    height: auto;
+}
+
+.camisa-detalhes h1 {
+    font-size: 1.45rem;
+    margin: 0;
+}
+
+.lado-direito {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: auto;
+    gap: 20px;
+}
+
+.camisa-controles {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0;
+}
+
+.camisa-detalhes p {
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    margin: 0;
+    text-align: right;
+}
+
+.camisa-detalhes {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.lado-esquerdo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.controle-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    background-color: #170b9b;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    text-decoration: none;
+}
+
+.controle-item img {
+    width: 30px;
+    display: block;
+}
+
+#concluir {
+    position: fixed;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    height: 12%;
+    margin-bottom: 0;
+    border: 1px solid black;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#concluir .lado-direito {
+    margin-left: auto;
+    margin-right: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.botao-finalizar {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #170b9b;
+    border-radius: 10px;
+    margin: 0;
+    height: 40px;
+    width: 200px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.valor-total {
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    text-align: left;
+    margin: 0;
+}
+
+.carrinho-vazio {
+    text-align: center;
+    margin-top: 10%;
+    font-size: 1.5rem;
+    color: gray;
+}

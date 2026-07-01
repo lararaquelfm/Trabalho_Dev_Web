@@ -1,11 +1,13 @@
 <%@page import="modelo.usuario.Usuario"%>
 <%@page import="modelo.produto.Produto"%>
+<%@page import="modelo.foto.Foto"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%
     Usuario usuario = (Usuario) session.getAttribute("usuario");
     Produto produto = (Produto) request.getAttribute("produto");
     List<Produto> variacoes = (List<Produto>) request.getAttribute("variacoes");
+    List<Foto> fotos = (List<Foto>) request.getAttribute("fotos");
 %>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -57,7 +59,21 @@
     <div id="produtoDetalhe">
         <div class="container">
             <div class="card">
-                <img src="<%= request.getContextPath() %>/MostrarProduto?id=<%= produto.getId() %>" class="produto-img" alt="<%= produto.getDescricao() %>">
+                <div class="carrossel">
+                    <button type="button" id="btnSetaEsquerda" class="seta seta-esquerda" disabled>&#10094;</button>
+                    <%
+                        if (fotos != null && !fotos.isEmpty()) {
+                    %>
+                    <img id="imgProduto" src="<%= request.getContextPath() %>/MostrarFoto?id=<%= fotos.get(0).getId() %>" class="produto-img" alt="<%= produto.getDescricao() %>">
+                    <%
+                        } else {
+                    %>
+                    <img id="imgProduto" src="<%= request.getContextPath() %>/imagens/Image-not-found.png" class="produto-img" alt="Sem foto disponível">
+                    <%
+                        }
+                    %>
+                    <button type="button" id="btnSetaDireita" class="seta seta-direita">&#10095;</button>
+                </div>
             </div>
             <div class="info">
                 <h3 class="nome"><%= produto.getDescricao() %></h3>
@@ -99,6 +115,54 @@
         }
 
         let produtoIdSelecionado = null;
+        const contextPath = "<%= request.getContextPath() %>";
+
+        // ---- Carrossel de fotos ----
+        const fotoIds = [
+            <%
+                if (fotos != null) {
+                    for (int i = 0; i < fotos.size(); i++) {
+            %>
+            <%= fotos.get(i).getId() %><%= (i < fotos.size() - 1) ? "," : "" %>
+            <%
+                    }
+                }
+            %>
+        ];
+        let indiceFotoAtual = 0;
+
+        function atualizarCarrossel() {
+            if (fotoIds.length === 0) {
+                return;
+            }
+            document.getElementById('imgProduto').src = contextPath + "/MostrarFoto?id=" + fotoIds[indiceFotoAtual];
+            document.getElementById('btnSetaEsquerda').disabled = (indiceFotoAtual === 0);
+            document.getElementById('btnSetaDireita').disabled = (indiceFotoAtual === fotoIds.length - 1);
+        }
+
+        const btnSetaEsquerda = document.getElementById('btnSetaEsquerda');
+        const btnSetaDireita = document.getElementById('btnSetaDireita');
+
+        if (fotoIds.length > 1) {
+            btnSetaEsquerda.addEventListener('click', function () {
+                if (indiceFotoAtual > 0) {
+                    indiceFotoAtual--;
+                    atualizarCarrossel();
+                }
+            });
+            btnSetaDireita.addEventListener('click', function () {
+                if (indiceFotoAtual < fotoIds.length - 1) {
+                    indiceFotoAtual++;
+                    atualizarCarrossel();
+                }
+            });
+        } else {
+            // só uma foto (ou nenhuma) - esconde as setas
+            btnSetaEsquerda.style.display = 'none';
+            btnSetaDireita.style.display = 'none';
+        }
+        atualizarCarrossel();
+        // ---- Fim do carrossel ----
 
         document.querySelectorAll('.tam').forEach(function (el) {
             el.addEventListener('click', function () {
@@ -124,8 +188,7 @@
                 document.getElementById('avisoTamanho').style.display = 'block';
                 return;
             }
-            // TODO: integrar com o servlet do carrinho quando estiver pronto
-            console.log("Adicionar ao carrinho - produtoId:", produtoIdSelecionado);
+            window.location.href = contextPath + "/secure/AdicionarCarrinho?id=" + produtoIdSelecionado;
         });
 
         document.getElementById('btnComprar').addEventListener('click', function () {
@@ -133,8 +196,7 @@
                 document.getElementById('avisoTamanho').style.display = 'block';
                 return;
             }
-            // TODO: integrar com o fluxo de compra quando o carrinho estiver pronto
-            console.log("Comprar agora - produtoId:", produtoIdSelecionado);
+            window.location.href = contextPath + "/secure/ComprarAgora?id=" + produtoIdSelecionado;
         });
     </script>
 </body>

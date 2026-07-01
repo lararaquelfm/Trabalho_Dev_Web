@@ -16,122 +16,46 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
     <meta charset="UTF-8">
     <title>Minhas Compras</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Contrail+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/css/barra_navegacao.css">
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/css/minhasCompras.css">
 </head>
-<style>
-    html, body{
-        margin: 0;
-        font-family: "Contrail One", sans-serif;
-    }
-
-    #cabecalho {
-        background-color: #170b9b;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        height: 6vh;
-        padding-left: 1%;
-    }
-
-    .botoes{
-        width: 40px;
-        position: relative;
-        margin-right: 1%;
-        cursor: pointer;
-        img{
-            width: 100%;
-        }
-    }
-
-    .linhavertical{
-        border-left: 3.1px solid white;
-        height: 20px;
-        margin: 0 15px;
-        display: inline-block;
-    }
-
-    .bemvindo{
-        font-size: 120%;
-        color: #FFFF;
-    }
-
-    h1.titulo {
-        margin-left: 2%;
-        font-size: 2rem;
-    }
-
-    #pedidos {
-        margin-left: 2%;
-        margin-right: 2%;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding-bottom: 40px;
-    }
-
-    .pedido {
-        background-color: white;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        border: 1px solid black;
-        border-radius: 15px;
-        padding: 15px 20px;
-        font-family: sans-serif;
-    }
-
-    .pedido-cabecalho {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 10px;
-        margin-bottom: 10px;
-    }
-
-    .pedido-cabecalho h2 {
-        font-family: "Contrail One", sans-serif;
-        margin: 0;
-        font-size: 1.3rem;
-    }
-
-    .pedido-item {
-        display: flex;
-        justify-content: space-between;
-        padding: 6px 0;
-    }
-
-    .pedido-total {
-        text-align: right;
-        font-weight: bold;
-        margin-top: 10px;
-        padding-top: 10px;
-        border-top: 1px solid #ddd;
-    }
-
-    .sem-compras {
-        text-align: center;
-        margin-top: 10%;
-        font-size: 1.5rem;
-        color: gray;
-        font-family: sans-serif;
-    }
-</style>
 <body>
 
-<div id="cabecalho">
+<div id="barraNavegacao">
     <div class="botoes">
-        <a href="<%= request.getContextPath()%>/secure/Homepage">
-            <img src="${pageContext.request.contextPath}/imagens/home.svg" alt="ft da home">
+        <a onclick="toggleMenu(event)" alt="Menu"><img id="profile" src="<%= request.getContextPath() %>/imagens/profile.svg" style="width: 100%; height: auto" alt="ft de perfil"></a>
+    </div>
+    <div class="botoes">
+        <a href="<%= request.getContextPath() %>/secure/Homepage">
+            <img id="home" src="<%= request.getContextPath() %>/imagens/home.svg" style="width: 100%; height: auto" alt="ft da home">
         </a>
     </div>
     <div class="botoes">
-        <a href="<%= request.getContextPath()%>/secure/Carrinho">
-            <img src="${pageContext.request.contextPath}/imagens/carrinho.svg" alt="ft de carrinho">
+        <a href="<%= request.getContextPath() %>/secure/Carrinho">
+            <img id="carrinho" src="<%= request.getContextPath() %>/imagens/carrinho.svg" style="width: 100%; height: auto" alt="ft de carrinho">
         </a>
     </div>
     <div class="linhavertical"></div>
     <span class="bemvindo">Bem-vindo(a), <%= usuario.getNome() %>!</span>
+    <div class="pesquisa">
+        <a href="<%= request.getContextPath() %>/secure/PaginaPesquisa">
+            <img src="<%= request.getContextPath() %>/imagens/search.svg" style="width: 100%; height: auto" alt="lupa de pesquisa">
+            <input type="text" class="desativar" style="width: 100%; height: 100%;">
+        </a>
+    </div>
+</div>
+
+<div id="Menu" class="menulateral">
+    <div class="itens_menu_lateral">
+        <a href="<%= request.getContextPath() %>/secure/MinhasCompras"><img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="">Meus pedidos</a>
+        <a href="<%= request.getContextPath() %>/secure/MyProfile?id=<%= usuario.getId() %>"><img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="">Meus dados</a>
+        <div class="sair">
+            <a href="<%= request.getContextPath() %>/secure/Logout" style="padding-top: 35px; padding-bottom: 20px;"><img src="<%= request.getContextPath() %>/imagens/logout.svg" alt="">Sair</a>
+        </div>
+        <div class="deletar">
+            <a href="<%= request.getContextPath() %>/secure/DeletarUsuario?id=<%= usuario.getId() %>"><img src="<%= request.getContextPath() %>/imagens/lixeira_preta.svg" alt="">Deletar perfil</a>
+        </div>
+    </div>
 </div>
 
 <h1 class="titulo">Minhas Compras</h1>
@@ -184,6 +108,13 @@ if (vendas == null || vendas.isEmpty()) {
 <%
 }
 %>
+
+<script>
+    function toggleMenu(event) {
+        if (event) event.preventDefault();
+        document.getElementById("Menu").classList.toggle("active");
+    }
+</script>
 
 </body>
 </html>
