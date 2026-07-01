@@ -167,4 +167,27 @@ public class AuxVendaProdutoDAO {
         }
         return meses;
     }
+    
+    public boolean removerPorVenda(int id_venda) {
+        try {
+            connection = Conexao.getConexao();
+
+            PreparedStatement ps = connection.prepareStatement(
+                "DELETE FROM aux_venda_produto WHERE id_venda = ?"
+            );
+
+            ps.setInt(1, id_venda);
+
+            ps.executeUpdate();
+
+            ps.close();
+            connection.close();
+
+            return true;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
 }

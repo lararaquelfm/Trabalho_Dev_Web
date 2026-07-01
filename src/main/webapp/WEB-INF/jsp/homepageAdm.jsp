@@ -1,3 +1,6 @@
+<%@page import="modelo.foto.FotoDAO"%>
+<%@page import="modelo.foto.Foto"%>
+<%@page import="java.util.List"%>
 <%@page import="modelo.produto.Produto"%>
 <%@page import="java.util.Map"%>
 <%@include file="homepageAdmCabecalho.jsp" %>
@@ -6,6 +9,7 @@
     Produto maisVendido = (Produto) request.getAttribute("maisVendido");
     double faturamento = (Double) request.getAttribute("faturamento");
     int[] vendasPorMes = (int[]) request.getAttribute("vendasPorMes");
+    List<Produto> emFalta = (List<Produto>) request.getAttribute("emFalta");
     %>
      <div class="pcima">
         <img id="profile" src="<%= request.getContextPath() %>/imagens/profile.svg" style="width: 3%; height: auto" alt="ft de perfil">
@@ -49,7 +53,18 @@
                     <div id="camisaV">
                         <div class="camisa">
                             <div class="foto">
-                                <img src="<%= request.getContextPath() %>/imagens/camisa.png">
+                            <% 
+                            List<Foto> fotos = new FotoDAO().obterPeloProduto(maisVendido.getId());
+                            if (fotos.isEmpty()){
+                            %>
+                                <img src="${pageContext.request.contextPath}/imagens/Image-not-found.png" class="itens-img" alt="Camiseta">
+                            <%
+                            } else {
+                            %>
+                                <img src="<%= request.getContextPath() %>/MostrarProduto?id=<%= maisVendido.getId()%>" class="itens-img" alt="Camiseta">
+                            <%
+                            }
+                            %>
                             </div>
                             <div id="descricao">
                                 <% if (maisVendido != null) { %>
@@ -65,10 +80,10 @@
                 </div>
                 <div class="dados">
                     <div class="titulo">
-                        <p>Visitas ao site hoje</p>
+                        <p>Produtos Esgotados</p>
                     </div>
                     <div class="cont">
-                        <h3>145 visitas</h3>
+                        <h3><%= emFalta.size() %></h3>
                     </div>
                 </div>
                 <div class="dados-chart">
@@ -112,12 +127,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="dados">
-                    <div class="titulo">
-                        <p>Vendas por time</p>
-                    </div>
-                    
                 </div>
             </div>
         </div>
