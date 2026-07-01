@@ -284,6 +284,8 @@
     <servlet>
         <servlet-name>ComprarAgoraServlet</servlet-name>
         <servlet-class>controle.venda.ComprarAgoraServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>ListarRelatorioServlet</servlet-name>
         <servlet-class>controle.relatorio.ListarRelatorioServlet</servlet-class>
     </servlet>
@@ -574,6 +576,8 @@
     <servlet-mapping>
         <servlet-name>ComprarAgoraServlet</servlet-name>
         <url-pattern>/secure/ComprarAgora</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>ListarRelatorioServlet</servlet-name>
         <url-pattern>/admin/ListarRelatorio</url-pattern>
     </servlet-mapping>

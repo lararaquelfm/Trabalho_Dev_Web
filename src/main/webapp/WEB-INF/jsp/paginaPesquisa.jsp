@@ -122,6 +122,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                                 Produto c = produtos.get(i);
                     %>
                                 <div class="camisa">
+                                <a href="<%= request.getContextPath() %>/secure/VerProduto?id=<%= c.getId() %>" style="text-decoration:none; color:inherit;">
                                 <% 
                                 List<Foto> fotos = new FotoDAO().obterPeloProduto(c.getId());
                                 if (fotos.isEmpty()){

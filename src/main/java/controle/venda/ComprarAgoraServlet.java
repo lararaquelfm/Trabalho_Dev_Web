@@ -2,17 +2,20 @@ package controle.venda;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import modelo.aux_venda_produto.AuxVendaProdutoDAO;
 import modelo.produto.Produto;
 import modelo.produto.ProdutoDAO;
 import modelo.usuario.Usuario;
 import modelo.venda.VendaDAO;
+import utils.CarrinhoCookieUtil;
 
 public class ComprarAgoraServlet extends HttpServlet {
 
@@ -56,6 +59,10 @@ public class ComprarAgoraServlet extends HttpServlet {
         AuxVendaProdutoDAO auxVendaProdutoDAO = new AuxVendaProdutoDAO();
         auxVendaProdutoDAO.inserir(idVenda, idProduto, quantidade, produto.getPreco());
         produtoDAO.baixarEstoque(idProduto, quantidade);
+
+        Cookie cookieVazio = CarrinhoCookieUtil.criarCookie(new HashMap<Integer, Integer>());
+        cookieVazio.setMaxAge(0);
+        response.addCookie(cookieVazio);
 
         response.sendRedirect(request.getContextPath() + "/secure/MinhasCompras");
     }

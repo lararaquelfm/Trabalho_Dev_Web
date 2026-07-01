@@ -62,6 +62,36 @@ public class AuxVendaProdutoDAO {
         }
         return auxVendaProduto;
     }
+    
+    public List<AuxVendaProduto> obterPorVenda(int id_venda) {
+        List<AuxVendaProduto> resultado = new ArrayList<>();
+
+        try {
+            connection = Conexao.getConexao();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM aux_venda_produto WHERE id_venda = ?");
+            preparedStatement.setInt(1, id_venda);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                AuxVendaProduto aux = new AuxVendaProduto();
+                aux.setIdVenda(resultSet.getInt("id_venda"));
+                aux.setIdProduto(resultSet.getInt("id_produto"));
+                aux.setQuantidade(resultSet.getInt("quantidade"));
+                aux.setPreco(resultSet.getDouble("preco"));
+                resultado.add(aux);
+            }
+
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+
+        return resultado;
+    }
 
     public boolean inserir(int id_venda, int id_produto, int quantidade, double preco) {
         boolean sucesso = false;

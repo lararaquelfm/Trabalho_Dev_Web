@@ -62,6 +62,7 @@ ProdutoDAO produtoDAO = new ProdutoDAO();
             <a href="<%= request.getContextPath()%>/admin/Produto">Itens</a>
             <a href="<%= request.getContextPath()%>/admin/ListarCategoria">Categorias</a>
             <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a>
+            <a href="<%= request.getContextPath()%>/admin/ListarRelatorio">Relatorios</a>
             </div>
             
             <div class="conteudo" style="width: 85%" display: flex; flex-direction: column; align-items: center;>

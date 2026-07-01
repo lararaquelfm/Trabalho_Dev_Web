@@ -52,6 +52,7 @@
                     </div>
                     <div id="camisaV">
                         <div class="camisa">
+                            <% if (maisVendido != null) { %>
                             <div class="foto">
                             <% 
                             List<Foto> fotos = new FotoDAO().obterPeloProduto(maisVendido.getId());
@@ -67,14 +68,16 @@
                             %>
                             </div>
                             <div id="descricao">
-                                <% if (maisVendido != null) { %>
                                     <p style="font-size: 17px;"><strong><%= maisVendido.getDescricao() %></strong></p>
                                     <p>Preço: R$ <%= String.format(java.util.Locale.forLanguageTag("pt-BR"), "%.2f", maisVendido.getPreco()) %></p>
                                     <p>Vendas: <%= maisVendido.getTotalVendido() %> unid.</p>
-                                <% } else { %>
-                                    <p>Nenhuma venda registrada.</p>
-                                <% } %>
                             </div>
+                            <% } else { %>
+                            <div id="descricao">
+                                <p>Nenhuma venda registrada.</p>
+                            </div>
+                            <% } %>
+                            
                         </div>
                     </div>
                 </div>
