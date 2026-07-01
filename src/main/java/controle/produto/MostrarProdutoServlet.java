@@ -21,9 +21,9 @@ public class MostrarProdutoServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         FotoDAO fotoDAO = new FotoDAO();
         List<Foto> fotos = fotoDAO.obterPeloProduto(id);
-        fotos.sort(Comparator.comparingInt(foto ->{
-            String nomeArquivo = foto.getFoto().substring(foto.getFoto().lastIndexOf("/") + 1);                            
-            String[] partes = nomeArquivo.split("\\|");
+        fotos.sort(Comparator.comparingInt(foto -> {
+            String nomeArquivo = new File(foto.getFoto()).getName();
+            String[] partes = nomeArquivo.split("_");
             return Integer.parseInt(partes[0].trim());
         }));
         String caminhoFoto = fotos.getFirst().getFoto();

@@ -254,6 +254,36 @@
         <servlet-class>controle.produto.BuscaProdutoServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>CarrinhoServlet</servlet-name>
+        <servlet-class>controle.carrinho.CarrinhoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdicionarCarrinhoServlet</servlet-name>
+        <servlet-class>controle.carrinho.AdicionarCarrinhoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AtualizarQuantidadeCarrinhoServlet</servlet-name>
+        <servlet-class>controle.carrinho.AtualizarQuantidadeCarrinhoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoverCarrinhoServlet</servlet-name>
+        <servlet-class>controle.carrinho.RemoverCarrinhoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FinalizarCompraServlet</servlet-name>
+        <servlet-class>controle.carrinho.FinalizarCompraServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MinhasComprasServlet</servlet-name>
+        <servlet-class>controle.venda.MinhasComprasServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VerProdutoServlet</servlet-name>
+        <servlet-class>controle.produto.VerProdutoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ComprarAgoraServlet</servlet-name>
+        <servlet-class>controle.venda.ComprarAgoraServlet</servlet-class>
         <servlet-name>ListarRelatorioServlet</servlet-name>
         <servlet-class>controle.relatorio.ListarRelatorioServlet</servlet-class>
     </servlet>
@@ -514,6 +544,36 @@
         <url-pattern>/secure/BuscaProdutoServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>CarrinhoServlet</servlet-name>
+        <url-pattern>/secure/Carrinho</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdicionarCarrinhoServlet</servlet-name>
+        <url-pattern>/secure/AdicionarCarrinho</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AtualizarQuantidadeCarrinhoServlet</servlet-name>
+        <url-pattern>/secure/AtualizarQuantidadeCarrinho</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoverCarrinhoServlet</servlet-name>
+        <url-pattern>/secure/RemoverCarrinho</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FinalizarCompraServlet</servlet-name>
+        <url-pattern>/secure/FinalizarCompra</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MinhasComprasServlet</servlet-name>
+        <url-pattern>/secure/MinhasCompras</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VerProdutoServlet</servlet-name>
+        <url-pattern>/secure/VerProduto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ComprarAgoraServlet</servlet-name>
+        <url-pattern>/secure/ComprarAgora</url-pattern>
         <servlet-name>ListarRelatorioServlet</servlet-name>
         <url-pattern>/admin/ListarRelatorio</url-pattern>
     </servlet-mapping>
