@@ -6,7 +6,6 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.Part;
 import modelo.produto.ProdutoDAO;
 
 public class InserirProdutoBDServlet extends HttpServlet {
@@ -27,7 +26,11 @@ public class InserirProdutoBDServlet extends HttpServlet {
         
         ProdutoDAO produtoDAO = new ProdutoDAO();
         boolean sucesso = false;
-        sucesso = produtoDAO.inserir(descricao, preco, tamanho, quantidade, timeId, categoriaId);
+        if (id == -1) {
+            sucesso = produtoDAO.inserir(descricao, preco, tamanho, quantidade, timeId, categoriaId);
+        } else {
+            sucesso = produtoDAO.atualizar(descricao, preco, tamanho, quantidade, timeId, categoriaId, id);
+        }
         if (sucesso) {
             request.setAttribute("mensagem", "Produto salvo com sucesso");
         } else {

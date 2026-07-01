@@ -47,7 +47,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                 <div class="cards">
                     <a class="card" href="<%= request.getContextPath()%>/admin/TotalComprasCliente" style="text-align: center; padding: 5px;">Total de Compras Por Cliente</a>
                     <a class="card" href="<%= request.getContextPath()%>/admin/ProdutosEmFalta" style="text-align: center; padding: 5px;">Produtos Em Falta No Estoque</a>
-                    <a class="card" href="<%= request.getContextPath()%>/admin/ValorTotalDia" style="text-align: center; padding: 5px;">Valor Total Recebido Por Dia</a
+                    <a class="card" href="<%= request.getContextPath()%>/admin/ValorTotalDias" style="text-align: center; padding: 5px;">Valor Total Recebido Por Dia</a
                 </div>
             </div>
         </div>

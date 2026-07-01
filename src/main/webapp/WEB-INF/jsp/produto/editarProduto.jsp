@@ -48,6 +48,7 @@
                     <div class="grade">
                         <div class="col">
                             <div class="campo">
+                                <input type="hidden" name="id" value="<%= produto.getId()%>"
                                 <strong>Descrição:</strong>
                                 <input type="text" name="descricao" id="profileControlDescricao" placeholder="Digite a descrição do produto" value="<%= (produto != null ? produto.getDescricao() : "")%>" required>   
                             </div>  
