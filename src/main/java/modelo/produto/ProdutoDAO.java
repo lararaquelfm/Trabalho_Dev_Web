@@ -244,4 +244,38 @@ public class ProdutoDAO {
         }
         return sucesso;
     }
+    
+    public Produto produtoMaisVendido() {
+        Produto produto = null;
+        try {
+            connection = Conexao.getConexao();
+            PreparedStatement preparedStatement = connection.prepareStatement(
+                    "SELECT p.id, p.descricao, p.preco, p.tamanho, p.quantidade, p.id_time, p.id_categoria, \n" +
+                    "       SUM(a.quantidade) AS total_vendido \n" +
+                    "FROM produto p \n" +
+                    "JOIN aux_venda_produto a ON a.id_produto = p.id \n" +
+                    "GROUP BY p.id, p.descricao, p.preco, p.tamanho, p.quantidade, p.id_time, p.id_categoria \n" +
+                    "ORDER BY total_vendido DESC \n" +
+                    "LIMIT 1");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                produto = new Produto();
+                produto.setId(resultSet.getInt("id"));
+                produto.setDescricao(resultSet.getString("descricao"));
+                produto.setPreco(resultSet.getDouble("preco"));
+                produto.setTamanho(resultSet.getString("tamanho"));
+                produto.setQuantidade(resultSet.getInt("quantidade"));
+                produto.setIdTime(resultSet.getInt("id_time"));
+                produto.setIdCategoria(resultSet.getInt("id_categoria"));
+                produto.setTotalVendido(resultSet.getInt("total_vendido"));
+            }
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return produto;    
+    }
 }

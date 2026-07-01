@@ -16,6 +16,7 @@ public class Produto {
     private int quantidade;
     private int id_time;
     private int id_categoria;
+    private int totalVendido;
     
     public int getId(){
         return id;
@@ -71,5 +72,13 @@ public class Produto {
     
     public void setIdCategoria(int id_categoria){
         this.id_categoria = id_categoria;
+    }
+
+    public int getTotalVendido(){
+        return totalVendido;
+    }
+
+    public void setTotalVendido(int totalVendido){
+        this.totalVendido = totalVendido;
     }
 }
