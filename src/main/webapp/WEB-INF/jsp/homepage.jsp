@@ -14,7 +14,7 @@
     </a>
     </div>
     <div class="botoes">
-        <a >
+        <a href="<%= request.getContextPath()%>/secure/Carrinho">
             <img id="carrinho" src="${pageContext.request.contextPath}/imagens/carrinho.svg" style="width: 100%; height: auto; " alt="ft de carrinho"></a>
     </div>
 
@@ -30,7 +30,7 @@
     
         <div id="Menu" class="menulateral">
             <div class="itens_menu_lateral">
-                <a ><img src="${pageContext.request.contextPath}/imagens/arrowright.svg" alt="">Meus pedidos</a>
+                <a href="<%= request.getContextPath()%>/secure/MinhasCompras"><img src="${pageContext.request.contextPath}/imagens/arrowright.svg" alt="">Meus pedidos</a>
                 <a href="<%= request.getContextPath()%>/secure/MyProfile?id=<%= usuario.getId() %>"><img src="${pageContext.request.contextPath}/imagens/arrowright.svg" alt="">Meus dados</a>
                 <div class="sair">
                     <a href="<%= request.getContextPath()%>/secure/Logout" style="padding-top: 35px; padding-bottom: 20px;"><img src="${pageContext.request.contextPath}/imagens/logout.svg" alt="">Sair</a> 
@@ -66,11 +66,12 @@
                 %>
                     <p style=" padding: 2px; white-space: nowrap; overflow: auto; text-overflow: ellipsis;"><%= c.getDescricao()%></p>
                     <h1>R$: <%= String.format("%.2f", c.getPreco())%></h1>
-                </a>
-                    <button>
-                        Adicionar ao carrinho
-                        <img src="${pageContext.request.contextPath}/imagens/carrinho.svg" alt="ft de carrinho">
-                    </button>
+                    <a href="<%= request.getContextPath()%>/secure/AdicionarCarrinho?id=<%= c.getId() %>" style="text-decoration: none;">
+                        <button>
+                            Adicionar ao carrinho
+                            <img src="${pageContext.request.contextPath}/imagens/carrinho.svg" alt="ft de carrinho">
+                        </button>
+                    </a>
                 </div>
     <%
             }
