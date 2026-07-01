@@ -43,6 +43,29 @@ public class FiltroDAO {
         return resultado;
     }
     
+    public List<Filtro> obterTodosAtivos() {
+        List<Filtro> resultado = new ArrayList<Filtro>();
+        try {
+            connection = Conexao.getConexao();
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT id, nome, checked FROM filtro WHERE checked = true;");
+            while (resultSet.next()) {
+                Filtro filtro = new Filtro();
+                filtro.setId(resultSet.getInt("id"));
+                filtro.setNome(resultSet.getString("nome"));
+                filtro.setChecked(resultSet.getBoolean("checked"));
+                resultado.add(filtro);
+            }
+            resultSet.close();
+            statement.close();
+            connection.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return resultado;
+    }
+    
     public Filtro obter(int id) {
         Filtro filtro = null;
         try {

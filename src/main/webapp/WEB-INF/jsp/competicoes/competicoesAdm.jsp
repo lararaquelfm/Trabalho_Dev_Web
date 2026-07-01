@@ -47,10 +47,14 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                 <div class="cards">
                     <a class="card" href="<%= request.getContextPath()%>/admin/ListarTime">Times</a>
                     <a class="card" href="<%= request.getContextPath()%>/admin/ListarCampeonato">Campeonatos</a>
+                    <a class="card" href="<%= request.getContextPath()%>/admin/ListarAuxCampTime" style="text-align: center;">Relacionar Campeonato Time</a>
+                    
+                </div>
+                <div class="cards">
                     <a class="card" href="<%= request.getContextPath()%>/admin/ListarFiltro">Filtros</a>
                     <a class="card" href="<%= request.getContextPath()%>/admin/ListarAtributos">Atributos</a>
                     <a class="card" href="<%= request.getContextPath()%>/admin/ListarAuxFiltroAtributo" style="text-align: center;">Relacionar Filtro Atributo</a>
-                </div>
+                </div>    
             </div>
         </div>
     </div>

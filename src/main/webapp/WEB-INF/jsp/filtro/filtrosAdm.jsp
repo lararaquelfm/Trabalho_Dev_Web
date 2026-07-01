@@ -124,8 +124,17 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                 <input type="text" name="nome" id="campoFiltroNome" required>
                 
                 <label>Checked:</label>
-                <input type="text" name="checked" id="campoFiltroChecked" required>
-
+                <div class="campo">
+                    <select name="checked" id="campoFiltroChecked" required>
+                        <option value="">Selecione...</option>
+                        <option value="true">
+                            true
+                        </option>
+                        <option value="false">
+                            false
+                        </option>
+                    </select>
+                </div>
                 <div class="modal-botoes">
                     <button type="button" class="btn-cancelar" onclick="fecharModalFiltro()">Cancelar</button>
                     <button type="submit" class="btn-salvar">Salvar</button>

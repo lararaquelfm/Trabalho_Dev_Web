@@ -6,6 +6,9 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.List;
+import modelo.produto.Produto;
+import modelo.produto.ProdutoDAO;
 import modelo.usuario.UsuarioDAO;
 import utils.Utils;
 
@@ -28,9 +31,11 @@ public class CadastrarServlet extends HttpServlet {
             requestDispatcher.forward(request, response);
         } else {
             request.setAttribute("mensagem", "Não foi possível realizar seu cadastro");
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/cadastrar.jsp");
-            requestDispatcher.forward(request, response);
         }
+        List<Produto> produtos = new ProdutoDAO().obterEstoque();
+        request.setAttribute("produtos", produtos);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/jsp/homepage.jsp");
+        requestDispatcher.forward(request, response);
     }
 
 }

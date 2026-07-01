@@ -83,10 +83,11 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                                 <td><%= t.getTabela() %></td>
                                 <td><%= t.getId() %></td>
                                 <td>
-                                    <a href="<%= request.getContextPath() %>/admin/DeletarAtributo?id=<%= t.getId() %>"
-                                       onclick="return confirm('Deseja realmente remover este atributo?')">
+                                    <div style="display: flex; align-content: space-around;">
+                                        <a href="<%= request.getContextPath() %>/admin/DeletarAtributo?id=<%= t.getId() %>"
+                                           onclick="return confirm('Deseja realmente remover este atributo?')" style="text-align: start;">
                                         <button>
-                                            <img src="<%= request.getContextPath() %>/imagens/lixeira_preta.svg" alt="deletar">
+                                            <img src="<%= request.getContextPath() %>/imagens/lixeira_preta.svg" alt="deletar" style="width: 30px;">
                                         </button>
                                     </a>
                                     <button onclick="abrirModalEditarAtributo(
@@ -94,8 +95,9 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                                         '<%= t.getAtributo().replace("'", "\\'") %>',
                                         '<%= t.getTabela().replace("'", "\\'") %>'
                                     )">
-                                        <img src="<%= request.getContextPath() %>/imagens/editar.svg" alt="editar">
+                                        <img src="<%= request.getContextPath() %>/imagens/editar.svg" alt="editar" style="width: 30px;">
                                     </button>
+                                    </div>
                                 </td>
                             </tr>
                             <%

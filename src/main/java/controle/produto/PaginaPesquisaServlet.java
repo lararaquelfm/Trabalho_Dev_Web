@@ -24,7 +24,7 @@ public class PaginaPesquisaServlet extends HttpServlet {
         if (request.getParameter("filtroId") != null && request.getParameter("filtroId").trim().length() > 0) {
             filtroId = Integer.parseInt(request.getParameter("filtroId"));
         }
-        List<Filtro> filtros = new FiltroDAO().obterTodos();
+        List<Filtro> filtros = new FiltroDAO().obterTodosAtivos();
         List<Atributo> atributos = new AtributoDAO().obterTodos();
         List<AuxFiltroAtributo> auxFiltroAtributos = new AuxFiltroAtributoDAO().obterTodos();
         List<Produto> produtos = null;

@@ -82,7 +82,9 @@ public class ProdutoDAO {
         List<Produto> resultado = new ArrayList<Produto>();
         try {
             connection = Conexao.getConexao();
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT \n" +
+            PreparedStatement preparedStatement = null;
+            if (tabela.equals("produto")){
+                preparedStatement = connection.prepareStatement("SELECT \n" +
                                                         "    MAX(id) AS id,\n" +
                                                         "    descricao, \n" +
                                                         "    id_time, \n" +
@@ -94,6 +96,21 @@ public class ProdutoDAO {
                                                         "WHERE quantidade > 0\n" +
                                                         "AND " + atributo + " \n" +
                                                         "GROUP BY descricao, id_time, id_categoria;");
+            } else {
+                preparedStatement = connection.prepareStatement("SELECT \n" +
+                                                                "MAX(p.id) AS id,\n" +
+                                                                "p.descricao,\n" +
+                                                                "p.id_time,\n" +
+                                                                "p.id_categoria,\n" +
+                                                                "MIN(p.preco) AS preco,\n" +
+                                                                "STRING_AGG(DISTINCT p.tamanho, ', ' ORDER BY p.tamanho) AS     tamanho,\n" +
+                                                                "SUM(p.quantidade) AS quantidade \n" +
+                                                                "FROM " +  tabela + " \n" +
+                                                                "WHERE quantidade > 0\n" +
+                                                                "AND " + atributo + " \n" +
+                                                                "GROUP BY p.descricao, p.id_time, p.id_categoria;");
+            }
+            
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 Produto produto = new Produto();

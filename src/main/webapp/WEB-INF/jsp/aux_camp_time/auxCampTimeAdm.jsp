@@ -36,10 +36,9 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
             <a href="<%= request.getContextPath()%>/admin/Produto">Itens</a>
             <a href="<%= request.getContextPath()%>/admin/ListarCategoria">Categorias</a>
             <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a>
-            <a href="<%= request.getContextPath()%>/admin/ListarCampeonato">Campeonatos</a>
             <div id="ativo">
                 <img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="seta direita">
-                <a href="<%= request.getContextPath()%>/admin/ListarAuxCampTime">Times por Campeonato</a>
+                <a href="<%= request.getContextPath()%>/admin/ListarAuxCampTime">Relacionar Campeonato Time</a>
             </div>
             <a href="<%= request.getContextPath()%>/admin/ListarRelatorio">Relatorios</a>
         </div>
