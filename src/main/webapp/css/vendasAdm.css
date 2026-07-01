@@ -1,0 +1,50 @@
+
+    .cabecalhocompras{
+        margin-left: 4%;
+        width: 90%;
+        margin: 0 auto;
+        h1{
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 3.5em;
+        }
+        .filtrar{
+            width: 50%;
+            font-family: "Poppins", sans-serif;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            border: 2px solid gray;
+            border-radius: 15px;
+            margin-bottom: 2%;
+            select{ 
+                cursor: pointer;
+                outline: none;
+                border-style: none;
+            }
+            
+        }
+    }
+    .Compras{
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 8px;
+        border-radius: 15px;
+        width: 90%;
+        margin: 0 auto;
+        border: 2px solid gray;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        margin-bottom: 1%;
+        p{
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 2px;
+            margin-left: 1%;
+        }
+        .div1{flex:1; min-width: 0;}
+        .div2{flex:1.5; min-width: 0;}
+    }

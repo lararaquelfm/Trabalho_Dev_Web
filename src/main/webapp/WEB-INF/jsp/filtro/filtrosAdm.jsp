@@ -29,7 +29,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
         <div class="menu">
             <a href="<%= request.getContextPath()%>/admin/MyProfileAdm?id=<%= usuario.getId() %>">Editar Dados</a>
             <a href="<%= request.getContextPath()%>/admin/HomepageAdm">Dashboard</a>
-            <a href="">Compras</a>
+            <a href="<%= request.getContextPath()%>/admin/ListarPorVendas">Compras</a>
             <a href="<%= request.getContextPath()%>/admin/ListarTodosUsuarios">Cadastros</a>
             <a href="<%= request.getContextPath()%>/admin/Produto">Itens</a>
             <a href="<%= request.getContextPath()%>/admin/ListarCategoria">Categorias</a>
@@ -38,6 +38,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                 <img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="seta direita">
                 <a href="<%= request.getContextPath()%>/admin/ListarFiltro">Filtros</a>
             </div>
+            <a href="<%= request.getContextPath()%>/admin/ListarRelatorio">Relatorios</a>
         </div>
 
         <div class="conteudo" style="flex: 1; min-width: 0;">

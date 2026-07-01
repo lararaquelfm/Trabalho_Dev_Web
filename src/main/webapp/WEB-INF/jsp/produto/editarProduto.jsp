@@ -36,6 +36,7 @@
             </div>
             <a href="<%= request.getContextPath()%>/admin/ListarCategoria">Categorias</a>
             <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a>
+            <a href="<%= request.getContextPath()%>/admin/ListarRelatorio">Relatorios</a>
         </div>
         <div id="conteudo" style="width: 85%">
             <div id="pag">
@@ -47,6 +48,7 @@
                     <div class="grade">
                         <div class="col">
                             <div class="campo">
+                                <input type="hidden" name="id" value="<%= produto.getId()%>"
                                 <strong>Descrição:</strong>
                                 <input type="text" name="descricao" id="profileControlDescricao" placeholder="Digite a descrição do produto" value="<%= (produto != null ? produto.getDescricao() : "")%>" required>   
                             </div>  

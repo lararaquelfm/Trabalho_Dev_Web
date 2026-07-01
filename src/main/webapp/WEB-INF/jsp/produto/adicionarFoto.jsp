@@ -39,6 +39,7 @@
             </div>
             <a href="<%= request.getContextPath()%>/admin/ListarCategoria">Categorias</a>
             <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a>
+            <a href="<%= request.getContextPath()%>/admin/ListarRelatorio">Relatorios</a>
         </div>
         <div id="conteudo" style="width: 85%">
             <div id="pag">

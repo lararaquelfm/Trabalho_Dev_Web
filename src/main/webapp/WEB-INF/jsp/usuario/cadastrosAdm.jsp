@@ -37,6 +37,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
             <a href="<%= request.getContextPath()%>/admin/Produto">Itens</a>
             <a href="<%= request.getContextPath()%>/admin/ListarCategoria">Categorias</a>
             <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a>
+            <a href="<%= request.getContextPath()%>/admin/ListarRelatorio">Relatorios</a>
             
             </div>
             <div class="conteudo" style="width: 85%">
@@ -63,7 +64,7 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                                        onclick="return confirm('Deseja realmente remover este cadastro?')">
                             <button style="border: none; background: transparent; padding: 0; cursor: pointer; padding: 5px; margin-left: 5px">
                                             <img src="<%= request.getContextPath() %>/imagens/lixeira_preta.svg" alt="deletar">
-                                        </button>
+                            </button>
                         </a>
                     </div>
                 </div>

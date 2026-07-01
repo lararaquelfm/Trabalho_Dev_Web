@@ -31,25 +31,23 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
             <a href="<%= request.getContextPath()%>/admin/ListarTodosUsuarios">Cadastros</a>
             <a href="<%= request.getContextPath()%>/admin/Produto">Itens</a>
             <a href="<%= request.getContextPath()%>/admin/ListarCategoria">Categorias</a>
+            <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a>
             <div id="ativo">
                 <img src="<%= request.getContextPath() %>/imagens/arrowright.svg" alt="seta direita">
-                <a href="<%= request.getContextPath()%>/admin/Competicoes">Tabelas</a>
+                <a href="<%= request.getContextPath()%>/admin/ListarRelatorio">Relatorios</a>
             </div>
-            <a href="<%= request.getContextPath()%>/admin/ListarRelatorio">Relatorios</a>
         </div>
 
         <div class="conteudo" style="flex: 1; min-width: 0;">
             <div id="pag">
                 <div id="cabecalho">
-                    <h1>Tabelas</h1>
+                    <h1>Relatórios Gerenciais</h1>
                 </div>
 
                 <div class="cards">
-                    <a class="card" href="<%= request.getContextPath()%>/admin/ListarTime">Times</a>
-                    <a class="card" href="<%= request.getContextPath()%>/admin/ListarCampeonato">Campeonatos</a>
-                    <a class="card" href="<%= request.getContextPath()%>/admin/ListarFiltro">Filtros</a>
-                    <a class="card" href="<%= request.getContextPath()%>/admin/ListarAtributos">Atributos</a>
-                    <a class="card" href="<%= request.getContextPath()%>/admin/ListarAuxFiltroAtributo" style="text-align: center;">Relacionar Filtro Atributo</a>
+                    <a class="card" href="<%= request.getContextPath()%>/admin/TotalComprasCliente" style="text-align: center; padding: 5px;">Total de Compras Por Cliente</a>
+                    <a class="card" href="<%= request.getContextPath()%>/admin/ProdutosEmFalta" style="text-align: center; padding: 5px;">Produtos Em Falta No Estoque</a>
+                    <a class="card" href="<%= request.getContextPath()%>/admin/ValorTotalDias" style="text-align: center; padding: 5px;">Valor Total Recebido Por Dia</a
                 </div>
             </div>
         </div>

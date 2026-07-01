@@ -45,12 +45,13 @@ if (session.getAttribute("usuario") != null && session.getAttribute("usuario") i
                 <img id="carrinho" src="${pageContext.request.contextPath}/imagens/carrinho.svg" style="width: 100%; height: auto; " alt="ft de carrinho"></a>
         </div>
 
-            <div class="pesquisa">
-                <a href="PaginaPesquisa.html">
-                    <img src="${pageContext.request.contextPath}/imagens/search.svg" style="width: 100%; height: auto" alt="lupa de pesquisa">
-                    <input type="text" class="desativar" style="width: 100%; height: 100%;">  
-                </a>
+        <form action="<%= request.getContextPath()%>/secure/BuscaProdutoServlet">
+            <div class="pesquisa" style="margin-top: -17px; margin-left: 57%;">
+                <img src="${pageContext.request.contextPath}/imagens/search.svg" style="width: 100%; height: auto" alt="lupa de pesquisa">
+                <input type="text" name="descricao" style="width: 100%; height: 100%;">  
             </div>
+        </form>
+          
     </div>
                     
     <div id="Menu" class="menulateral">
